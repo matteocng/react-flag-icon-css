@@ -1,6 +1,4 @@
 // @flow
-import React from 'react'
-
 export type ObjStringKeyValuesType = { [key: string]: string }
 
 export type CssModuleType = ObjStringKeyValuesType
@@ -13,22 +11,24 @@ export type FlagIconSizesType =
   | "5x"
 
 export type FlagIconRotateType =
+  | 30
+  | 60
   | 90
   | 180
   | 270
+
+export type FlagIconFlipType =
+  | "horizontal"
+  | "vertical"
 
 export type FlagIconPropsType = {
   code: string,
   squared?: boolean,
   size?: FlagIconSizesType,
   rotate?: FlagIconRotateType,
+  flip?: FlagIconFlipType,
   Component?: string,
-  children?: React.Element<*>
-}
-
-export type CountryType = {
-  name: string,
-  code: string
+  children?: React$Element<*>
 }
 
 export type FlagIconOptionsType = {
@@ -288,3 +288,8 @@ export type FlagIconCodeType =
   | "za"
   | "zm"
   | "zw"
+
+export type CountryType = {
+  name: string,
+  code: FlagIconCodeType
+}

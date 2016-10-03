@@ -1,7 +1,9 @@
 // @flow
-import { String, Boolean, ReactElement, struct, enums, maybe, Object as TObject } from 'tcomb'
+import { Boolean as tcombBoolean, struct, enums, maybe, String as tcombString,
+         Object as tcombObject } from 'tcomb'
+import { ReactChildren } from 'tcomb-react'
 import type { CountryType, ObjStringKeyValuesType as ObjKVType } from '../types/flow'
-import { getCountries } from '../functions'
+import { getCountries } from '../functions/countries'
 
 
 const strict = true
@@ -14,20 +16,24 @@ const countriesKeyValue = getCountries().reduce(addKeyToObj, {})
 
 // Types
 const FlagIconSizeType = enums.of(['lg', '2x', '3x', '4x', '5x'], 'FlagIconSizeType')
-const FlagIconRotateType = enums.of([90, 180, 270], 'FlagIconRotateType')
-
+const FlagIconRotateType = enums.of([30, 60, 90, 180, 270], 'FlagIconRotateType')
+const FlagIconFlipType = enums.of(['horizontal', 'vertical'], 'FlagIconFlipType')
 const FlagIconCodeType = enums(countriesKeyValue, 'FlagIconCodeType')
 
-export const FlagIconPropsTypeTcomb = struct({
+export const FlagIconClassesObjectTypeTcomb = struct({
   code: FlagIconCodeType,
   size: maybe(FlagIconSizeType),
-  squared: maybe(Boolean),
+  squared: maybe(tcombBoolean),
   rotate: maybe(FlagIconRotateType),
-  Component: maybe(String),
-  children: maybe(ReactElement)
-}, { name: 'FlagIconType', strict })
+  flip: maybe(FlagIconFlipType)
+}, 'FlagIconClassesObjectType')
+
+export const FlagIconPropsTypeTcomb = FlagIconClassesObjectTypeTcomb.extend({
+  Component: maybe(tcombString),
+  children: maybe(ReactChildren)
+}, { name: 'FlagIconPropsType', strict })
 
 export const FlagIconOptionsTypeTcomb = struct({
-  useCssModules: Boolean,
-  themeStyles: maybe(TObject)
+  useCssModules: tcombBoolean,
+  themeStyles: maybe(tcombObject)
 }, { name: 'FlagIconOptionsType', strict })
