@@ -6,8 +6,8 @@ type DummyPropsType = {
   text?: string
 }
 
-const DummyComponent = (React: typeof react) : ReactType.createElement =>
-(props: DummyPropsType) : ReactType.Element<*> =>
+const DummyComponent = (React: typeof module) : ReactType.createElement =>
+(props: DummyPropsType) : React$Element<*> =>
   <div className={props.className}>{props.text}</div>
 
 export default DummyComponent
