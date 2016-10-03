@@ -4,7 +4,8 @@
         ["es2015", { "modules": "commonjs"}],
     ],
     "plugins": [
-      "transform-object-rest-spread"
+      "transform-object-rest-spread",
+      "transform-export-extensions"
     ],
     "comments": false
 }
