@@ -3,5 +3,8 @@ module.name_mapper='^~/\(.*\)' -> '<PROJECT_ROOT>/src/\1'
 module.name_mapper.extension='scss' -> '<PROJECT_ROOT>/flow/stub/css-modules.js'
 # SEE: https://github.com/facebook/flow/issues/1895
 suppress_type=$FlowIssue
+esproposal.export_star_as=enable
 [libs]
 ./node_modules/fbjs/flow/lib
+[ignore]
+<PROJECT_ROOT>/lib/.*
