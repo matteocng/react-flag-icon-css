@@ -1,0 +1,19 @@
+@import 'variables';
+@import 'mixins';
+
+
+@each $key, $value in $font-sizes {
+  @include size($key, $value)
+}
+
+@each $key, $value in $rotations {
+  @include rotate($key, $value)
+}
+
+.#{$prefix}-flip-horizontal {
+  transform: scale(-1, 1);
+}
+
+.#{$prefix}-flip-vertical {
+  transform: scale(1, -1);
+}
