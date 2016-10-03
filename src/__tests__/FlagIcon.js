@@ -36,12 +36,44 @@ const getExpectedClassName = (props: FlagIconPropsType, options: FlagIconOptions
   return classnames(oParams)
 }
 
-const baseProps = {
+const filterClassObjectKey = (obj: classes, objKey: string) : boolean =>
+  objKey !== flagIconClassesPrefixName && objKey.startsWith(flagIconClassesPrefixName)
+
+// FlagIcon Props
+
+const requiredProps = {
   code: 'it'
+}
+
+const optionalProps = {
+  size: '3x',
+  squared: false,
+  rotate: 90,
+  flip: 'horizontal'
+}
+
+const allProps = {
+  ...requiredProps,
+  ...optionalProps
 }
 
 // Tests
 
+test('functions > makeClassesObject', (t: tape$Context) => {
+  const computedOptions = makeFlagIconOptions()
+  const oParams = makeClassesObject(allProps, computedOptions)
+
+  // First remove ${flagIconClassesPrefixName}, any key not starting with
+  // ${flagIconClassesPrefixName} (e.g theme key)
+  const oFilteredParams = Object.keys(oParams).filter(filterClassObjectKey.bind(this, oParams))
+  const expectedLength = Object.keys(optionalProps).length
+  // We substract the length of the required properties and then expect a key in the
+  // object created by makeClassesObject for each of the optional properties
+  const computedLength = oFilteredParams.length - Object.keys(requiredProps).length
+
+  t.equal(expectedLength, computedLength)
+  t.end()
+})
 
 test('FlagIconFactory > useCssModules: false and props: className', (t: tape$Context) => {
   const options = { useCssModules: false }
