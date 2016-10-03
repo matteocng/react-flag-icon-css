@@ -3,19 +3,20 @@ import React from 'react'
 import test from 'tape' // eslint-disable-line import/no-extraneous-dependencies
 import { shallow, mount } from 'enzyme' // eslint-disable-line import/no-extraneous-dependencies
 import classnames from 'classnames'
+
 import type { ReactWrapper, ShallowWrapper } from 'enzyme' // eslint-disable-line import/no-extraneous-dependencies
+import type classes from 'classnames'
+import type { FlagIconPropsType, FlagIconOptionsType } from '../types/flow'
 
 import FlagIconFactory from '../'
 import styles from '../styles'
-import { objectKeysApplyFn } from '../functions'
-import type { FlagIconPropsType, FlagIconOptionsType } from '../types/flow'
 import DummyComponentFactory from './DummyComponent'
-import makeFlagIconOptions from '../options'
-
-import { makeClassNameObject } from '../classnameMaker'
-import makeCssModulesObject from '../cssModulesStyleObjectMaker'
+import { countries, constants, makeStyles, makeClassesObject, objectKeysApplyFn,
+         makeFlagIconOptions } from '../functions'
 import testThemeStyles from './testThemeStyles.scss'
 
+const { getCountryCodes } = countries
+const { flagIconClassesPrefixName } = constants
 
 // Helpers and definitions
 
