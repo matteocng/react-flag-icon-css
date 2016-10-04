@@ -10,7 +10,8 @@ import type { FlagIconOptionsType } from '../types/flow'
 import { makeStyles, makeFlagIconOptions } from '../functions'
 
 
-const FlagIconFactory = (React: ReactModule, options?: FlagIconOptionsType) : ReactType.createElement => { // eslint-disable-line flowtype/no-weak-types, max-len
+const FlagIconFactory = (React: ReactModule,
+                         options?: FlagIconOptionsType) : ReactType.createElement => {
   const computedOptions = makeFlagIconOptions(options)
 
   const FlagIconComponent = FlagIcon(React, computedOptions)
