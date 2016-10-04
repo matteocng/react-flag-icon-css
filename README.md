@@ -38,7 +38,7 @@ const rootEL = document.body.querySelector('#app')
 ReactDOM.render(<App {...appProps} />, rootEL)
 ```
 
-
+An [example project](//github.com/matteocng/react-flag-icon-css-example-multi) is available.
 
 ## Development
 
