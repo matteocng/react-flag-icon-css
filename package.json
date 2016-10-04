@@ -1,28 +1,14 @@
 {
   "name": "react-flag-icon-css",
-  "version": "1.0.0",
   "description": "React SVG country flags component",
+  "homepage": "https://github.com/matteocng/react-flag-icon-css#readme",
+  "version": "1.0.1",
   "main": "./lib",
-  "scripts": {
-    "clean": "rimraf ./lib",
-    "prebuild": "npm run clean",
-    "build": "babel src --out-dir ./lib --ignore **/__tests__/",
-    "postbuild": "npm run sass && flow-copy-source -v src lib",
-    "prepublish": "npm run test && npm run build",
-    "sass": "mkdirp lib/sass && cp src/sass/*.scss lib/sass",
-    "test": "tape -r babel-register \"src/**/__tests__/index.js\"",
-    "posttest": "npm run lint && npm run flow",
-    "flow": "flow; test $? -eq 0 -o $? -eq 2",
-    "lint": "npm run lint:js && npm run lint:css",
-    "lint:js": "eslint src cmrh.conf.js",
-    "lint:css": "sass-lint 'src/**/*.scss' -v -q"
-  },
   "author": {
-    "name": "matteocng",
     "email": "matteocng+npmjs@outlook.com",
+    "name": "matteocng",
     "url": "https://github.com/matteocng"
   },
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/matteocng/react-flag-icon-css.git"
@@ -37,16 +23,12 @@
     "flag-icon-css",
     "react-css-modules"
   ],
-  "peerDependencies": {
-    "react": "^0.14 || ^15.0",
-    "react-dom": "^0.14 || ^15.0"
-  },
   "dependencies": {
     "classnames": "^2.2.5",
+    "flag-icon-css": "^2.4.0",
     "react-css-modules": "^4.0.0",
     "tcomb": "^3.2.15",
-    "tcomb-react": "^0.9.3",
-    "flag-icon-css": "^2.4.0"
+    "tcomb-react": "^0.9.3"
   },
   "devDependencies": {
     "babel-eslint": "^7.0.0",
@@ -79,5 +61,24 @@
     "tape": "^4.6.0",
     "tcomb": "^3.2.15",
     "tcomb-react": "^0.9.3"
+  },
+  "scripts": {
+    "build": "babel src --out-dir ./lib --ignore **/__tests__/",
+    "clean": "rimraf ./lib",
+    "flow": "flow; test $? -eq 0 -o $? -eq 2",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:css": "sass-lint 'src/**/*.scss' -v -q",
+    "lint:js": "eslint src cmrh.conf.js",
+    "postbuild": "npm run sass && flow-copy-source -v src lib",
+    "posttest": "npm run lint && npm run flow",
+    "prebuild": "npm run clean",
+    "prepublish": "npm run test && npm run build",
+    "sass": "mkdirp lib/sass && cp src/sass/*.scss lib/sass",
+    "test": "tape -r babel-register \"src/**/__tests__/index.js\""
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^0.14 || ^15.0",
+    "react-dom": "^0.14 || ^15.0"
   }
 }
