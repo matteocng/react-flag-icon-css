@@ -69,7 +69,7 @@
     "lint": "npm run lint:js && npm run lint:css",
     "lint:css": "sass-lint 'src/**/*.scss' -v -q",
     "lint:js": "eslint src cmrh.conf.js",
-    "postbuild": "npm run sass && flow-copy-source -v src lib",
+    "postbuild": "npm run sass && flow-copy-source --ignore *__tests__/* -v src lib",
     "posttest": "npm run lint && npm run flow",
     "prebuild": "npm run clean",
     "prepublish": "npm run test && npm run build",
