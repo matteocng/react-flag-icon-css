@@ -5,9 +5,9 @@ import type { default as ReactType } from 'react'
 import typeof { default as ReactModule } from 'react'
 import FlagIcon from './FlagIcon'
 import styles from '../styles'
+import { makeStyles, makeFlagIconOptions } from '../functions'
 import { FlagIconPropsTypeTcomb } from '../types/tcomb'
 import type { FlagIconOptionsType } from '../types/flow'
-import { makeStyles, makeFlagIconOptions } from '../functions'
 
 
 const FlagIconFactory = (React: ReactModule,
