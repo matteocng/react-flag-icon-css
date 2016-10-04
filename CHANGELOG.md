@@ -1,3 +1,10 @@
+<a name="1.0.2"></a>
+## 1.0.2 (2016-10-04)
+
+* fix(flow-copy-source): do not copy tests to lib ([e5adc74](https://github.com/matteocng/react-flag-icon-css/commit/e5adc74))
+
+
+
 <a name="1.0.1"></a>
 ## 1.0.1 (2016-10-04)
 
