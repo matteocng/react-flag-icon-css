@@ -1,3 +1,10 @@
+<a name="1.0.4"></a>
+## 1.0.4 (2016-10-05)
+
+* docs(README): more updates ([0405d49](https://github.com/matteocng/react-flag-icon-css/commit/0405d49))
+
+
+
 <a name="1.0.3"></a>
 ## 1.0.3 (2016-10-05)
 
