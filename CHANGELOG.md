@@ -1,3 +1,11 @@
+<a name="1.0.3"></a>
+## 1.0.3 (2016-10-05)
+
+* docs(readme): add link to example project ([1e9921c](https://github.com/matteocng/react-flag-icon-css/commit/1e9921c))
+* docs(README): misc fixes and updates ([2054846](https://github.com/matteocng/react-flag-icon-css/commit/2054846))
+
+
+
 <a name="1.0.2"></a>
 ## 1.0.2 (2016-10-04)
 
