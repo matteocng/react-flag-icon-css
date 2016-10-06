@@ -289,6 +289,10 @@ export type FlagIconCodeType =
   | "zm"
   | "zw"
 
+export type FlagIconReturnType = (props: FlagIconPropsType) => React$Element<*>
+
+export type FlagIconFactoryReturnType = FlagIconReturnType
+
 export type CountryType = {
   name: string,
   code: FlagIconCodeType

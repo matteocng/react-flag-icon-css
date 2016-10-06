@@ -1,17 +1,17 @@
 // @flow
 import CssModulesTransform from 'react-css-modules'
 import { propTypes as tcombProps } from 'tcomb-react'
-import type { default as ReactType } from 'react'
+
 import typeof { default as ReactModule } from 'react'
 import FlagIcon from './FlagIcon'
 import styles from '../styles'
 import { makeStyles, makeFlagIconOptions } from '../functions'
 import { FlagIconPropsTypeTcomb } from '../types/tcomb'
-import type { FlagIconOptionsType } from '../types/flow'
+import type { FlagIconOptionsType, FlagIconFactoryReturnType } from '../types/flow'
 
 
 const FlagIconFactory = (React: ReactModule,
-                         options?: FlagIconOptionsType) : ReactType.createElement => {
+                         options?: FlagIconOptionsType) : FlagIconFactoryReturnType => {
   const computedOptions = makeFlagIconOptions(options)
 
   const FlagIconComponent = FlagIcon(React, computedOptions)
