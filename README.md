@@ -1,4 +1,4 @@
-A simple React SVG country flags component.
+A simple React SVG country flags component that works with React Css Modules (default) or global Css.
 
 ## Installation
 
@@ -13,7 +13,7 @@ $ npm install --save react-flag-icon-css
 The [webpack](//github.com/webpack/webpack) module bundler and ecosystem are recommended. You will need to install a few packages, including:
 
 ```bash
-$ npm install --save-dev babel-loader css-loader file-loader sass-loader node-sass style-loader extract-text-webpack-plugin classnames tcomb tcomb-react
+$ npm install --save-dev babel-loader css-loader file-loader sass-loader node-sass style-loader extract-text-webpack-plugin classnames tcomb tcomb-react react-css-modules
 ```
 
 ## Basic usage
@@ -44,29 +44,38 @@ An [example project](//github.com/matteocng/react-flag-icon-css-example-multi) i
 
 ## FlagIcon props
 
-| Prop | Type | Default | Description | Supported values |
-| --- | --- | --- | --- |
-| code * | <code>String</code> |  | [ISO 3166-1-alpha-2 code](http://www.iso.org/iso/country_names_and_code_elements) | The list is [here](relative link/static/countries.json) |
-| size | <code>String</code> |  |  | lg, 2x, 3x, 4x, 5x |
-| flip | <code>String</code> |  |  | horizontal, vertical |
-| rotate | <code>Number</code> |  |  | 30, 60, 90, 180, 270 |
-| squared | <code>Boolean</code> | <code>false</code> |  | |
-| Component | <code>String</code> | <code>span</code> |  | e.g <code>span</code>, <code>div</code> |
-| Children | <code>String</code> | <code>false</code> | React element | e.g ```<Something />``` |
+| Prop | Type | Flow Type | Default | Description | Supported values |
+| --- | --- | --- | --- | --- |  --- |
+| code * | <code>String</code> | <code>FlagIconCodeType</code> | | [ISO 3166-1-alpha-2 code](https://www.iso.org/obp/ui/#searchs) | The list is [here](relative link/static/countries.json) |
+| size | <code>String</code> | <code>FlagIconSizeType</code> | |  | lg, 2x, 3x, 4x, 5x |
+| flip | <code>String</code> | <code>FlagIconFlipType</code> | |  | horizontal, vertical |
+| rotate | <code>Number</code> | <code>FlagIconRotateType</code>| |  | 30, 60, 90, 180, 270 |
+| squared | <code>Boolean</code> | |<code>false</code> |  | |
+| Component | <code>String</code> | |<code>span</code> |  | e.g <code>span</code>, <code>div</code> |
+| Children | <code>String</code> | <code>React$Element<*></code>| | React element | e.g ```<Something />``` |
 
-In development mode, you will see warnings in the console if you attempt to use an unsupported prop value.
+Remember to always build FlagIcon with its factory.
+
+## FlagIconFactory
+
+| Argument | Type | Flow Type | Description | Supported values |
+| --- | --- | --- | --- |  --- |
+| React * | <code>Module</code> | <code>ReactModule</code>  | Your app's React instance | Versions in peerDependencies |
+| options | <code>Object</code> | <code>FlagIconOptionsType</code> |  |  ||
 
 ## Development
 
-TODO
+Runtime type checking: in development mode (process.env.NODE_ENV !== 'production'), if you attempt to use an unsupported prop or prop value, you will see "Failed prop type" errors in the browser console (tcomb package).
+
+Static type checking: if you use Flow, it should automatically pick up this package's definitions from the .js.flow files and check your code accordingly when you run <code>npm run flow</code>. The latest Flow version or the version in package.json is recommended.
 
 ## Contributing
 
-TODO
+Contributions are welcome. Please use a topic branch, follow the [AngularJS commit style guidelines](//github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-git-commit-guidelines) and check that <code>npm run prepublish</code> (build, test, type checking, lint ...) returns zero errors before opening a PR. Thanks!
 
-## Origin of the flags
+## Source of the flags
 
-This project uses the [flag-icon-css](github.com/lipis/flag-icon-css) SVG country flags and CSS.
+This project uses [flag-icon-css](//github.com/lipis/flag-icon-css) SVG and Css.
 
 ## License
 
