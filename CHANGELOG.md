@@ -1,3 +1,10 @@
+<a name="1.0.6"></a>
+## 1.0.6 (2016-10-10)
+
+* fix(package.json): add required babel-cli ([d31d2d8](https://github.com/matteocng/react-flag-icon-css/commit/d31d2d8))
+
+
+
 <a name="1.0.5"></a>
 ## 1.0.5 (2016-10-06)
 
