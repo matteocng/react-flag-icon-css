@@ -79,4 +79,4 @@ This project uses [flag-icon-css](//github.com/lipis/flag-icon-css) SVG and Css.
 
 ## License
 
-This project is licensed under the terms of the [MIT license](relative link/LICENSE).
+This project is licensed under the terms of the [MIT license](LICENSE).
