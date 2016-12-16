@@ -212,6 +212,9 @@
 	"name": "Ethiopia",
 	"code": "et"
 }, {
+	"name": "European Union",
+	"code": "eu"
+}, {
 	"name": "Falkland Islands (Malvinas)",
 	"code": "fk"
 }, {
@@ -703,6 +706,21 @@
 }, {
 	"name": "United Kingdom",
 	"code": "gb"
+}, {
+	"name": "England",
+	"code": "gb-eng"
+}, {
+	"name": "Northern Ireland",
+	"code": "gb-nir"
+}, {
+	"name": "Scotland",
+	"code": "gb-sct"
+}, {
+	"name": "Wales",
+	"code": "gb-wls"
+}, {
+	"name": "United Nations",
+	"code": "un"
 }, {
 	"name": "United States",
 	"code": "us"
