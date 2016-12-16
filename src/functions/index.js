@@ -9,9 +9,11 @@ export * as countries from './countries'
 export * as constants from './constants'
 
 
-export const objectKeysApplyFn = (obj: classes, // eslint-disable-line import/prefer-default-export, max-len
-                                  fn: KeyCallbackType) : classes =>
-  Object.keys(obj).reduce((retObj: classes, key: string) : classes => { // eslint-disable-line arrow-body-style, max-len
+export const objectKeysApplyFn = ( // eslint-disable-line import/prefer-default-export
+  obj: classes,
+  fn: KeyCallbackType
+): classes =>
+  Object.keys(obj).reduce((retObj: classes, key: string): classes => { // eslint-disable-line arrow-body-style, max-len
     return {
       ...retObj,
       [fn(key)]: obj[key]

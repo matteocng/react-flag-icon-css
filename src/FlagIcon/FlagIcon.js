@@ -1,11 +1,11 @@
 // @flow
-import typeof { default as ReactModule } from 'react'
+import typeof ReactModule from 'react'
 import type { FlagIconPropsType, FlagIconOptionsType, FlagIconReturnType } from '../types/flow'
 import { makeClassnames } from '../functions'
 
 
-const FlagIcon = (React: ReactModule, options: FlagIconOptionsType) : FlagIconReturnType =>
-  ({ ...props, Component = 'span', children }: FlagIconPropsType) : React$Element<*> => {
+const FlagIcon = (React: ReactModule, options: FlagIconOptionsType): FlagIconReturnType =>
+  ({ ...props, Component = 'span', children }: FlagIconPropsType): React$Element<*> => {
     const stylePropName = options.useCssModules ? 'styleName' : 'className'
     const p = { [stylePropName]: makeClassnames(props, options) }
 

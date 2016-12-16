@@ -8,7 +8,7 @@ const cssModulesScopedName = '[path]___[name]__[local]___[hash:base64:5]'
 module.exports = {
   extensions: cssExtensions,
   generateScopedName: cssModulesScopedName,
-  preprocessCss: (data: string, file: string) : Buffer =>
+  preprocessCss: (data: string, file: string): Buffer =>
     sass.renderSync({
       file,
       data

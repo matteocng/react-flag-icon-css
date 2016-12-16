@@ -6,13 +6,25 @@ import classnames from 'classnames'
 
 import type { ReactWrapper, ShallowWrapper } from 'enzyme' // eslint-disable-line import/no-extraneous-dependencies
 import type classes from 'classnames'
-import type { FlagIconPropsType, FlagIconOptionsType } from '../types/flow'
+import type {
+  FlagIconPropsType,
+  FlagIconOptionsType,
+  FlagIconCodeType
+} from '../types/flow'
 
 import FlagIconFactory from '../'
 import styles from '../styles'
 import DummyComponentFactory from './DummyComponent'
-import { countries, constants, makeStyles, makeClassesObject, objectKeysApplyFn,
-         makeFlagIconOptions } from '../functions'
+import {
+  countries,
+  constants,
+  makeStyles,
+  makeClassesObject,
+  objectKeysApplyFn,
+  makeFlagIconOptions,
+  diffArrays
+} from '../functions'
+import { GetFlagIconModuleCountryCodes } from '../functions/config'
 import testThemeStyles from './testThemeStyles.scss'
 
 const { getCountryCodes } = countries
@@ -20,14 +32,14 @@ const { flagIconClassesPrefixName } = constants
 
 // Helper functions
 
-const getExpectedClassName = (props: FlagIconPropsType, options: FlagIconOptionsType) : string => {
+const getExpectedClassName = (props: FlagIconPropsType, options: FlagIconOptionsType): string => {
   const computedOptions = makeFlagIconOptions(options)
   let oParams = makeClassesObject(props, computedOptions)
 
   if (computedOptions.useCssModules) {
     const computedStyles = makeStyles(styles, computedOptions)
 
-    oParams = objectKeysApplyFn(oParams, (key: string) : string => {
+    oParams = objectKeysApplyFn(oParams, (key: string): string => {
       const skipValue = !oParams[key] // keys with 'false' values can be ignored
       const newKeyName = computedStyles[key]
       return skipValue ? key : newKeyName
@@ -36,7 +48,7 @@ const getExpectedClassName = (props: FlagIconPropsType, options: FlagIconOptions
   return classnames(oParams)
 }
 
-const filterClassObjectKey = (obj: classes, objKey: string) : boolean =>
+const filterClassObjectKey = (obj: classes, objKey: string): boolean =>
   objKey !== flagIconClassesPrefixName && objKey.startsWith(flagIconClassesPrefixName)
 
 // FlagIcon Props
@@ -156,8 +168,10 @@ test('FlagIcon mount > props:children', (t: tape$Context) => {
   const FlagIcon = FlagIconFactory(React, { useCssModules: false })
   const childrenClassName = 'test'
   const childrenText = 'test'
-  const children = DummyComponentFactory(React)({ text: childrenText,
-                                                  className: childrenClassName })
+  const children = DummyComponentFactory(React)({
+    text: childrenText,
+    className: childrenClassName
+  })
   const ReactFlagIconCssModules = FlagIconCssModules({ ...requiredProps, children })
   const ReactFlagIcon = FlagIcon({ ...requiredProps, children })
   const flagIcons = [ReactFlagIconCssModules, ReactFlagIcon]

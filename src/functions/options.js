@@ -6,5 +6,5 @@ const defaultOptions: FlagIconOptionsType = {
   useCssModules: true
 }
 
-export default (options?: FlagIconOptionsType) : FlagIconOptionsType =>
+export default (options?: FlagIconOptionsType): FlagIconOptionsType =>
   FlagIconOptionsTypeTcomb({ ...defaultOptions, ...options })

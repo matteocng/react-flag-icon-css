@@ -11,7 +11,7 @@ export const makeClassesObject = ({ ...props,
                                        size = '',
                                        squared = false,
                                        rotate }: FlagIconPropsType,
-                                       options: FlagIconOptionsType) : classes => {
+                                       options: FlagIconOptionsType): classes => {
   let obj = {
     [flagIconClassesPrefixName]: true,
     [`${flagIconClassesPrefix}squared`]: squared,
@@ -28,5 +28,5 @@ export const makeClassesObject = ({ ...props,
   return obj
 }
 
-export default (props: FlagIconPropsType, options: FlagIconOptionsType) : string =>
+export default (props: FlagIconPropsType, options: FlagIconOptionsType): string =>
   classnames(makeClassesObject(props, options))

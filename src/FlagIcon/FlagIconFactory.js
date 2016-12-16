@@ -2,7 +2,7 @@
 import CssModulesTransform from 'react-css-modules'
 import { propTypes as tcombProps } from 'tcomb-react'
 
-import typeof { default as ReactModule } from 'react'
+import typeof ReactModule from 'react'
 import FlagIcon from './FlagIcon'
 import styles from '../styles'
 import { makeStyles, makeFlagIconOptions } from '../functions'
@@ -11,7 +11,7 @@ import type { FlagIconOptionsType, FlagIconFactoryReturnType } from '../types/fl
 
 
 const FlagIconFactory = (React: ReactModule,
-                         options?: FlagIconOptionsType) : FlagIconFactoryReturnType => {
+                         options?: FlagIconOptionsType): FlagIconFactoryReturnType => {
   const computedOptions = makeFlagIconOptions(options)
 
   const FlagIconComponent = FlagIcon(React, computedOptions)

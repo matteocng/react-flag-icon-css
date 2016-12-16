@@ -1,4 +1,4 @@
-import type { default as ReactType } from 'react'
+import type ReactType from 'react'
 
 
 type DummyPropsType = {
@@ -6,8 +6,8 @@ type DummyPropsType = {
   text?: string
 }
 
-const DummyComponent = (React: typeof module) : ReactType.createElement =>
-(props: DummyPropsType) : React$Element<*> =>
+const DummyComponent = (React: typeof module): ReactType.createElement =>
+(props: DummyPropsType): React$Element<*> =>
   <div className={props.className}>{props.text}</div>
 
 export default DummyComponent
