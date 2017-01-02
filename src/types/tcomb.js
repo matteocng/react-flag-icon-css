@@ -9,8 +9,10 @@ import { getCountries } from '../functions/countries'
 const strict = true
 
 // Functions
-const addKeyToObj = (retObj: ObjKVType,
-                     curObj: CountryType) : ObjKVType => ({ ...retObj, [curObj.code]: curObj.name })
+const addKeyToObj = (
+  retObj: ObjKVType,
+  curObj: CountryType
+): ObjKVType => ({ ...retObj, [curObj.code]: curObj.name })
 
 const countriesKeyValue = getCountries().reduce(addKeyToObj, {})
 

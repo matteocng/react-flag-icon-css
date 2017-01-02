@@ -71,6 +71,17 @@ const allProps = {
 
 // Tests
 
+test('countries.json is synchronized with flag-icon-css', (t: tape$Context) => {
+  const jsonCodes = getCountryCodes()
+  const moduleCodes: FlagIconCodeType[] = GetFlagIconModuleCountryCodes()
+  const diff = diffArrays(jsonCodes, moduleCodes)
+  const testOk = (diff.length === 0)
+  const message = testOk ? '' : `Diff: ${diff.join(', ')}`
+
+  t.ok(testOk, message)
+  t.end()
+})
+
 test('functions > makeClassesObject', (t: tape$Context) => {
   const computedOptions = makeFlagIconOptions()
   const oParams = makeClassesObject(allProps, computedOptions)
