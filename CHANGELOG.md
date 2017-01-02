@@ -1,3 +1,18 @@
+<a name="1.0.7"></a>
+## 1.0.7 (2017-01-02)
+
+* chore: remove unused duplicate country codes file ([8acd57b](https://github.com/matteocng/react-flag-icon-css/commit/8acd57b))
+* chore: replace .eslintrc with .eslintrc.js ([98a455c](https://github.com/matteocng/react-flag-icon-css/commit/98a455c))
+* chore: run yarn upgrade 'modulename' ([1d886e8](https://github.com/matteocng/react-flag-icon-css/commit/1d886e8))
+* chore: yarn upgrade ([67c5b3d](https://github.com/matteocng/react-flag-icon-css/commit/67c5b3d))
+* fix: fixes #2. add eu, un, gb-eng, gb-nir, gb-sct, gb-wls flags ([8f479e6](https://github.com/matteocng/react-flag-icon-css/commit/8f479e6)), closes [#2](https://github.com/matteocng/react-flag-icon-css/issues/2)
+* fix: make country codes more automated and tested ([7ad2177](https://github.com/matteocng/react-flag-icon-css/commit/7ad2177))
+* style: fix eslint errors and misc fixes ([058d32a](https://github.com/matteocng/react-flag-icon-css/commit/058d32a))
+* feat: add yarn https://yarnpkg.com/ ([d6d4d5f](https://github.com/matteocng/react-flag-icon-css/commit/d6d4d5f))
+* docs: fix broken link ([c7f057d](https://github.com/matteocng/react-flag-icon-css/commit/c7f057d))
+
+
+
 <a name="1.0.6"></a>
 ## 1.0.6 (2016-10-10)
 
