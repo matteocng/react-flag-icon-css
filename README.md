@@ -46,7 +46,7 @@ An [example project](//github.com/matteocng/react-flag-icon-css-example-multi) i
 
 | Prop | Type | Flow Type | Default | Description | Supported values |
 | --- | --- | --- | --- | --- |  --- |
-| code * | <code>String</code> | <code>FlagIconCodeType</code> | | [ISO 3166-1-alpha-2 code](https://www.iso.org/obp/ui/#searchs) | The list is [here](relative link/static/countries.json) |
+| code * | <code>String</code> | <code>FlagIconCodeType</code> | | [ISO 3166-1-alpha-2 code](https://www.iso.org/iso/country_names_and_code_elements) | The list is [here](static/countries.json) |
 | size | <code>String</code> | <code>FlagIconSizeType</code> | |  | lg, 2x, 3x, 4x, 5x |
 | flip | <code>String</code> | <code>FlagIconFlipType</code> | |  | horizontal, vertical |
 | rotate | <code>Number</code> | <code>FlagIconRotateType</code>| |  | 30, 60, 90, 180, 270 |
@@ -71,7 +71,7 @@ Static type checking: if you use Flow, it should automatically pick up this pack
 
 ## Contributing
 
-Contributions are welcome. Please use a topic branch, follow the [AngularJS commit style guidelines](//github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-git-commit-guidelines) and check that <code>npm run prepublish</code> (build, test, type checking, lint ...) returns zero errors before opening a PR. Thanks!
+Contributions are welcome. Please use a topic branch, follow the [AngularJS commit style guidelines](//github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-git-commit-guidelines) and check that <code>yarn run prepublish</code> (recommended) or <code>npm run prepublish</code> (build, test, type checking, lint ...) returns zero errors before opening a PR. Thanks!
 
 ## Source of the flags
 
