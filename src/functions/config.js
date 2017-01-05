@@ -8,7 +8,7 @@ import styles from '../styles'
 
 export const GetFlagIconModuleCountryCodes = ( // eslint-disable-line import/prefer-default-export
     modulePath: string = flagIconModulePath
-): boolean =>
+): FlagIconCodeType[] =>
   fs.readdirSync(path.resolve(`${modulePath}/flags/4x3`)).reduce(
     (retAr: [], fileName: string): FlagIconCodeType[] => { // reduce() first argument: function
       const code = path.basename(fileName, path.extname(fileName))
