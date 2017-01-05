@@ -133,25 +133,31 @@ test('FlagIcon props', (t: tape$Context) => {
   let currentExpectedClassName = ''
 
   const countryCodes = getCountryCodes()
+  let aComparisonResults = []
 
   countryCodes.forEach((code: string) => {
     currentProps = { ...currentProps, code }
+
     Object.keys(optionalProps).forEach((prop: string) => {
       const ReactFlagIconCssModules : React$Element<*> = FlagIconCssModules({ ...currentProps })
       const ReactFlagIcon : React$Element<*> = FlagIcon({ ...currentProps })
       const FlagIcons = [ReactFlagIconCssModules, ReactFlagIcon]
+
       FlagIcons.forEach((flagIcon: React$Element<*>, i: number) => {
         const wrapper: ShallowWrapper<*> = shallow(flagIcon)
         const Component = currentProps.Component ? currentProps.Component : 'span'
         const currentOptions = { ...options, useCssModules: (i === 0) }
         currentExpectedClassName = getExpectedClassName(currentProps, currentOptions)
 
-        t.equal(wrapper.contains(<Component className={currentExpectedClassName} />), true)
+        const result = wrapper.contains(<Component className={currentExpectedClassName} />)
+        aComparisonResults = [...aComparisonResults, result]
       })
       currentProps = { ...currentProps, [prop]: optionalProps[prop] }
     })
   })
 
+  const nTrueComparisons = aComparisonResults.filter((result: boolean): boolean => result).length
+  t.equal(nTrueComparisons, aComparisonResults.length)
   t.end()
 })
 
