@@ -10,8 +10,10 @@ import { FlagIconPropsTypeTcomb } from '../types/tcomb'
 import type { FlagIconOptionsType, FlagIconFactoryReturnType } from '../types/flow'
 
 
-const FlagIconFactory = (React: ReactModule,
-                         options?: FlagIconOptionsType): FlagIconFactoryReturnType => {
+const FlagIconFactory = (
+  React: ReactModule,
+  options?: FlagIconOptionsType
+): FlagIconFactoryReturnType => {
   const computedOptions = makeFlagIconOptions(options)
 
   const FlagIconComponent = FlagIcon(React, computedOptions)

@@ -1,8 +1,17 @@
 // @flow
-import { Boolean as tcombBoolean, struct, enums, maybe, String as tcombString,
-         Object as tcombObject } from 'tcomb'
 import { ReactChildren } from 'tcomb-react'
-import type { CountryType, ObjStringKeyValuesType as ObjKVType } from '../types/flow'
+import {
+  enums,
+  maybe,
+  struct,
+  Boolean as tcombBoolean,
+  Object as tcombObject,
+  String as tcombString,
+} from 'tcomb'
+import type {
+  CountryType,
+  ObjStringKeyValuesType
+} from '../types/flow'
 import { getCountries } from '../functions/countries'
 
 
@@ -10,9 +19,9 @@ const strict = true
 
 // Functions
 const addKeyToObj = (
-  retObj: ObjKVType,
+  retObj: ObjStringKeyValuesType,
   curObj: CountryType
-): ObjKVType => ({ ...retObj, [curObj.code]: curObj.name })
+): ObjStringKeyValuesType => ({ ...retObj, [curObj.code]: curObj.name })
 
 const countriesKeyValue = getCountries().reduce(addKeyToObj, {})
 

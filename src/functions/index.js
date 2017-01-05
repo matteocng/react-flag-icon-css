@@ -9,16 +9,11 @@ export * as countries from './countries'
 export * as constants from './constants'
 
 
-export const objectKeysApplyFn = ( // eslint-disable-line import/prefer-default-export
-  obj: classes,
-  fn: KeyCallbackType
-): classes =>
-  Object.keys(obj).reduce((retObj: classes, key: string): classes => { // eslint-disable-line arrow-body-style, max-len
-    return {
-      ...retObj,
-      [fn(key)]: obj[key]
-    }
-  }, {})
+export const objectKeysApplyFn = (obj: classes, fn: KeyCallbackType): classes =>
+  Object.keys(obj).reduce(
+    (rObj: classes, key: string): classes => ({ ...rObj, [fn(key)]: obj[key] })
+    , {} // reduce() second argument: initial value of rObj
+  )
 
 export const diffArrays = <T>(arA: Array<T>, arB: Array<T>): Array<T> => {
   const arrays = (arA.length > arB.length) ? [arA, arB] : [arB, arA]
