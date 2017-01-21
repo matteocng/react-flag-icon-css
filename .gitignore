@@ -1,5 +1,6 @@
 node_modules
 lib
+module
 npm-debug.log
 .idea
 .DS_Store

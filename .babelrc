@@ -1,11 +1,27 @@
 {
-    "presets": [
-        "react",
-        ["es2015", { "modules": "commonjs"}],
-    ],
-    "plugins": [
-      "transform-object-rest-spread",
-      "transform-export-extensions"
-    ],
-    "comments": false
+	"presets": [
+		"react"
+	],
+	"plugins": [
+		"transform-object-rest-spread",
+		"transform-export-extensions"
+	],
+	"comments": false,
+	"env": {
+		"development": {
+			"presets": ["es2015"]
+		},
+		"module": {
+			"presets": [
+				["es2015", {
+					"modules": false
+				}]
+			],
+			"ignore": ["**/__tests__/"]
+		},
+		"build": {
+			"presets": ["es2015"],
+			"ignore": ["**/__tests__/"]
+		}
+	}
 }

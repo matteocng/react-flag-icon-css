@@ -8,3 +8,4 @@ esproposal.export_star_as=enable
 ./node_modules/fbjs/flow/lib
 [ignore]
 <PROJECT_ROOT>/lib/.*
+<PROJECT_ROOT>/module/.*
