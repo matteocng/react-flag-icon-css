@@ -8,9 +8,6 @@
 	],
 	"comments": false,
 	"env": {
-		"development": {
-			"presets": ["es2015"]
-		},
 		"module": {
 			"presets": [
 				["es2015", {
