@@ -8,13 +8,14 @@ import styles from '../styles'
 
 export const GetFlagIconModuleCountryCodes = (
     modulePath: string = flagIconModulePath
-): FlagIconCodeType[] =>
+): Array<string | FlagIconCodeType> =>
   fs.readdirSync(path.resolve(`${modulePath}/flags/4x3`)).reduce(
-    (retAr: [], fileName: string): FlagIconCodeType[] => { // reduce() first argument: function
+    // reduce() first argument: function
+    (retAr: string[], fileName: string): Array<string | FlagIconCodeType> => {
       const code = path.basename(fileName, path.extname(fileName))
       return styles[`${flagIconClassesPrefix}${code}`] ? [...retAr, code] : retAr
     }
-    , [] // reduce() second argument: initial value of retAr
+    , ([]: string[]) // reduce() second argument: initial value of retAr
   )
 
 export const ThrowNoJsonLoaderError = () => {

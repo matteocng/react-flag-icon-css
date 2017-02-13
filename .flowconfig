@@ -2,9 +2,12 @@
 module.name_mapper.extension='scss' -> '<PROJECT_ROOT>/flow/stub/css-modules.js'
 # SEE: https://github.com/facebook/flow/issues/1895
 suppress_type=$FlowIssue
+suppress_comment=\\(.\\|\n\\)*\\$FlowExpectError
 esproposal.export_star_as=enable
 [libs]
 ./node_modules/fbjs/flow/lib
 [ignore]
 <PROJECT_ROOT>/lib/.*
 <PROJECT_ROOT>/module/.*
+[version]
+^0.39.0

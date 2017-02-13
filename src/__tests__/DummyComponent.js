@@ -6,8 +6,15 @@ type DummyPropsType = {
   text?: string
 }
 
-const DummyComponent = (React: typeof module): ReactType.createElement =>
-  (props: DummyPropsType): React$Element<*> =>
-    <div className={props.className}>{props.text}</div>
+const DummyComponent = (React: typeof module, props: DummyPropsType): React$Element<*> =>
+  <div className={props.className}>{props.text}</div> // eslint-disable-line react/prop-types
 
-export default DummyComponent
+DummyComponent.defaultProps = {
+  className: '',
+  text: ''
+}
+
+const DummyComponentFactory = (React: typeof module): ReactType.createElement =>
+  DummyComponent.bind(null, React)
+
+export default DummyComponentFactory
