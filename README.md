@@ -1,4 +1,7 @@
+
 A simple React SVG country flags component that works with React Css Modules (default) or global Css.
+
+[![Build Status](https://travis-ci.org/matteocng/react-flag-icon-css.svg?branch=master)](https://travis-ci.org/matteocng/react-flag-icon-css)
 
 ## Installation
 
