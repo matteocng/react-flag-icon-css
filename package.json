@@ -65,6 +65,9 @@
     "tcomb": "^3.2.16",
     "tcomb-react": "^0.9.3"
   },
+  "engines": {
+    "node": ">=4"
+  },
   "scripts": {
     "build": "BABEL_ENV=build babel src --out-dir ./lib",
     "build:module": "BABEL_ENV=module babel src --out-dir ./module ",
@@ -84,7 +87,7 @@
     "prebuild:module": "npm run clean:module",
     "prepublish": "npm run test && npm run build && npm run build:module",
     "sass": "mkdirp lib/sass && mkdirp module/sass && cp src/sass/*.scss lib/sass && cp src/sass/*.scss module/sass",
-    "test": "tape -r babel-register \"src/**/__tests__/index.js\""
+    "test": "BABEL_ENV=testing tape -r babel-register -r babel-polyfill \"src/**/__tests__/index.js\""
   },
   "license": "MIT",
   "peerDependencies": {

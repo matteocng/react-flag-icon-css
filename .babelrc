@@ -8,6 +8,10 @@
 	],
 	"comments": false,
 	"env": {
+		"build": {
+			"presets": ["es2015"],
+			"ignore": ["**/__tests__/"]
+		},
 		"module": {
 			"presets": [
 				["es2015", {
@@ -16,9 +20,8 @@
 			],
 			"ignore": ["**/__tests__/"]
 		},
-		"build": {
-			"presets": ["es2015"],
-			"ignore": ["**/__tests__/"]
+		"testing": {
+			"presets": ["es2015"]
 		}
 	}
 }
