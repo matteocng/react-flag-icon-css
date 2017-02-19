@@ -1,5 +1,5 @@
-import stylesFlagIcon from 'flag-icon-css/sass/_flag-icon.scss'
-import stylesMain from './sass/main.scss'
+import stylesFlagIcon from 'flag-icon-css/css/flag-icon.css'
+import stylesMain from './styles/main.css'
 
 
 const finalStyles = {

@@ -13,6 +13,10 @@ A simple React SVG country flags component that works with React Css Modules (de
 React Flag Icon Css is distributed as an [npm package](https://www.npmjs.org/package/react-flag-icon-css):
 
 ```bash
+$ yarn add react-flag-icon-css
+```
+or
+```bash
 $ npm install --save react-flag-icon-css
 ```
 
@@ -21,7 +25,13 @@ $ npm install --save react-flag-icon-css
 The [webpack](//github.com/webpack/webpack) module bundler and ecosystem are recommended. You will need to install a few packages, including:
 
 ```bash
-$ npm install --save-dev babel-loader css-loader file-loader sass-loader node-sass style-loader extract-text-webpack-plugin classnames tcomb tcomb-react react-css-modules
+$ yarn add -D babel-loader css-loader file-loader style-loader extract-text-webpack-plugin classnames tcomb tcomb-react react-css-modules
+```
+
+or
+
+```bash
+$ npm install --save-dev ...
 ```
 
 ## Basic usage
@@ -75,11 +85,11 @@ Remember to always build FlagIcon with its factory.
 
 Runtime type checking: in development mode (process.env.NODE_ENV !== 'production'), if you attempt to use an unsupported prop or prop value, you will see "Failed prop type" errors in the browser console (tcomb package).
 
-Static type checking: if you use Flow, it should automatically pick up this package's definitions from the .js.flow files and check your code accordingly when you run <code>npm run flow</code>. The latest Flow version or the version in package.json is recommended.
+Static type checking: if you use Flow, it should automatically pick up this package's definitions from the .js.flow files and check your code accordingly when you run <code>yarn run flow</code>. The latest Flow version or the version in package.json is recommended.
 
 ## Contributing
 
-Contributions are welcome. Please use a topic branch, follow the [AngularJS commit style guidelines](//github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-git-commit-guidelines) and check that <code>yarn run prepublish</code> (recommended) or <code>npm run prepublish</code> (build, test, type checking, lint ...) returns zero errors before opening a PR. Thanks!
+Contributions are welcome. Please use a topic branch, follow the [AngularJS commit style guidelines](//github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-git-commit-guidelines) and check that <code>yarn run prepublish</code> (recommended) or <code>yarn run prepublish</code> (build, test, type checking, lint ...) returns zero errors before opening a PR. Thanks!
 
 ## Source of the flags
 

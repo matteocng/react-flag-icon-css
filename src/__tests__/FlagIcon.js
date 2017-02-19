@@ -25,7 +25,7 @@ import {
   diffArrays
 } from '../functions'
 import { GetFlagIconModuleCountryCodes } from '../functions/config'
-import testThemeStyles from './testThemeStyles.scss'
+import testThemeStyles from './testThemeStyles.css'
 
 const { getCountryCodes } = countries
 const { flagIconClassesPrefixName } = constants

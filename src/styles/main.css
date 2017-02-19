@@ -1,0 +1,25 @@
+:root {
+  --font-sizes: lg, 2x, 3x, 4x, 5x; /* stylelint-disable-line unit-no-unknown */
+  --font-sizes-values: 1.33333333em, 2em, 3em, 4em, 5em;
+  --rotates: 30, 60, 90, 180, 270;
+}
+
+.flag-icon-flip-horizontal {
+  transform: scale(-1, 1);
+}
+
+.flag-icon-flip-vertical {
+  transform: scale(1, -1);
+}
+
+@each $key, $val in (var(--font-sizes)), (var(--font-sizes-values)) {
+  .flag-icon-$key {
+    font-size: $val;
+  }
+}
+
+@each $key in (var(--rotates)) {
+  .flag-icon-rotate-$key {
+    transform: rotate($(key)deg); /* stylelint-disable-line function-whitespace-after */
+  }
+}
