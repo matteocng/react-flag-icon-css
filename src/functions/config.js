@@ -1,24 +1,5 @@
 // @flow
-import fs from 'fs'
-import path from 'path'
-import type { FlagIconCodeType } from '../types/flow'
-import { flagIconModulePath, flagIconClassesPrefix } from '../functions/constants'
-import styles from '../styles'
-
-
-export const GetFlagIconModuleCountryCodes = (
-    modulePath: string = flagIconModulePath
-): Array<string | FlagIconCodeType> =>
-  fs.readdirSync(path.resolve(`${modulePath}/flags/4x3`)).reduce(
-    // reduce() first argument: function
-    (retAr: string[], fileName: string): Array<string | FlagIconCodeType> => {
-      const code = path.basename(fileName, path.extname(fileName))
-      return styles[`${flagIconClassesPrefix}${code}`] ? [...retAr, code] : retAr
-    }
-    , ([]: string[]) // reduce() second argument: initial value of retAr
-  )
-
-export const ThrowNoJsonLoaderError = () => {
+export const ThrowNoJsonLoaderError = () => { // eslint-disable-line import/prefer-default-export
   if (process.env.NODE_ENV !== 'production') { // UglifyJS strips this code out in production.
     /* eslint-disable camelcase */
     declare var __webpack_require__;

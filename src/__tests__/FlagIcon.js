@@ -24,7 +24,7 @@ import {
   makeFlagIconOptions,
   diffArrays
 } from '../functions'
-import { GetFlagIconModuleCountryCodes } from '../functions/config'
+import { GetFlagIconModuleCountryCodes } from './functions'
 import testThemeStyles from './testThemeStyles.css'
 
 const { getCountryCodes } = countries
