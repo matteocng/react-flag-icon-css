@@ -4,7 +4,6 @@
   "homepage": "https://github.com/matteocng/react-flag-icon-css#readme",
   "version": "1.0.7",
   "main": "./lib",
-  "module": "./module",
   "author": {
     "email": "matteocng+npmjs@outlook.com",
     "name": "matteocng",
@@ -18,10 +17,10 @@
     "url": "https://github.com/matteocng/react-flag-icon-css/issues"
   },
   "keywords": [
-    "react",
     "flag-icon",
-    "flag-icons",
     "flag-icon-css",
+    "flag-icons",
+    "react",
     "react-css-modules"
   ],
   "dependencies": {
@@ -74,32 +73,11 @@
   "engines": {
     "node": ">=4"
   },
-  "postcss": {
-    "plugins": {
-      "postcss-at-rules-variables": {},
-      "postcss-each": {},
-      "postcss-custom-properties": {},
-      "postcss-discard-comments": {}
-    }
-  },
-  "stylelint": {
-    "extends": "stylelint-config-standard",
-    "rules": {
-      "at-rule-no-unknown": [
-        true,
-        {
-          "ignoreAtRules": [
-            "each"
-          ]
-        }
-      ]
-    }
-  },
   "scripts": {
     "build": "BABEL_ENV=build babel src --out-dir ./lib",
     "build:module": "BABEL_ENV=module babel src --out-dir ./module ",
-    "build:watch": "BABEL_ENV=build babel src --watch --out-dir ./lib",
     "build:module:watch": "BABEL_ENV=module babel src --watch --out-dir ./module",
+    "build:watch": "BABEL_ENV=build babel src --watch --out-dir ./lib",
     "clean": "rimraf ./lib",
     "clean:module": "rimraf ./module",
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
@@ -117,8 +95,29 @@
     "test": "BABEL_ENV=testing tape -r babel-register -r babel-polyfill \"src/**/__tests__/index.js\""
   },
   "license": "MIT",
+  "module": "./module",
   "peerDependencies": {
     "react": "^0.14 || ^15.0 || ^16.0",
     "react-dom": "^0.14 || ^15.0 || ^16.0"
+  },
+  "postcss": {
+    "plugins": {
+      "postcss-at-rules-variables": {},
+      "postcss-custom-properties": {},
+      "postcss-discard-comments": {},
+      "postcss-each": {}
+    }
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "at-rule-no-unknown": [true,
+        {
+          "ignoreAtRules": [
+            "each"
+          ]
+        }
+      ]
+    }
   }
 }
