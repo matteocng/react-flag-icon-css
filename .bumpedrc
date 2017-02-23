@@ -4,11 +4,6 @@ files: [
 
 plugins:
 
-  prerelease:
-
-    'Linting config files':
-      plugin: 'bumped-finepack'
-
   postrelease:
 
     'Generating CHANGELOG file':
