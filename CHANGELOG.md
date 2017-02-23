@@ -1,3 +1,34 @@
+<a name="1.0.9"></a>
+## 1.0.9 (2017-02-23)
+
+* fix: add file to flow type checking ([f579a37](https://github.com/matteocng/react-flag-icon-css/commit/f579a37))
+* fix: correct function's Flow return type ([298ff50](https://github.com/matteocng/react-flag-icon-css/commit/298ff50))
+* fix: flow v0.39.0 compatibility and lint ([b328d2a](https://github.com/matteocng/react-flag-icon-css/commit/b328d2a))
+* fix: temporarily disable finepack to stop sorting 'stylelint' ([e89e103](https://github.com/matteocng/react-flag-icon-css/commit/e89e103))
+* lint package.json ([76402e3](https://github.com/matteocng/react-flag-icon-css/commit/76402e3))
+* Migrate SASS to PostCSS and publish CSS instead of SASS ([9e9f20f](https://github.com/matteocng/react-flag-icon-css/commit/9e9f20f)), closes [#4](https://github.com/matteocng/react-flag-icon-css/issues/4)
+* refactor/doc: use the react css modules decorator only when needed, add comments ([f29695c](https://github.com/matteocng/react-flag-icon-css/commit/f29695c))
+* chore: (slightly) improve code readability ([e5fd383](https://github.com/matteocng/react-flag-icon-css/commit/e5fd383))
+* chore: add 'testing' BABEL_ENV and babel-polyfill for tests ([19eae3b](https://github.com/matteocng/react-flag-icon-css/commit/19eae3b))
+* chore: add build:watch and linting for .eslintrc.js ([4a7ec31](https://github.com/matteocng/react-flag-icon-css/commit/4a7ec31))
+* chore: add lots of badges ([1caa559](https://github.com/matteocng/react-flag-icon-css/commit/1caa559))
+* chore: add yarn-error.log to .gitignore ([9d1df8e](https://github.com/matteocng/react-flag-icon-css/commit/9d1df8e))
+* chore: add yarn.lock to .npmignore ([aca6fbb](https://github.com/matteocng/react-flag-icon-css/commit/aca6fbb))
+* chore: bump dependencies ([ceb9cca](https://github.com/matteocng/react-flag-icon-css/commit/ceb9cca))
+* chore: bump dependencies ([c4a522f](https://github.com/matteocng/react-flag-icon-css/commit/c4a522f))
+* chore: do not publish GetFlagIconModuleCountryCodes ([f06909d](https://github.com/matteocng/react-flag-icon-css/commit/f06909d))
+* chore: remove unused .scss-lint.yml ([afd4a4c](https://github.com/matteocng/react-flag-icon-css/commit/afd4a4c))
+* chore: remove unused configuration ([8d759e1](https://github.com/matteocng/react-flag-icon-css/commit/8d759e1))
+* chore: yarn upgrade ([91f7e26](https://github.com/matteocng/react-flag-icon-css/commit/91f7e26))
+* docs: embed travis-ci status image ([e0a3612](https://github.com/matteocng/react-flag-icon-css/commit/e0a3612))
+* docs: misc fixes ([7df9f65](https://github.com/matteocng/react-flag-icon-css/commit/7df9f65))
+* test: add Travis CI ([d000186](https://github.com/matteocng/react-flag-icon-css/commit/d000186))
+* feat: add ES2015/ES6 modules distribution in './module' folder ([e68e2f9](https://github.com/matteocng/react-flag-icon-css/commit/e68e2f9))
+* feat: print console message if no json-loader ([9067cfa](https://github.com/matteocng/react-flag-icon-css/commit/9067cfa))
+* refactor: reduce console output of FlagIcon props test ([0685c92](https://github.com/matteocng/react-flag-icon-css/commit/0685c92))
+
+
+
 <a name="1.0.7"></a>
 ## 1.0.7 (2017-01-02)
 
