@@ -3203,7 +3203,7 @@ react-css-modules@^4.1.0:
     lodash "^4.16.6"
     object-unfreeze "^1.1.0"
 
-react-dom@^16.0.0-alpha.2:
+react-dom@^16.0.0-alpha.3:
   version "16.0.0-alpha.3"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.0.0-alpha.3.tgz#9cf304ea4bcdafe026f29ec2e71373316ec597ab"
   dependencies:
@@ -3219,7 +3219,7 @@ react@>=0.13.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
-react@^16.0.0-alpha.2:
+react@^16.0.0-alpha.3:
   version "16.0.0-alpha.3"
   resolved "https://registry.yarnpkg.com/react/-/react-16.0.0-alpha.3.tgz#addfd7ae9d801fd20c6244142354ae0cb7b1fe00"
   dependencies:
@@ -3459,9 +3459,9 @@ resumer@~0.0.0:
   dependencies:
     through "~2.3.4"
 
-rimraf@2, rimraf@^2.2.8, rimraf@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.0.tgz#89b8a0fe432b9ff9ec9a925a00b6cdb3a91bbada"
+rimraf@2, rimraf@^2.2.8, rimraf@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.1.tgz#c2338ec643df7a1b7fe5c54fa86f57428a55f33d"
   dependencies:
     glob "^7.0.5"
 
