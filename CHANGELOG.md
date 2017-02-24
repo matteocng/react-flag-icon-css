@@ -1,3 +1,11 @@
+<a name="1.0.10"></a>
+## 1.0.10 (2017-02-24)
+
+* fix: upgrade react and add requestAnimationFrame polyfill ([467e618](https://github.com/matteocng/react-flag-icon-css/commit/467e618))
+* chore: bump flow-bin and adjust tcomb semver ([69ae5db](https://github.com/matteocng/react-flag-icon-css/commit/69ae5db))
+
+
+
 <a name="1.0.9"></a>
 ## 1.0.9 (2017-02-23)
 
