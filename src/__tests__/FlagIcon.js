@@ -1,6 +1,6 @@
 // @flow
 import React from 'react'
-import test from 'tape' // eslint-disable-line import/no-extraneous-dependencies
+import test from 'ava' // eslint-disable-line import/no-extraneous-dependencies
 import { shallow, mount } from 'enzyme' // eslint-disable-line import/no-extraneous-dependencies
 import classnames from 'classnames'
 
@@ -71,18 +71,17 @@ const allProps = {
 
 // Tests
 
-test('countries.json is synchronized with flag-icon-css', (t: tape$Context) => {
+test('countries.json is synchronized with flag-icon-css', (t: *) => {
   const jsonCodes = getCountryCodes()
   const moduleCodes: FlagIconCodeType[] = GetFlagIconModuleCountryCodes()
   const diff = diffArrays(jsonCodes, moduleCodes)
   const testOk = (diff.length === 0)
   const message = testOk ? '' : `Diff: ${diff.join(', ')}`
 
-  t.ok(testOk, message)
-  t.end()
+  t.truthy(testOk, message)
 })
 
-test('functions > makeClassesObject', (t: tape$Context) => {
+test('functions > makeClassesObject', (t: *) => {
   const computedOptions = makeFlagIconOptions()
   const oParams = makeClassesObject(allProps, computedOptions)
 
@@ -94,11 +93,10 @@ test('functions > makeClassesObject', (t: tape$Context) => {
   // object created by makeClassesObject for each of the optional properties
   const computedLength = oFilteredParams.length - Object.keys(requiredProps).length
 
-  t.equal(expectedLength, computedLength)
-  t.end()
+  t.is(expectedLength, computedLength)
 })
 
-test('FlagIconFactory > useCssModules: false and props: className', (t: tape$Context) => {
+test('FlagIconFactory > useCssModules: false and props: className', (t: *) => {
   const options = { useCssModules: false }
   const FlagIcon = FlagIconFactory(React, options)
   const props = { ...requiredProps, className: 'some-css-rule' }
@@ -108,11 +106,10 @@ test('FlagIconFactory > useCssModules: false and props: className', (t: tape$Con
   const wrapper: ShallowWrapper<*> = shallow(ReactFlagIcon)
   const expectedClassName = getExpectedClassName(props, options)
 
-  t.equal(wrapper.contains(<span className={expectedClassName} />), true)
-  t.end()
+  t.truthy(wrapper.contains(<span className={expectedClassName} />))
 })
 
-test('FlagIcon themeStyles', (t: tape$Context) => {
+test('FlagIcon themeStyles', (t: *) => {
   const options = { themeStyles: testThemeStyles }
   const FlagIconCssModules = FlagIconFactory(React, options)
   const ReactFlagIcon = FlagIconCssModules({ ...requiredProps })
@@ -120,11 +117,10 @@ test('FlagIcon themeStyles', (t: tape$Context) => {
   const wrapper: ShallowWrapper<*> = shallow(ReactFlagIcon)
   const expectedClassName = getExpectedClassName(requiredProps, options)
 
-  t.equal(wrapper.contains(<span className={expectedClassName} />), true)
-  t.end()
+  t.truthy(wrapper.contains(<span className={expectedClassName} />))
 })
 
-test('FlagIcon props', (t: tape$Context) => {
+test('FlagIcon props', (t: *) => {
   const options = { themeStyles: testThemeStyles }
   const FlagIconCssModules = FlagIconFactory(React, options)
   const FlagIcon = FlagIconFactory(React, makeFlagIconOptions({ useCssModules: false }))
@@ -157,11 +153,10 @@ test('FlagIcon props', (t: tape$Context) => {
   })
 
   const nTrueComparisons = aComparisonResults.filter((result: boolean): boolean => result).length
-  t.equal(nTrueComparisons, aComparisonResults.length)
-  t.end()
+  t.is(nTrueComparisons, aComparisonResults.length)
 })
 
-test('FlagIcon props:Component', (t: tape$Context) => {
+test('FlagIcon props:Component', (t: *) => {
   const options = { themeStyles: testThemeStyles }
   const FlagIconCssModules = FlagIconFactory(React, options)
   const FlagIcon = FlagIconFactory(React, { useCssModules: false })
@@ -175,12 +170,11 @@ test('FlagIcon props:Component', (t: tape$Context) => {
     const currentOptions = { ...options, useCssModules: (i === 0) }
     currentExpectedClassName = getExpectedClassName(requiredProps, currentOptions)
 
-    t.equal(wrapper.contains(<div className={currentExpectedClassName} />), true)
+    t.truthy(wrapper.contains(<div className={currentExpectedClassName} />))
   })
-  t.end()
 })
 
-test('FlagIcon mount > props:children', (t: tape$Context) => {
+test('FlagIcon mount > props:children', (t: *) => {
   const FlagIconCssModules = FlagIconFactory(React, { themeStyles: testThemeStyles })
   const FlagIcon = FlagIconFactory(React, { useCssModules: false })
   const childrenClassName = 'test'
@@ -196,9 +190,8 @@ test('FlagIcon mount > props:children', (t: tape$Context) => {
   flagIcons.forEach((flagIcon: React$Element<*>) => {
     const wrapper: ReactWrapper<*> = mount(flagIcon)
 
-    t.equal(wrapper.contains(children), true)
-    t.equal(wrapper.find('div').is(`div.${childrenClassName}`), true)
-    t.equal(wrapper.find('div').text(), childrenText)
+    t.truthy(wrapper.contains(children))
+    t.truthy(wrapper.find('div').is(`div.${childrenClassName}`))
+    t.is(wrapper.find('div').text(), childrenText)
   })
-  t.end()
 })

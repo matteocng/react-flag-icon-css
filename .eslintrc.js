@@ -4,9 +4,13 @@ module.exports = {
     'react',
     'flowtype',
     'import',
-    'babel'
+    'babel',
+    'ava'
   ],
-  extends: ['airbnb'],
+  extends: [
+    'airbnb',
+    'plugin:ava/recommended'
+  ],
   rules:
   {
     'import/no-duplicates': 1,

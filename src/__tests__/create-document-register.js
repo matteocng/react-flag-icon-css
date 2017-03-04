@@ -14,6 +14,7 @@ const createDocument = () => {
 }
 
 const registerPolyfills = () => {
+  // We need this because 'react-dom' depends on 'requestAnimationFrame'.
   global.requestAnimationFrame = requestAnimationFramePolyfill(global.window)
 }
 

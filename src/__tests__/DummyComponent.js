@@ -1,3 +1,5 @@
+// @flow
+import typeof ReactModule from 'react'
 import type ReactType from 'react'
 
 
@@ -6,7 +8,7 @@ type DummyPropsType = {
   text?: string
 }
 
-const DummyComponent = (React: typeof module, props: DummyPropsType): React$Element<*> =>
+const DummyComponent = (React: ReactModule, props: DummyPropsType): React$Element<*> =>
   <div className={props.className}>{props.text}</div> // eslint-disable-line react/prop-types
 
 DummyComponent.defaultProps = {
@@ -14,7 +16,7 @@ DummyComponent.defaultProps = {
   text: ''
 }
 
-const DummyComponentFactory = (React: typeof module): ReactType.createElement =>
+const DummyComponentFactory = (React: ReactModule): ReactType.createElement =>
   DummyComponent.bind(null, React)
 
 export default DummyComponentFactory

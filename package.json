@@ -31,8 +31,10 @@
     "tcomb-react": "^0.9.3"
   },
   "devDependencies": {
+    "ava": "^0.18.2",
     "babel-cli": "^6.23.0",
     "babel-eslint": "^7.1.1",
+    "babel-plugin-istanbul": "^4.0.0",
     "babel-plugin-transform-export-extensions": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-polyfill": "^6.22.0",
@@ -44,6 +46,7 @@
     "enzyme": "^2.7.1",
     "eslint": "^3.16.0",
     "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-ava": "^4.2.0",
     "eslint-plugin-babel": "^4.0.1",
     "eslint-plugin-flowtype": "^2.30.0",
     "eslint-plugin-import": "^2.2.0",
@@ -54,6 +57,7 @@
     "flow-copy-source": "^1.1.0",
     "jsdom": "^9.11.0",
     "mkdirp": "^0.5.1",
+    "nyc": "^10.1.2",
     "postcss-at-rules-variables": "^0.0.27",
     "postcss-cli": "^3.0.0-beta",
     "postcss-custom-properties": "^5.0.2",
@@ -92,10 +96,25 @@
     "prebuild:module": "npm run clean:module",
     "prepublish": "npm run test && npm run build && npm run build:module",
     "styles": "postcss -o lib/styles/main.css src/styles/main.css && cpy lib/styles/main.css module/styles/",
-    "test": "BABEL_ENV=testing tape -r babel-register -r babel-polyfill \"src/**/__tests__/index.js\""
+    "test": "BABEL_ENV=testing nyc ava"
   },
   "license": "MIT",
+  "ava": {
+    "babel": "inherit",
+    "files": [
+      "src/__tests__/FlagIcon.js"
+    ]
+  },
   "module": "./module",
+  "nyc": {
+    "instrument": false,
+    "require": [
+      "babel-polyfill",
+      "babel-register",
+      "./src/__tests__/index.js"
+    ],
+    "sourceMap": false
+  },
   "peerDependencies": {
     "react": "^0.14 || ^15.0 || ^16.0",
     "react-dom": "^0.14 || ^15.0 || ^16.0"
