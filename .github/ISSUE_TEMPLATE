@@ -1,0 +1,66 @@
+## Report a bug:
+
+Please [search all issues](https://github.com/matteocng/react-flag-icon-css/issues?q=is%3Aissue) to see if it has already been reported or fixed.
+
+### Basic information:
+
+- `react-flag-icon-css` version: .........
+- Module bundler: ......... version: .........
+- The output of `node -v`: .........
+
+
+- [ ] I can not install `react-flag-icon-css`:
+  - `Copy-paste the error here`
+  - [ ] I am using `yarn` version: .........
+  - [ ] I am using `npm` version: .........
+- [ ] I am using standard Css.
+- [ ] I am using React Css Modules version: .........
+- [ ] This issue is related to type checking.
+  - [ ] I am using Facebook's Flow version: .........
+- [ ] This issue is related to custom flags.
+
+### Description
+
+Describe the issue and be as specific as possible.
+
+### How I am creating `FlagIcon`
+
+```js
+import FlagIconFactory from 'react-flag-icon-css'
+
+const FlagIcon = FlagIconFactory(React)
+// ...
+```
+
+
+### Expected behavior or result
+
+...
+
+### Actual behavior or result
+
+...
+
+### Diagnostic output:
+
+`yarn list --depth 0 > yarn-list.txt` or `npm list --depth=0 > yarn-list.txt`
+
+```
+COPY-PASTE yarn-list.txt HERE
+```
+
+The configuration file of my module bundler:
+```js
+// COPY-PASTE your webpack.config.js or equivalent configuration file HERE
+```
+* * *
+
+## Propose a feature:
+
+Please [search all issues](https://github.com/matteocng/react-flag-icon-css/issues?q=is%3Aissue) and [pull requests](https://github.com/matteocng/react-flag-icon-css/pulls?q=) to see if it has already been requested or discussed.
+
+What should this feature do ...
+
+Why do you think it is important ...
+
+An example use case ...

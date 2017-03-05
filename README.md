@@ -98,11 +98,11 @@ Remember to always build `FlagIcon` with its factory.
 
 Contributions are welcome:
 
--   :pencil2: **Write code:** use a topic branch, follow the [AngularJS commit style guidelines](//github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-git-commit-guidelines) and check that `yarn prepublish` (build, test, type checking, linting ...) returns zero errors before opening a PR. If you want to make major modifications to the code, please [open an issue](/issues) to discuss them first.
+-   :pencil2: **Write code:** use a topic branch, follow the [AngularJS commit style guidelines](//github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-git-commit-guidelines) and check that `yarn prepublish` (build, test, type checking, linting ...) returns zero errors before opening a PR. If you want to make major modifications to the code, please [open an issue](https://github.com/matteocng/react-flag-icon-css/issues) to discuss them first.
 
--   :bug: **Report a bug:** first, [search all issues](/issues?q=is%3Aissue). If nothing turns up, [open a new issue](/issues/new) and be as specific as possible, so that we can reproduce your setup and find out if it is a bug or a configuration issue.
+-   :bug: **Report a bug:** first, [search all issues](https://github.com/matteocng/react-flag-icon-css/issues?q=is%3Aissue). If nothing turns up, [open a new issue](https://github.com/matteocng/react-flag-icon-css/issues/new) and be as specific as possible, so that we can reproduce your setup and find out if it is a bug or a configuration issue.
 
--   :triangular_ruler: **Propose a feature:** first, [search all issues](/issues?q=is%3Aissue). If nothing turns up, [open a new issue](/issues/new) and describe what the proposed feature should do, why you think it is important and an example use case.
+-   :triangular_ruler: **Propose a feature:** first, [search all issues](https://github.com/matteocng/react-flag-icon-css/issues?q=is%3Aissue). If nothing turns up, [open a new issue](https://github.com/matteocng/react-flag-icon-css/issues/new) and describe what the proposed feature should do, why you think it is important and an example use case.
 
 Thanks! :blue_heart:
 
