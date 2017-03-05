@@ -6,7 +6,8 @@ A simple React SVG country flags component that works with React Css Modules (de
 [![dependencies Status](https://david-dm.org/matteocng/react-flag-icon-css/status.svg)](https://david-dm.org/matteocng/react-flag-icon-css)
 [![devDependencies Status](https://david-dm.org/matteocng/react-flag-icon-css/dev-status.svg)](https://david-dm.org/matteocng/react-flag-icon-css?type=dev)
 [![peerDependencies Status](https://david-dm.org/matteocng/react-flag-icon-css/peer-status.svg)](https://david-dm.org/matteocng/react-flag-icon-css?type=peer)
-
+[![codecov](https://codecov.io/gh/matteocng/react-flag-icon-css/branch/master/graph/badge.svg)](https://codecov.io/gh/matteocng/react-flag-icon-css)
+[![Coverage Status](https://coveralls.io/repos/github/matteocng/react-flag-icon-css/badge.svg?branch=master)](https://coveralls.io/github/matteocng/react-flag-icon-css?branch=master)
 
 ## Installation
 
