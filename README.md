@@ -11,6 +11,8 @@ A simple React SVG country flags component that works with React Css Modules (de
 
 ## Installation
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/matteocng/react-flag-icon-css.svg)](https://greenkeeper.io/)
+
 React Flag Icon Css is distributed as an [npm package](https://www.npmjs.org/package/react-flag-icon-css):
 
 ```bash
