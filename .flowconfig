@@ -12,4 +12,4 @@ esproposal.export_star_as=enable
 # SEE: https://github.com/stylelint/stylelint/issues/2322
 .*/node_modules/stylelint/.*
 [version]
-^0.40.0
+^0.41.0
