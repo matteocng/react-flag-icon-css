@@ -1,83 +1,47 @@
-module.exports = {
+module.exports = { // eslint-disable-line import/unambiguous
   parser: 'babel-eslint',
   plugins: [
-    'react',
-    'flowtype',
-    'import',
-    'babel',
-    'ava'
+    'ava', // SEE: https://github.com/avajs/eslint-plugin-ava
+    'babel', // SEE: https://github.com/babel/eslint-plugin-babel
+    'flowtype', // SEE: https://github.com/gajus/eslint-plugin-flowtype
+    'import', // required by 'eslint-config-airbnb'
+    'jsx-a11y', // required by 'eslint-config-airbnb'
+    'react', // required by 'eslint-config-airbnb'
   ],
   extends: [
+    // SEE: https://git.io/vy8hw
     'airbnb',
-    'plugin:ava/recommended'
+
+    // SEE: https://github.com/avajs/eslint-plugin-ava#recommended-config
+    'plugin:ava/recommended', // https://git.io/vy8hy
+
+    // SEE: https://git.io/vy8h7
+    'plugin:flowtype/recommended', // https://git.io/vy8hF
+
+    // We don't use 'plugin:import/recommended' because it configures some rules
+    // as warnings and not errors.
+    // SEE: https://github.com/benmosher/eslint-plugin-import
+    'plugin:import/errors', // https://git.io/vyRvM
+    'plugin:import/warnings', // https://git.io/vyRv9
   ],
   rules:
   {
-    'import/no-duplicates': 1,
-    'no-duplicate-imports': 0,
-    'babel/new-cap': 0,
-    'new-cap': 0,
+    // Disable this for now, it doesn't seem to work correctly with polymorphic
+    // Flow types (e.g <T>(...)).
     'arrow-parens': 0,
-    'babel/no-await-in-loop': 1,
-    semi: 0,
-    'comma-dangle': 0,
+
+    // From 'eslint-plugin-import'.
+    'import/unambiguous': 1,
+
+    // Disable this, use 'import/no-duplicates' instead (compatible with Flow).
+    // SEE: https://git.io/vy4vX
+    'no-duplicate-imports': 0,
+
+    // Allow .js files to contain jsx. Overrides the recommended 'airbnb' setting.
+    // SEE: https://github.com/airbnb/javascript/issues/1089
     'react/jsx-filename-extension': 0,
-    'react/require-extension': 'off',
-    'flowtype/boolean-style': [
-      2,
-      'boolean'
-    ],
-    'flowtype/define-flow-type': 1,
-    'flowtype/delimiter-dangle': [
-      2,
-      'never'
-    ],
-    'flowtype/generic-spacing': [
-      2,
-      'never'
-    ],
-    'flowtype/no-weak-types': 2,
-    'flowtype/require-parameter-type': 2,
-    'flowtype/require-return-type': [
-      2,
-      'always',
-      {
-        annotateUndefined: 'never'
-      }
-    ],
-    'flowtype/require-valid-file-annotation': 2,
-    'flowtype/semi': [
-      2,
-      'never'
-    ],
-    'flowtype/space-after-type-colon': [
-      2,
-      'always'
-    ],
-    'flowtype/space-before-generic-bracket': [
-      2,
-      'never'
-    ],
-    'flowtype/space-before-type-colon': [
-      2,
-      'never'
-    ],
-    'flowtype/type-id-match': [
-      2,
-      '^([A-Z][a-z0-9]+)+Type$'
-    ],
-    'flowtype/union-intersection-spacing': [
-      2,
-      'always'
-    ],
-    'flowtype/use-flow-type': 1,
-    'flowtype/valid-syntax': 1
+
+    // No semicolons. Overrides the recommended 'airbnb' setting.
+    semi: 0,
   },
-  settings:
-  {
-    flowtype:
-    {
-      onlyFilesWithFlowAnnotation: false
-    }
-  }
 }
