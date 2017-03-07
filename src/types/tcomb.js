@@ -10,7 +10,7 @@ import {
 } from 'tcomb'
 import type {
   CountryType,
-  ObjStringKeyValuesType
+  ObjStringKeyValuesType,
 } from '../types/flow'
 import { getCountries } from '../functions/countries'
 
@@ -20,7 +20,7 @@ const strict = true
 // Functions
 const addKeyToObj = (
   retObj: ObjStringKeyValuesType,
-  curObj: CountryType
+  curObj: CountryType,
 ): ObjStringKeyValuesType => ({ ...retObj, [curObj.code]: curObj.name })
 
 const countriesKeyValue = getCountries().reduce(addKeyToObj, {})
@@ -36,15 +36,15 @@ export const FlagIconClassesObjectTypeTcomb = struct({
   size: maybe(FlagIconSizeType),
   squared: maybe(tcombBoolean),
   rotate: maybe(FlagIconRotateType),
-  flip: maybe(FlagIconFlipType)
+  flip: maybe(FlagIconFlipType),
 }, 'FlagIconClassesObjectType')
 
 export const FlagIconPropsTypeTcomb = FlagIconClassesObjectTypeTcomb.extend({
   Component: maybe(tcombString),
-  children: maybe(ReactChildren)
+  children: maybe(ReactChildren),
 }, { name: 'FlagIconPropsType', strict })
 
 export const FlagIconOptionsTypeTcomb = struct({
   useCssModules: tcombBoolean,
-  themeStyles: maybe(tcombObject)
+  themeStyles: maybe(tcombObject),
 }, { name: 'FlagIconOptionsType', strict })

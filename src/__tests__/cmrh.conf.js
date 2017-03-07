@@ -21,6 +21,6 @@ module.exports = {
     atRulesVariables(),
     each(),
     customProperties(),
-    discardComments()
-  ]
+    discardComments(),
+  ],
 }

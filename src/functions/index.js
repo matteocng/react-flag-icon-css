@@ -12,7 +12,7 @@ export * as constants from './constants'
 export const objectKeysApplyFn = (obj: classes, fn: KeyCallbackType): classes =>
   Object.keys(obj).reduce(
     (rObj: classes, key: string): classes => ({ ...rObj, [fn(key)]: obj[key] })
-    , {} // reduce() second argument: initial value of rObj
+    , {}, // reduce() second argument: initial value of rObj
   )
 
 export const diffArrays = <T>(arA: Array<T>, arB: Array<T>): Array<T> => {

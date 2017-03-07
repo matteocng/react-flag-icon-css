@@ -3,7 +3,7 @@ import { FlagIconOptionsTypeTcomb } from '../types/tcomb'
 
 
 const defaultOptions: FlagIconOptionsType = {
-  useCssModules: true
+  useCssModules: true,
 }
 
 export default (options?: FlagIconOptionsType): FlagIconOptionsType =>

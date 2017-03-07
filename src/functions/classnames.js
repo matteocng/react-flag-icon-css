@@ -7,7 +7,7 @@ import { baseThemeStyleName, flagIconClassesPrefix, flagIconClassesPrefixName } 
 
 export const makeClassesObject = (
   { ...props, code, flip = '', size = '', squared = false, rotate }: FlagIconPropsType,
-  options: FlagIconOptionsType
+  options: FlagIconOptionsType,
 ): classes => {
   let obj = {
     [flagIconClassesPrefixName]: true,
@@ -16,7 +16,7 @@ export const makeClassesObject = (
     [`${flagIconClassesPrefix}${code}`]: code,
     [`${flagIconClassesPrefix}flip-${flip}`]: flip,
     [`${flagIconClassesPrefix}rotate-${rotate || ''}`]: rotate,
-    [baseThemeStyleName]: options.useCssModules && options.themeStyles
+    [baseThemeStyleName]: options.useCssModules && options.themeStyles,
   }
 
   if (props.className && options.useCssModules) {

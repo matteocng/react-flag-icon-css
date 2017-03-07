@@ -43,7 +43,7 @@ export type KeyCallbackType = (key: string) => string
 const countryCodesEnum = getCountryCodes().reduce(
   (arReturn: ObjStringKeyValuesType, countryCode: string): ObjStringKeyValuesType =>
     ({ ...arReturn, [countryCode]: countryCode })
-  , {}
+  , {},
 )
 
 // SEE: https://github.com/facebook/flow/issues/627

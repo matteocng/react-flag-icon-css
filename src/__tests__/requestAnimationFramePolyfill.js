@@ -24,7 +24,7 @@ const polyfill = (
 
 /* eslint-disable no-undef, import/prefer-default-export, flowtype/no-weak-types */
 export default (
-  window: Object
+  window: Object,
 ): Function => { // eslint-disable-line arrow-body-style
   return window.requestAnimationFrame || window.webkitRequestAnimationFrame ||
          window.mozRequestAnimationFrame || polyfill

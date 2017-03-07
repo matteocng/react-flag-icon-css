@@ -9,7 +9,7 @@ import type classes from 'classnames'
 import type {
   FlagIconPropsType,
   FlagIconOptionsType,
-  FlagIconCodeType
+  FlagIconCodeType,
 } from '../types/flow'
 
 import FlagIconFactory from '../'
@@ -22,7 +22,7 @@ import {
   makeClassesObject,
   objectKeysApplyFn,
   makeFlagIconOptions,
-  diffArrays
+  diffArrays,
 } from '../functions'
 import { GetFlagIconModuleCountryCodes } from './functions'
 import testThemeStyles from './testThemeStyles.css'
@@ -54,19 +54,19 @@ const filterClassObjectKey = (obj: classes, objKey: string): boolean =>
 // FlagIcon Props
 
 const requiredProps = {
-  code: 'it'
+  code: 'it',
 }
 
 const optionalProps = {
   size: '3x',
   squared: false,
   rotate: 90,
-  flip: 'horizontal'
+  flip: 'horizontal',
 }
 
 const allProps = {
   ...requiredProps,
-  ...optionalProps
+  ...optionalProps,
 }
 
 // Tests
@@ -181,7 +181,7 @@ test('FlagIcon mount > props:children', (t: *) => {
   const childrenText = 'test'
   const children = DummyComponentFactory(React)({
     text: childrenText,
-    className: childrenClassName
+    className: childrenClassName,
   })
   const ReactFlagIconCssModules = FlagIconCssModules({ ...requiredProps, children })
   const ReactFlagIcon = FlagIcon({ ...requiredProps, children })

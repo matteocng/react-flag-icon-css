@@ -13,7 +13,7 @@ const DummyComponent = (React: ReactModule, props: DummyPropsType): React$Elemen
 
 DummyComponent.defaultProps = {
   className: '',
-  text: ''
+  text: '',
 }
 
 const DummyComponentFactory = (React: ReactModule): ReactType.createElement =>

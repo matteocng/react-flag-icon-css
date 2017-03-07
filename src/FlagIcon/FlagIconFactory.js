@@ -12,7 +12,7 @@ import type { FlagIconOptionsType, FlagIconFactoryReturnType } from '../types/fl
 
 const FlagIconFactory = (
   React: ReactModule,
-  options?: FlagIconOptionsType
+  options?: FlagIconOptionsType,
 ): FlagIconFactoryReturnType => {
   // We 'makeFlagIconOptions' by merging the default options with the (optional)
   // user-supplied options.
@@ -26,7 +26,7 @@ const FlagIconFactory = (
     // We assign tcomb's propTypes (dynamic type checking) to the React component.
     // SEE: https://github.com/gcanti/tcomb-react#how-it-works
     FlagIconComponent = Object.assign(FlagIconComponent, {
-      propTypes: tcombPropTypes(FlagIconPropsTypeTcomb)
+      propTypes: tcombPropTypes(FlagIconPropsTypeTcomb),
     })
   } // In production, FlagIconComponent.propTypes will be undefined.
 
@@ -54,7 +54,7 @@ Try building FlagIcon like this: \n\n\tFlagIconFactory(React, { useCssModules: f
 is not correctly set up for CSS modules. If you are using Webpack, the key \
 modules to set up are 'style-loader', 'css-loader' and 'extract-text-webpack-plugin' \
 ('sass-loader' also comes into play if you are using SASS). \
-The link below may help you:\n\n\t${readmeModules}`
+The link below may help you:\n\n\t${readmeModules}`,
           )
         }
       }
@@ -96,7 +96,7 @@ The link below may help you:\n\n\t${readmeModules}`
     return CssModulesTransform(
       FlagIconComponent,
       computedStyles,
-      { allowMultiple: true }
+      { allowMultiple: true },
     )
   }// /if useCssModules
 

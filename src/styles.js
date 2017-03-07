@@ -4,7 +4,7 @@ import stylesMain from './styles/main.css'
 
 const finalStyles = {
   ...stylesFlagIcon,
-  ...stylesMain
+  ...stylesMain,
 }
 
 export default finalStyles
