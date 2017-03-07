@@ -44,6 +44,7 @@
     "codecov": "^1.0.1",
     "coveralls": "^2.11.16",
     "cpy-cli": "^1.0.1",
+    "cross-env": "^3.2.3",
     "css-modules-require-hook": "^4.0.5",
     "enzyme": "^2.7.1",
     "eslint": "^3.16.0",
@@ -80,10 +81,10 @@
     "node": ">=4"
   },
   "scripts": {
-    "build": "BABEL_ENV=build babel src --out-dir ./lib",
-    "build:module": "BABEL_ENV=module babel src --out-dir ./module ",
-    "build:module:watch": "BABEL_ENV=module babel src --watch --out-dir ./module",
-    "build:watch": "BABEL_ENV=build babel src --watch --out-dir ./lib",
+    "build": "cross-env BABEL_ENV=build babel src --out-dir ./lib",
+    "build:module": "cross-env BABEL_ENV=module babel src --out-dir ./module ",
+    "build:module:watch": "cross-env BABEL_ENV=module babel src --watch --out-dir ./module",
+    "build:watch": "cross-env BABEL_ENV=build babel src --watch --out-dir ./lib",
     "clean": "rimraf ./lib",
     "clean:module": "rimraf ./module",
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
@@ -103,7 +104,7 @@
     "coverage:codecov": "codecov",
     "coverage:coveralls": "coveralls < .nyc_output/coverage.lcov",
     "styles": "postcss -o lib/styles/main.css src/styles/main.css && cpy lib/styles/main.css module/styles/",
-    "test": "BABEL_ENV=testing nyc ava"
+    "test": "cross-env BABEL_ENV=testing nyc ava"
   },
   "license": "MIT",
   "ava": {
