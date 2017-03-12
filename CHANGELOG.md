@@ -1,3 +1,23 @@
+<a name="1.0.11"></a>
+## 1.0.11 (2017-03-12)
+
+* fix: restore npm publish and fix sortOptions ([f8bb1a1](https://github.com/matteocng/react-flag-icon-css/commit/f8bb1a1))
+* chore: add 'coveralls' and coverage badges ([9e9922c](https://github.com/matteocng/react-flag-icon-css/commit/9e9922c))
+* chore: add codecov.io, integrate it with travis ([119a1a2](https://github.com/matteocng/react-flag-icon-css/commit/119a1a2))
+* chore: restore .bumpedrc, replace npm -> yarn in it ([89e6ff1](https://github.com/matteocng/react-flag-icon-css/commit/89e6ff1))
+* chore: upgrade flow-bin to 0.41.0 ([f1586e9](https://github.com/matteocng/react-flag-icon-css/commit/f1586e9))
+* chore(eslint): add trailing commas - 'comma-dangle' rule ([8cd7ebe](https://github.com/matteocng/react-flag-icon-css/commit/8cd7ebe))
+* chore(eslint): simplify config with 'extends', remove deprecated rules ([f4f1609](https://github.com/matteocng/react-flag-icon-css/commit/f4f1609))
+* chore(package): add cross-env ([5e6d4f2](https://github.com/matteocng/react-flag-icon-css/commit/5e6d4f2))
+* chore(package): revert eslint-plugin-flowtype to 2.30.0 ([cf7a71b](https://github.com/matteocng/react-flag-icon-css/commit/cf7a71b))
+* chore(package): update eslint-plugin-flowtype to version 2.30.3 ([8dd0851](https://github.com/matteocng/react-flag-icon-css/commit/8dd0851))
+* chore(tests): replace 'tape' with 'ava', add 'istanbul' via 'nyc' ([c4b096e](https://github.com/matteocng/react-flag-icon-css/commit/c4b096e))
+* docs(github): add ISSUE_TEMPLATE inside '.github', fix broken links ([c3af213](https://github.com/matteocng/react-flag-icon-css/commit/c3af213))
+* docs(README): add npm version badge ([f1846a1](https://github.com/matteocng/react-flag-icon-css/commit/f1846a1))
+* docs(README): improve content and style ([5386fa8](https://github.com/matteocng/react-flag-icon-css/commit/5386fa8))
+
+
+
 <a name="1.0.10"></a>
 ## 1.0.10 (2017-02-24)
 
