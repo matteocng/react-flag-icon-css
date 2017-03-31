@@ -44,7 +44,7 @@
     "codecov": "^2.0.1",
     "coveralls": "^2.11.16",
     "cpy-cli": "^1.0.1",
-    "cross-env": "^3.2.3",
+    "cross-env": "^4.0.0",
     "css-modules-require-hook": "^4.0.5",
     "enzyme": "^2.7.1",
     "eslint": "^3.16.0",
