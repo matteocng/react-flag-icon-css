@@ -1,3 +1,18 @@
+<a name="1.0.12"></a>
+## 1.0.12 (2017-04-10)
+
+* chore(package): restore react 15 and yarn upgrade ([a0f157c](https://github.com/matteocng/react-flag-icon-css/commit/a0f157c))
+* chore(package): update ava to version 0.19.0 ([c738e2e](https://github.com/matteocng/react-flag-icon-css/commit/c738e2e))
+* chore(package): update codecov to version 2.0.1 ([c18519c](https://github.com/matteocng/react-flag-icon-css/commit/c18519c))
+* chore(package): update eslint-plugin-flowtype to version 2.30.4 ([d7c19e2](https://github.com/matteocng/react-flag-icon-css/commit/d7c19e2))
+* chore(package): update flow-bin to version 0.42.0 ([bfed14b](https://github.com/matteocng/react-flag-icon-css/commit/bfed14b))
+* chore(package): update flow-bin to version 0.43.1 ([e4a706b](https://github.com/matteocng/react-flag-icon-css/commit/e4a706b))
+* chore(package): update postcss-at-rules-variables to version 0.1.0 ([01d54f6](https://github.com/matteocng/react-flag-icon-css/commit/01d54f6))
+* chore(package): update postcss-cli to version 3.1.1 ([734948a](https://github.com/matteocng/react-flag-icon-css/commit/734948a))
+* chore(travis): drop Node.js 5 (unmantained) ([90d2138](https://github.com/matteocng/react-flag-icon-css/commit/90d2138))
+
+
+
 <a name="1.0.11"></a>
 ## 1.0.11 (2017-03-12)
 
