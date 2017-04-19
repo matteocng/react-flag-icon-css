@@ -1,6 +1,10 @@
 // @flow
 import { getCountryCodes } from '../functions/countries'
 
+// Workaround for exact types because: "Exact fails when doing es6 object spread".
+// SEE: https://github.com/facebook/flow/issues/2405
+type Exact<T> = T & $Shape<T>;
+
 export type ObjStringKeyValuesType = { [key: string]: string }
 
 export type CssModuleType = ObjStringKeyValuesType
@@ -33,10 +37,10 @@ export type FlagIconPropsType = {
   children?: React$Element<*>
 }
 
-export type FlagIconOptionsType = {
+export type FlagIconOptionsType = Exact<{
   useCssModules?: boolean,
   themeStyles?: CssModuleType
-}
+}>
 
 export type KeyCallbackType = (key: string) => string
 
