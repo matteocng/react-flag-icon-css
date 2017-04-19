@@ -1,3 +1,4 @@
+// @flow
 import type { FlagIconOptionsType } from '../types/flow'
 import { FlagIconOptionsTypeTcomb } from '../types/tcomb'
 

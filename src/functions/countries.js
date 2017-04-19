@@ -1,5 +1,6 @@
+// @flow
 import { ThrowNoJsonLoaderError } from './config'
-import type { CountryType } from '../types/flow'
+import type { CountryType, FlagIconCodeType } from '../types/flow'
 import oCountries from '../../static/countries.json'
 
 
