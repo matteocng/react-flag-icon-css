@@ -1,12 +1,11 @@
 // @flow
 import CssModulesTransform from 'react-css-modules'
-import { propTypes as tcombPropTypes } from 'tcomb-react'
 
 import typeof ReactModule from 'react'
 import FlagIcon from './FlagIcon'
 import styles from '../styles'
 import { makeStyles, makeFlagIconOptions } from '../functions'
-import { FlagIconPropsTypeTcomb } from '../types/tcomb'
+import { FlagIconPropsType as FlagIconPropsTypeReact } from '../types/propTypes'
 import type { FlagIconOptionsType, FlagIconFactoryReturnType } from '../types/flow'
 
 
@@ -20,14 +19,13 @@ const FlagIconFactory = (
   const { useCssModules } = computedOptions
 
   // We assign the React Component to 'FlagIconComponent'. SEE: './FlagIcon.js'
-  let FlagIconComponent = FlagIcon(React, computedOptions)
+  const FlagIconComponent = FlagIcon(React, computedOptions)
+  FlagIconComponent.displayName = 'FlagIcon' // Otherwise 'WrappedComponent' when testing.
 
   if (process.env.NODE_ENV !== 'production') { // UglifyJS strips this block out in production.
-    // We assign tcomb's propTypes (dynamic type checking) to the React component.
-    // SEE: https://github.com/gcanti/tcomb-react#how-it-works
-    FlagIconComponent = Object.assign(FlagIconComponent, {
-      propTypes: tcombPropTypes(FlagIconPropsTypeTcomb),
-    })
+    // We assign react propTypes (dynamic type checking) to the React component.
+    // SEE: https://github.com/reactjs/prop-types
+    FlagIconComponent.propTypes = FlagIconPropsTypeReact
   } // In production, FlagIconComponent.propTypes will be undefined.
 
   if (useCssModules) {
@@ -84,7 +82,7 @@ The link below may help you:\n\n\t${readmeModules}`,
      *  -  invalid props supplied to 'FlagIconComponent'; a side effect is that the
      *     'styleName' property of 'FlagIconComponent', which is a function of its
      *     props and the options it was built with, contains CSS modules not part of
-     *     'computedStyles'. If NODE_ENV !== 'production', tcomb prints a debugging
+     *     'computedStyles'. If NODE_ENV !== 'production', 'prop-types' prints a debugging
      *     message to the browser console (before 'CssModulesTransform' is executed).
      *
      *  -  'options.themeStyles' was passed and 'options.useCssModules' is
