@@ -74,7 +74,6 @@
     "rimraf": "^2.6.1",
     "stylelint": "^7.9.0",
     "stylelint-config-standard": "^16.0.0",
-    "tape": "^4.6.3",
     "tcomb": "^3.2.20",
     "tcomb-react": "^0.9.3"
   },
