@@ -107,7 +107,8 @@
   "ava": {
     "babel": "inherit",
     "files": [
-      "src/__tests__/FlagIcon.js"
+      "src/__tests__/FlagIcon.js",
+      "src/__tests__/types/propTypes.js"
     ]
   },
   "module": "./module",
