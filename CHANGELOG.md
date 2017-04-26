@@ -1,3 +1,15 @@
+<a name="1.0.13"></a>
+## 1.0.13 (2017-04-26)
+
+* test: add tests for types/propTypes ([b0f07a7](https://github.com/matteocng/react-flag-icon-css/commit/b0f07a7))
+* refactor: migrate from tcomb & tcomb-react to prop-types ([f8b6758](https://github.com/matteocng/react-flag-icon-css/commit/f8b6758))
+* chore(package): bump enzyme, flow-bin, tcomb ([3459e45](https://github.com/matteocng/react-flag-icon-css/commit/3459e45))
+* chore(package): remove tape (unused) ([450855e](https://github.com/matteocng/react-flag-icon-css/commit/450855e))
+* chore(package): update eslint-plugin-flowtype to 2.32.1 ([bb32323](https://github.com/matteocng/react-flag-icon-css/commit/bb32323))
+* fix(flow): make FlagIconOptionsType exact ([7e30bb1](https://github.com/matteocng/react-flag-icon-css/commit/7e30bb1))
+
+
+
 <a name="1.0.12"></a>
 ## 1.0.12 (2017-04-10)
 

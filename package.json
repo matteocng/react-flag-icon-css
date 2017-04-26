@@ -2,7 +2,7 @@
   "name": "react-flag-icon-css",
   "description": "React SVG country flags component",
   "homepage": "https://github.com/matteocng/react-flag-icon-css#readme",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "main": "./lib",
   "author": {
     "email": "matteocng+npmjs@outlook.com",
@@ -26,8 +26,8 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "flag-icon-css": "^2.8.0",
-    "react-css-modules": "^4.2.0",
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.5.8",
+    "react-css-modules": "^4.2.0"
   },
   "devDependencies": {
     "ava": "^0.19.0",
@@ -122,9 +122,9 @@
     "sourceMap": false
   },
   "peerDependencies": {
+    "prop-types": "^15.5.8",
     "react": "^0.14 || ^15.0",
-    "react-dom": "^0.14 || ^15.0",
-    "prop-types": "^15.5.8"
+    "react-dom": "^0.14 || ^15.0"
   },
   "postcss": {
     "plugins": {
