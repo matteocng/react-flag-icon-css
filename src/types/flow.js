@@ -3,29 +3,17 @@ import { getCountryCodes } from '../functions/countries'
 
 // Workaround for exact types because: "Exact fails when doing es6 object spread".
 // SEE: https://github.com/facebook/flow/issues/2405
-type Exact<T> = T & $Shape<T>;
+type Exact<T> = T & $Shape<T>
 
 export type ObjStringKeyValuesType = { [key: string]: string }
 
 export type CssModuleType = ObjStringKeyValuesType
 
-export type FlagIconSizesType =
-  | "lg"
-  | "2x"
-  | "3x"
-  | "4x"
-  | "5x"
+export type FlagIconSizesType = 'lg' | '2x' | '3x' | '4x' | '5x'
 
-export type FlagIconRotateType =
-  | 30
-  | 60
-  | 90
-  | 180
-  | 270
+export type FlagIconRotateType = 30 | 60 | 90 | 180 | 270
 
-export type FlagIconFlipType =
-  | "horizontal"
-  | "vertical"
+export type FlagIconFlipType = 'horizontal' | 'vertical'
 
 export type FlagIconPropsType = {
   code: string,
@@ -34,20 +22,22 @@ export type FlagIconPropsType = {
   rotate?: FlagIconRotateType,
   flip?: FlagIconFlipType,
   Component?: string,
-  children?: React$Element<*>
+  children?: React$Element<*>,
 }
 
 export type FlagIconOptionsType = Exact<{
   useCssModules?: boolean,
-  themeStyles?: CssModuleType
+  themeStyles?: CssModuleType,
 }>
 
 export type KeyCallbackType = (key: string) => string
 
 const countryCodesEnum = getCountryCodes().reduce(
-  (arReturn: ObjStringKeyValuesType, countryCode: string): ObjStringKeyValuesType =>
-    ({ ...arReturn, [countryCode]: countryCode })
-  , {},
+  (
+    arReturn: ObjStringKeyValuesType,
+    countryCode: string,
+  ): ObjStringKeyValuesType => ({ ...arReturn, [countryCode]: countryCode }),
+  {},
 )
 
 // SEE: https://github.com/facebook/flow/issues/627
@@ -59,5 +49,5 @@ export type FlagIconFactoryReturnType = FlagIconReturnType
 
 export type CountryType = {
   name: string,
-  code: FlagIconCodeType
+  code: FlagIconCodeType,
 }

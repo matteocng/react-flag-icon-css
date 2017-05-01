@@ -3,7 +3,7 @@ export type ConsoleHookType = {|
   getLog: () => string,
   flushLog: () => string,
   detach: () => ConsoleHookType,
-  attach: () => ConsoleHookType
+  attach: () => ConsoleHookType,
 |}
 
 export const ConsoleOutput = {
@@ -17,10 +17,10 @@ type ConsoleOutputType = $Keys<typeof ConsoleOutput>
 
 type ConsoleHookInputType = {|
   outputType: ConsoleOutputType,
-  attachOnCreate?: boolean
+  attachOnCreate?: boolean,
 |}
 
-let consoleText = '';
+let consoleText = ''
 
 const defaultOptions = {
   outputType: ConsoleOutput.log,
@@ -32,7 +32,7 @@ const makeOptions = (options: ConsoleHookInputType): ConsoleHookInputType =>
 
 // Factory of ConsoleHookType.
 // NOTE: please avoid using this hook whenever possible, not a best practice.
-export default(inputOptions: ConsoleHookInputType): ConsoleHookType => {
+export default (inputOptions: ConsoleHookInputType): ConsoleHookType => {
   const options = makeOptions(inputOptions)
   const { outputType, attachOnCreate } = options
   const fnBeforeAttach = console[outputType] // eslint-disable-line no-console
@@ -49,11 +49,13 @@ export default(inputOptions: ConsoleHookInputType): ConsoleHookType => {
       return ret
     },
     detach: (): ConsoleHookType => {
-      (console: any)[outputType] = fnBeforeAttach // eslint-disable-line flowtype/no-weak-types
+      // eslint-disable-next-line flowtype/no-weak-types, no-extra-semi
+      ;(console: any)[outputType] = fnBeforeAttach
       return returnValue
     },
     attach: (): ConsoleHookType => {
-      (console: any)[outputType] = fnHook // eslint-disable-line flowtype/no-weak-types
+      // eslint-disable-next-line flowtype/no-weak-types, no-extra-semi
+      ;(console: any)[outputType] = fnHook
       return returnValue
     },
   }

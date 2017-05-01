@@ -6,8 +6,10 @@ import FlagIcon from './FlagIcon'
 import styles from '../styles'
 import { makeStyles, makeFlagIconOptions } from '../functions'
 import { FlagIconPropsType as FlagIconPropsTypeReact } from '../types/propTypes'
-import type { FlagIconOptionsType, FlagIconFactoryReturnType } from '../types/flow'
-
+import type {
+  FlagIconOptionsType,
+  FlagIconFactoryReturnType,
+} from '../types/flow'
 
 const FlagIconFactory = (
   React: ReactModule,
@@ -22,7 +24,8 @@ const FlagIconFactory = (
   const FlagIconComponent = FlagIcon(React, computedOptions)
   FlagIconComponent.displayName = 'FlagIcon' // Otherwise 'WrappedComponent' when testing.
 
-  if (process.env.NODE_ENV !== 'production') { // UglifyJS strips this block out in production.
+  if (process.env.NODE_ENV !== 'production') {
+    // UglifyJS strips this block out in production.
     // We assign react propTypes (dynamic type checking) to the React component.
     // SEE: https://github.com/reactjs/prop-types
     FlagIconComponent.propTypes = FlagIconPropsTypeReact
@@ -31,17 +34,23 @@ const FlagIconFactory = (
   if (useCssModules) {
     const computedStyles = makeStyles(styles, options)
 
-    if (process.env.NODE_ENV !== 'production') { // UglifyJS strips this block out in production.
+    if (process.env.NODE_ENV !== 'production') {
+      // UglifyJS strips this block out in production.
       if (useCssModules) {
         // Has the user set 'useCssModules' to true or is it just the default value?
         const userSetUseCssModules = options ? options.useCssModules : false
 
-        if (!Object.prototype.hasOwnProperty.call(computedStyles, 'flag-icon')) {
-          const readme = 'https://github.com/matteocng/react-flag-icon-css/blob/master/README.md'
-          const readmeModules = 'https://github.com/gajus/react-css-modules#usage'
+        if (
+          !Object.prototype.hasOwnProperty.call(computedStyles, 'flag-icon')
+        ) {
+          const readme =
+            'https://github.com/matteocng/react-flag-icon-css/blob/master/README.md'
+          const readmeModules =
+            'https://github.com/gajus/react-css-modules#usage'
 
-          console.error( // eslint-disable-line no-console
-`Warning: Detected configuration mismatch/error: [react-flag-icon-css] \
+          // eslint-disable-next-line no-console
+          console.error(
+            `Warning: Detected configuration mismatch/error: [react-flag-icon-css] \
 FlagIconFactory tried to build FlagIcon with the option 'useCssModules' set to true \
 (${userSetUseCssModules ? 'by you' : 'default'}), but it seems that your environment \
 is not loading the stylesheets in the appropriate way. Two possibilities: \
@@ -91,12 +100,10 @@ The link below may help you:\n\n\t${readmeModules}`,
      *     in the stylesheet/s loaded-mapped to 'themeStyles'.
      *
     */
-    return CssModulesTransform(
-      FlagIconComponent,
-      computedStyles,
-      { allowMultiple: true },
-    )
-  }// /if useCssModules
+    return CssModulesTransform(FlagIconComponent, computedStyles, {
+      allowMultiple: true,
+    })
+  } // /if useCssModules
 
   return FlagIconComponent
 }

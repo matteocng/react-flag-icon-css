@@ -32,7 +32,10 @@ const { flagIconClassesPrefixName } = constants
 
 // Helper functions
 
-const getExpectedClassName = (props: FlagIconPropsType, options: FlagIconOptionsType): string => {
+const getExpectedClassName = (
+  props: FlagIconPropsType,
+  options: FlagIconOptionsType,
+): string => {
   const computedOptions = makeFlagIconOptions(options)
   let oParams = makeClassesObject(props, computedOptions)
 
@@ -49,7 +52,8 @@ const getExpectedClassName = (props: FlagIconPropsType, options: FlagIconOptions
 }
 
 const filterClassObjectKey = (obj: classes, objKey: string): boolean =>
-  objKey !== flagIconClassesPrefixName && objKey.startsWith(flagIconClassesPrefixName)
+  objKey !== flagIconClassesPrefixName &&
+  objKey.startsWith(flagIconClassesPrefixName)
 
 // FlagIcon Props
 
@@ -75,7 +79,7 @@ test('countries.json is synchronized with flag-icon-css', (t: *) => {
   const jsonCodes = getCountryCodes()
   const moduleCodes: FlagIconCodeType[] = GetFlagIconModuleCountryCodes()
   const diff = diffArrays(jsonCodes, moduleCodes)
-  const testOk = (diff.length === 0)
+  const testOk = diff.length === 0
   const message = testOk ? '' : `Diff: ${diff.join(', ')}`
 
   t.truthy(testOk, message)
@@ -87,11 +91,14 @@ test('functions > makeClassesObject', (t: *) => {
 
   // First remove ${flagIconClassesPrefixName}, any key not starting with
   // ${flagIconClassesPrefixName} (e.g theme key)
-  const oFilteredParams = Object.keys(oParams).filter(filterClassObjectKey.bind(this, oParams))
+  const oFilteredParams = Object.keys(oParams).filter(
+    filterClassObjectKey.bind(this, oParams),
+  )
   const expectedLength = Object.keys(optionalProps).length
   // We substract the length of the required properties and then expect a key in the
   // object created by makeClassesObject for each of the optional properties
-  const computedLength = oFilteredParams.length - Object.keys(requiredProps).length
+  const computedLength =
+    oFilteredParams.length - Object.keys(requiredProps).length
 
   t.is(expectedLength, computedLength)
 })
@@ -102,7 +109,7 @@ test('FlagIconFactory > useCssModules: false and props: className', (t: *) => {
   const props = { ...requiredProps, className: 'some-css-rule' }
 
   // Test that className works when useCssModules: false
-  const ReactFlagIcon : React$Element<*> = FlagIcon(props)
+  const ReactFlagIcon: React$Element<*> = FlagIcon(props)
   const wrapper: ShallowWrapper<*> = shallow(ReactFlagIcon)
   const expectedClassName = getExpectedClassName(props, options)
 
@@ -123,7 +130,10 @@ test('FlagIcon themeStyles', (t: *) => {
 test('FlagIcon props', (t: *) => {
   const options = { themeStyles: testThemeStyles }
   const FlagIconCssModules = FlagIconFactory(React, options)
-  const FlagIcon = FlagIconFactory(React, makeFlagIconOptions({ useCssModules: false }))
+  const FlagIcon = FlagIconFactory(
+    React,
+    makeFlagIconOptions({ useCssModules: false }),
+  )
 
   let currentProps = { ...requiredProps }
   let currentExpectedClassName = ''
@@ -135,24 +145,35 @@ test('FlagIcon props', (t: *) => {
     currentProps = { ...currentProps, code }
 
     Object.keys(optionalProps).forEach((prop: string) => {
-      const ReactFlagIconCssModules : React$Element<*> = FlagIconCssModules({ ...currentProps })
-      const ReactFlagIcon : React$Element<*> = FlagIcon({ ...currentProps })
+      const ReactFlagIconCssModules: React$Element<*> = FlagIconCssModules({
+        ...currentProps,
+      })
+      const ReactFlagIcon: React$Element<*> = FlagIcon({ ...currentProps })
       const FlagIcons = [ReactFlagIconCssModules, ReactFlagIcon]
 
       FlagIcons.forEach((flagIcon: React$Element<*>, i: number) => {
         const wrapper: ShallowWrapper<*> = shallow(flagIcon)
-        const Component = currentProps.Component ? currentProps.Component : 'span'
-        const currentOptions = { ...options, useCssModules: (i === 0) }
-        currentExpectedClassName = getExpectedClassName(currentProps, currentOptions)
+        const Component = currentProps.Component
+          ? currentProps.Component
+          : 'span'
+        const currentOptions = { ...options, useCssModules: i === 0 }
+        currentExpectedClassName = getExpectedClassName(
+          currentProps,
+          currentOptions,
+        )
 
-        const result = wrapper.contains(<Component className={currentExpectedClassName} />)
+        const result = wrapper.contains(
+          <Component className={currentExpectedClassName} />,
+        )
         aComparisonResults = [...aComparisonResults, result]
       })
       currentProps = { ...currentProps, [prop]: optionalProps[prop] }
     })
   })
 
-  const nTrueComparisons = aComparisonResults.filter((result: boolean): boolean => result).length
+  const nTrueComparisons = aComparisonResults.filter(
+    (result: boolean): boolean => result,
+  ).length
   t.is(nTrueComparisons, aComparisonResults.length)
 })
 
@@ -160,22 +181,30 @@ test('FlagIcon props:Component', (t: *) => {
   const options = { themeStyles: testThemeStyles }
   const FlagIconCssModules = FlagIconFactory(React, options)
   const FlagIcon = FlagIconFactory(React, { useCssModules: false })
-  const ReactFlagIconCssModules = FlagIconCssModules({ ...requiredProps, Component: 'div' })
+  const ReactFlagIconCssModules = FlagIconCssModules({
+    ...requiredProps,
+    Component: 'div',
+  })
   const ReactFlagIcon = FlagIcon({ ...requiredProps, Component: 'div' })
   const flagIcons = [ReactFlagIconCssModules, ReactFlagIcon]
   let currentExpectedClassName = ''
 
   flagIcons.forEach((flagIcon: React$Element<*>, i: number) => {
     const wrapper: ShallowWrapper<*> = shallow(flagIcon)
-    const currentOptions = { ...options, useCssModules: (i === 0) }
-    currentExpectedClassName = getExpectedClassName(requiredProps, currentOptions)
+    const currentOptions = { ...options, useCssModules: i === 0 }
+    currentExpectedClassName = getExpectedClassName(
+      requiredProps,
+      currentOptions,
+    )
 
     t.truthy(wrapper.contains(<div className={currentExpectedClassName} />))
   })
 })
 
 test('FlagIcon mount > props:children', (t: *) => {
-  const FlagIconCssModules = FlagIconFactory(React, { themeStyles: testThemeStyles })
+  const FlagIconCssModules = FlagIconFactory(React, {
+    themeStyles: testThemeStyles,
+  })
   const FlagIcon = FlagIconFactory(React, { useCssModules: false })
   const childrenClassName = 'test'
   const childrenText = 'test'
@@ -183,7 +212,10 @@ test('FlagIcon mount > props:children', (t: *) => {
     text: childrenText,
     className: childrenClassName,
   })
-  const ReactFlagIconCssModules = FlagIconCssModules({ ...requiredProps, children })
+  const ReactFlagIconCssModules = FlagIconCssModules({
+    ...requiredProps,
+    children,
+  })
   const ReactFlagIcon = FlagIcon({ ...requiredProps, children })
   const flagIcons = [ReactFlagIconCssModules, ReactFlagIcon]
 

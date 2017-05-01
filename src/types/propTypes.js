@@ -21,7 +21,9 @@ const FlagIconPropsTypeObject = {
   Component: PropTypes.string,
 }
 
-export const FlagIconClassesObjectType = AddExactValidator(FlagIconClassesObject)
+export const FlagIconClassesObjectType = AddExactValidator(
+  FlagIconClassesObject,
+)
 export const FlagIconPropsType = AddExactValidator(FlagIconPropsTypeObject)
 
 export const FlagIconOptionsType = AddExactValidator({

@@ -2,14 +2,16 @@
 import typeof ReactModule from 'react'
 import type ReactType from 'react'
 
-
 type DummyPropsType = {
   className?: string,
-  text?: string
+  text?: string,
 }
 
-const DummyComponent = (React: ReactModule, props: DummyPropsType): React$Element<*> =>
-  <div className={props.className}>{props.text}</div> // eslint-disable-line react/prop-types
+const DummyComponent = (
+  React: ReactModule,
+  props: DummyPropsType,
+  // eslint-disable-next-line react/prop-types
+): React$Element<*> => <div className={props.className}>{props.text}</div>
 
 DummyComponent.defaultProps = {
   className: '',

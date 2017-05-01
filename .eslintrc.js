@@ -30,6 +30,9 @@ module.exports = { // eslint-disable-line import/unambiguous
     // Flow types (e.g <T>(...)).
     'arrow-parens': 0,
 
+    // Override 'plugin:flowtype/recommended'.
+    'flowtype/no-weak-types': 1,
+
     // From 'eslint-plugin-import'.
     'import/unambiguous': 1,
 

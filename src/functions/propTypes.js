@@ -1,5 +1,5 @@
 // @flow
-type ObjStringKeyMixedValueType = {[string]: mixed}
+type ObjStringKeyMixedValueType = { [string]: mixed }
 const validatorKeyName = '__exact__'
 
 /**
@@ -19,15 +19,18 @@ const fnExactValidator = (
   propsValues: ObjStringKeyMixedValueType,
   propName: string,
   componentName: string,
-): ?Error => { // eslint-disable-line consistent-return
+  // eslint-disable-next-line consistent-return
+): ?Error => {
   const passedPropNames: string[] = Object.keys(propsValues)
   const extra = passedPropNames.filter(
     (prop: string) => !Object.prototype.hasOwnProperty.call(propsObject, prop),
   )
 
   if (extra.length > 0) {
-    return new Error(`Invalid prop(s) ${JSON.stringify(extra)} supplied to \
-\`${componentName}\`, expected one of [${passedPropNames.join(',')}].`)
+    return new Error(
+      `Invalid prop(s) ${JSON.stringify(extra)} supplied to \
+\`${componentName}\`, expected one of [${passedPropNames.join(',')}].`,
+    )
   }
 }
 
@@ -44,7 +47,8 @@ const fnExactValidator = (
  * This type of validation is the runtime equivalent to Flow's 'exact object types'.
  * SEE: https://flow.org/en/docs/types/objects/#toc-exact-object-types
  */
-export const AddExactValidator = <T: ObjStringKeyMixedValueType>(obj: T): T => { // eslint-disable-line import/prefer-default-export, max-len
+// eslint-disable-next-line import/prefer-default-export, max-len
+export const AddExactValidator = <T: ObjStringKeyMixedValueType>(obj: T): T => {
   if (Object.prototype.hasOwnProperty.call(obj, validatorKeyName)) {
     // TODO: print a message or throw when not in production?
     return obj // The custom validator is already 'installed'.

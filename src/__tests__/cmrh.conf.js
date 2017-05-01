@@ -11,16 +11,9 @@ import each from 'postcss-each'
 import customProperties from 'postcss-custom-properties'
 import discardComments from 'postcss-discard-comments'
 
-
 const cssModulesScopedName = '[path]___[name]__[local]___[hash:base64:5]'
-
 
 module.exports = {
   generateScopedName: cssModulesScopedName,
-  prepend: [
-    atRulesVariables(),
-    each(),
-    customProperties(),
-    discardComments(),
-  ],
+  prepend: [atRulesVariables(), each(), customProperties(), discardComments()],
 }

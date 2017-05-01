@@ -2,7 +2,6 @@
 import jsdom from 'jsdom' // eslint-disable-line import/no-extraneous-dependencies
 import requestAnimationFramePolyfill from './requestAnimationFramePolyfill'
 
-
 const createDocument = () => {
   if (typeof document !== 'undefined') {
     return

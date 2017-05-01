@@ -2,11 +2,21 @@
 import classnames from 'classnames'
 import type classes from 'classnames'
 import type { FlagIconPropsType, FlagIconOptionsType } from '../types/flow'
-import { baseThemeStyleName, flagIconClassesPrefix, flagIconClassesPrefixName } from './constants'
-
+import {
+  baseThemeStyleName,
+  flagIconClassesPrefix,
+  flagIconClassesPrefixName,
+} from './constants'
 
 export const makeClassesObject = (
-  { ...props, code, flip = '', size = '', squared = false, rotate }: FlagIconPropsType,
+  {
+    ...props,
+    code,
+    flip = '',
+    size = '',
+    squared = false,
+    rotate,
+  }: FlagIconPropsType,
   options: FlagIconOptionsType,
 ): classes => {
   let obj = {
@@ -25,5 +35,7 @@ export const makeClassesObject = (
   return obj
 }
 
-export default (props: FlagIconPropsType, options: FlagIconOptionsType): string =>
-  classnames(makeClassesObject(props, options))
+export default (
+  props: FlagIconPropsType,
+  options: FlagIconOptionsType,
+): string => classnames(makeClassesObject(props, options))
