@@ -6,9 +6,9 @@
 import chalk from 'chalk' // eslint-disable-line import/no-extraneous-dependencies
 import glob from 'glob' // eslint-disable-line import/no-extraneous-dependencies
 import path from 'path'
+import childProcess from 'child_process'
 
-const execFileSync = require('child_process').execFileSync
-
+const { execFileSync } = childProcess
 const shouldWrite = process.argv[2] === 'write'
 const isWindows = process.platform === 'win32'
 const prettier = isWindows ? 'prettier.cmd' : 'prettier'
@@ -23,8 +23,12 @@ const defaultOptions = {
   'trailing-comma': 'all',
   'print-width': 80,
   semi: 'false',
+  parser: 'flow',
 }
-const config = {
+
+// We assign the 'Object' type to specify that 'config' is not sealed.
+// eslint-disable-next-line flowtype/no-weak-types
+let config: Object = {
   default: {
     patterns: ['src/**/*.js'],
     ignore: ['**/node_modules/**'],
@@ -33,6 +37,19 @@ const config = {
     patterns: ['scripts/**/*.js'],
     ignore: [],
   },
+  static: {
+    patterns: ['static/**/*.js'],
+    ignore: [],
+  },
+}
+
+if (process.argv[3]) {
+  config = {
+    userProvided: {
+      ...config.default,
+      patterns: [process.argv[3]],
+    },
+  }
 }
 
 const exec = (command, args) => {
