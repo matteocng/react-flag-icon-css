@@ -110,7 +110,7 @@ test('FlagIconFactory > useCssModules: false and props: className', (t: *) => {
 
   // Test that className works when useCssModules: false
   const ReactFlagIcon: React$Element<*> = FlagIcon(props)
-  const wrapper: ShallowWrapper<*> = shallow(ReactFlagIcon)
+  const wrapper: ShallowWrapper = shallow(ReactFlagIcon)
   const expectedClassName = getExpectedClassName(props, options)
 
   t.truthy(wrapper.contains(<span className={expectedClassName} />))
@@ -121,7 +121,7 @@ test('FlagIcon themeStyles', (t: *) => {
   const FlagIconCssModules = FlagIconFactory(React, options)
   const ReactFlagIcon = FlagIconCssModules({ ...requiredProps })
 
-  const wrapper: ShallowWrapper<*> = shallow(ReactFlagIcon)
+  const wrapper: ShallowWrapper = shallow(ReactFlagIcon)
   const expectedClassName = getExpectedClassName(requiredProps, options)
 
   t.truthy(wrapper.contains(<span className={expectedClassName} />))
@@ -152,7 +152,7 @@ test('FlagIcon props', (t: *) => {
       const FlagIcons = [ReactFlagIconCssModules, ReactFlagIcon]
 
       FlagIcons.forEach((flagIcon: React$Element<*>, i: number) => {
-        const wrapper: ShallowWrapper<*> = shallow(flagIcon)
+        const wrapper: ShallowWrapper = shallow(flagIcon)
         const Component = currentProps.Component
           ? currentProps.Component
           : 'span'
@@ -190,7 +190,7 @@ test('FlagIcon props:Component', (t: *) => {
   let currentExpectedClassName = ''
 
   flagIcons.forEach((flagIcon: React$Element<*>, i: number) => {
-    const wrapper: ShallowWrapper<*> = shallow(flagIcon)
+    const wrapper: ShallowWrapper = shallow(flagIcon)
     const currentOptions = { ...options, useCssModules: i === 0 }
     currentExpectedClassName = getExpectedClassName(
       requiredProps,
@@ -220,7 +220,7 @@ test('FlagIcon mount > props:children', (t: *) => {
   const flagIcons = [ReactFlagIconCssModules, ReactFlagIcon]
 
   flagIcons.forEach((flagIcon: React$Element<*>) => {
-    const wrapper: ReactWrapper<*> = mount(flagIcon)
+    const wrapper: ReactWrapper = mount(flagIcon)
 
     t.truthy(wrapper.contains(children))
     t.truthy(wrapper.find('div').is(`div.${childrenClassName}`))
