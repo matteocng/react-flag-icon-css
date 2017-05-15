@@ -105,6 +105,7 @@
     "styles": "postcss -o lib/styles/main.css src/styles/main.css && cpy lib/styles/main.css module/styles/",
     "prettier:check": "cross-env BABEL_ENV=build babel-node ./scripts/tasks/prettier.js",
     "prettier": "cross-env BABEL_ENV=build babel-node ./scripts/tasks/prettier.js write",
+    "generate:types": "cross-env BABEL_ENV=build babel-node ./scripts/tasks/generateFlowTypes.js",
     "test": "cross-env BABEL_ENV=testing nyc ava"
   },
   "license": "MIT",
