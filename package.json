@@ -60,6 +60,7 @@
     "flow-copy-source": "^1.1.0",
     "jsdom": "^9.12.0",
     "mkdirp": "^0.5.1",
+    "nsp": "^2.6.3",
     "nyc": "^10.1.2",
     "postcss-at-rules-variables": "^0.1.0",
     "postcss-cli": "^4.0.0",
@@ -101,12 +102,13 @@
     "prebuild": "npm run clean",
     "prebuild:module": "npm run clean:module",
     "precoverage": "mkdirp .nyc_output",
-    "prepublish": "npm run test && npm run build && npm run build:module",
+    "prepublish": "npm run test && npm run nsp && npm run build && npm run build:module",
     "styles": "postcss -o lib/styles/main.css src/styles/main.css && cpy lib/styles/main.css module/styles/",
     "prettier:check": "cross-env BABEL_ENV=build babel-node ./scripts/tasks/prettier.js",
     "prettier": "cross-env BABEL_ENV=build babel-node ./scripts/tasks/prettier.js write",
     "generate:types": "cross-env BABEL_ENV=build babel-node ./scripts/tasks/generateFlowTypes.js",
-    "test": "cross-env BABEL_ENV=testing nyc ava"
+    "test": "cross-env BABEL_ENV=testing nyc ava",
+    "nsp": "nsp check"
   },
   "license": "MIT",
   "ava": {
