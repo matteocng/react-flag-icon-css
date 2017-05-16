@@ -26,7 +26,9 @@ export const makeClassesObject = (
     [`${flagIconClassesPrefix}${code}`]: code,
     [`${flagIconClassesPrefix}flip-${flip}`]: flip,
     [`${flagIconClassesPrefix}rotate-${rotate || ''}`]: rotate,
-    [baseThemeStyleName]: options.useCssModules && options.themeStyles,
+    [baseThemeStyleName]: useCssModules &&
+      themeStyles &&
+      themeStyles[baseThemeStyleName],
   }
 
   if (props.className && options.useCssModules) {
