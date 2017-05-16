@@ -7,14 +7,14 @@ import type {
 } from '../types/flow'
 import { makeClassnames } from '../functions'
 
-const FlagIcon = (
+const FlagIcon = <T>(
   React: ReactModule,
-  options: FlagIconOptionsType,
-): FlagIconReturnType => ({
+  options: FlagIconOptionsType<T>,
+): FlagIconReturnType<T> => ({
   ...props,
   Component = 'span',
   children,
-}: FlagIconPropsType): React$Element<*> => {
+}: FlagIconPropsType<T>): React$Element<*> => {
   const stylePropName = options.useCssModules ? 'styleName' : 'className'
   const p = { [stylePropName]: makeClassnames(props, options) }
 

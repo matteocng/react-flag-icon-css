@@ -1,6 +1,60 @@
 // @flow
-type ObjStringKeyMixedValueType = { [string]: mixed }
-const validatorKeyName = '__exact__'
+import type { PropsTypeObjectType } from '../types/flow'
+
+type ObjStringKeyMixedValueType = { [string]: * }
+
+const fnThemeStylesValidator = (
+  // prop-types Object supplied by the user. i.e {lorem: PropTypes.string}
+  propsObject: PropsTypeObjectType,
+  // prop-values Object supplied by the user. i.e {lorem: 'ipsum'}
+  propsValues: ObjStringKeyMixedValueType,
+  propName: string,
+  componentName: string,
+  // eslint-disable-next-line consistent-return
+): ?Error => {
+  const { useCssModules, customCodes } = propsValues
+  if (!useCssModules) return
+
+  if (customCodes) {
+    const { themeStyles } = propsValues
+
+    if (themeStyles) {
+      const themeStylesClassNames = Object.keys(themeStyles)
+      const result = Object.keys(customCodes).filter(
+        (customCode: string) =>
+          !themeStylesClassNames.includes(`flag-icon-${customCode}`),
+      )
+
+      if (result.length > 0) {
+        // eslint-disable-next-line consistent-return
+        return new Error(
+          `Invalid prop(s) \`themeStyles\` supplied to \
+\`${componentName}\`, expected \`.flag-icon-[${result.join('/')}]\`.`,
+        )
+      }
+    } else {
+      // eslint-disable-next-line consistent-return
+      return new Error(
+        `Missing required prop(s) \`themeStyles\` supplied to \`${componentName}\`.`,
+      )
+    }
+  }
+}
+
+export const AddThemeStylesValidator = (
+  obj: PropsTypeObjectType,
+): PropsTypeObjectType => {
+  const validatorKeyName = '__themeStyles__'
+  if (Object.prototype.hasOwnProperty.call(obj, validatorKeyName)) {
+    // TODO: print a message or throw when not in production?
+    return obj // The custom validator is already 'installed'.
+  }
+
+  return {
+    ...obj,
+    [validatorKeyName]: fnThemeStylesValidator.bind(this, obj),
+  }
+}
 
 /**
  * This 'custom validator' function is called by the `prop-types` module at runtime.
@@ -14,7 +68,7 @@ const validatorKeyName = '__exact__'
  */
 const fnExactValidator = (
   // prop-types Object supplied by the user. i.e {lorem: PropTypes.string}
-  propsObject: ObjStringKeyMixedValueType,
+  propsObject: PropsTypeObjectType,
   // prop-values Object supplied by the user. i.e {lorem: 'ipsum'}
   propsValues: ObjStringKeyMixedValueType,
   propName: string,
@@ -48,7 +102,10 @@ const fnExactValidator = (
  * SEE: https://flow.org/en/docs/types/objects/#toc-exact-object-types
  */
 // eslint-disable-next-line import/prefer-default-export, max-len
-export const AddExactValidator = <T: ObjStringKeyMixedValueType>(obj: T): T => {
+export const AddExactValidator = (
+  obj: PropsTypeObjectType,
+): PropsTypeObjectType => {
+  const validatorKeyName = '__exact__'
   if (Object.prototype.hasOwnProperty.call(obj, validatorKeyName)) {
     // TODO: print a message or throw when not in production?
     return obj // The custom validator is already 'installed'.

@@ -1,32 +1,59 @@
 // @flow
 import PropTypes from 'prop-types'
-import { getCountryCodes } from '../functions/countries'
-import { AddExactValidator } from '../functions/propTypes'
+import { getRotates, getFlips, getSizes } from '../functions/props'
+import {
+  AddExactValidator,
+  AddThemeStylesValidator,
+} from '../functions/propTypes'
+import type { FlagIconCodeType, PropsTypeObjectType } from '../types/flow'
 
-const FlagIconSizeType = PropTypes.oneOf(['lg', '2x', '3x', '4x', '5x'])
-const FlagIconRotateType = PropTypes.oneOf([30, 60, 90, 180, 270])
-const FlagIconFlipType = PropTypes.oneOf(['horizontal', 'vertical'])
-const FlagIconCodeType = PropTypes.oneOf(getCountryCodes())
+type MaybeFlagIconCodeType<T> = FlagIconCodeType | T
 
-const FlagIconClassesObject = {
-  code: FlagIconCodeType.isRequired,
-  size: FlagIconSizeType,
-  squared: PropTypes.bool,
-  rotate: FlagIconRotateType,
-  flip: FlagIconFlipType,
+const FlagIconSizeType = PropTypes.oneOf(getSizes())
+const FlagIconRotateType = PropTypes.oneOf(getRotates())
+const FlagIconFlipType = PropTypes.oneOf(getFlips())
+
+const makeFlagIconCodeType = <T>(
+  codes: MaybeFlagIconCodeType<T>[],
+  // eslint-disable-next-line arrow-body-style
+): React$PropType$OneOf => {
+  return PropTypes.oneOf(codes)
 }
-const FlagIconPropsTypeObject = {
-  ...FlagIconClassesObject,
-  children: PropTypes.element,
-  Component: PropTypes.string,
+
+const makeFlagIconClassesObject = <T>(
+  codes: MaybeFlagIconCodeType<T>[],
+  // eslint-disable-next-line arrow-body-style
+): PropsTypeObjectType => {
+  return {
+    code: makeFlagIconCodeType(codes).isRequired,
+    size: FlagIconSizeType,
+    squared: PropTypes.bool,
+    rotate: FlagIconRotateType,
+    flip: FlagIconFlipType,
+  }
 }
 
-export const FlagIconClassesObjectType = AddExactValidator(
-  FlagIconClassesObject,
-)
-export const FlagIconPropsType = AddExactValidator(FlagIconPropsTypeObject)
+const makeFlagIconPropsTypeObject = <T>(
+  codes: MaybeFlagIconCodeType<T>[],
+  // eslint-disable-next-line arrow-body-style
+): PropsTypeObjectType => {
+  return {
+    ...makeFlagIconClassesObject(codes),
+    children: PropTypes.element,
+    Component: PropTypes.string,
+  }
+}
 
-export const FlagIconOptionsType = AddExactValidator({
-  useCssModules: PropTypes.bool,
+export const MakeFlagIconPropsType = <T>(
+  codes: MaybeFlagIconCodeType<T>[],
+  // eslint-disable-next-line arrow-body-style
+): PropsTypeObjectType => AddExactValidator(makeFlagIconPropsTypeObject(codes))
+
+const flagIconOptionsType = {
+  customCodes: PropTypes.object,
   themeStyles: PropTypes.object,
-})
+  useCssModules: PropTypes.bool,
+}
+
+export const MakeFlagIconOptionsPropType = (): PropsTypeObjectType =>
+  AddExactValidator(AddThemeStylesValidator(flagIconOptionsType))

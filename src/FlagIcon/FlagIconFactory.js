@@ -5,20 +5,22 @@ import typeof ReactModule from 'react'
 import FlagIcon from './FlagIcon'
 import styles from '../styles'
 import { makeStyles, makeFlagIconOptions } from '../functions'
-import { FlagIconPropsType as FlagIconPropsTypeReact } from '../types/propTypes'
+import { getCountryCodes } from '../functions/props'
+import { MakeFlagIconPropsType } from '../types/propTypes'
 import type {
   FlagIconOptionsType,
   FlagIconFactoryReturnType,
+  StandardFlagIconFactoryReturnType,
 } from '../types/flow'
 
-const FlagIconFactory = (
+const FlagIconFactory = <T>(
   React: ReactModule,
-  options?: FlagIconOptionsType,
-): FlagIconFactoryReturnType => {
+  options?: FlagIconOptionsType<T>,
+): StandardFlagIconFactoryReturnType => {
   // We 'makeFlagIconOptions' by merging the default options with the (optional)
   // user-supplied options.
   const computedOptions = makeFlagIconOptions(options)
-  const { useCssModules } = computedOptions
+  const { useCssModules, customCodes } = computedOptions
 
   // We assign the React Component to 'FlagIconComponent'. SEE: './FlagIcon.js'
   const FlagIconComponent = FlagIcon(React, computedOptions)
@@ -28,7 +30,13 @@ const FlagIconFactory = (
     // UglifyJS strips this block out in production.
     // We assign react propTypes (dynamic type checking) to the React component.
     // SEE: https://github.com/reactjs/prop-types
-    FlagIconComponent.propTypes = FlagIconPropsTypeReact
+    let codes = getCountryCodes()
+
+    if (customCodes) {
+      codes = [...codes, ...Object.keys(customCodes)]
+    }
+
+    FlagIconComponent.propTypes = MakeFlagIconPropsType(codes)
   } // In production, FlagIconComponent.propTypes will be undefined.
 
   if (useCssModules) {
@@ -107,3 +115,9 @@ The link below may help you:\n\n\t${readmeModules}`)
 }
 
 export default FlagIconFactory
+
+const CustomFlagIconFactory = <T: { [string]: string }>(
+  React: ReactModule,
+  options?: FlagIconOptionsType<T>,
+): FlagIconFactoryReturnType<T> => FlagIconFactory(React, options)
+export { CustomFlagIconFactory }

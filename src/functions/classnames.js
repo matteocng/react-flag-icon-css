@@ -8,17 +8,20 @@ import {
   flagIconClassesPrefixName,
 } from './constants'
 
-export const makeClassesObject = (
-  {
-    ...props,
+export const makeClassesObject = <T>(
+  props: FlagIconPropsType<T>,
+  options: FlagIconOptionsType<T>,
+): classes => {
+  const {
     code,
     flip = '',
     size = '',
     squared = false,
     rotate,
-  }: FlagIconPropsType,
-  options: FlagIconOptionsType,
-): classes => {
+    className,
+  } = props
+  const { themeStyles, useCssModules } = options
+
   let obj = {
     [flagIconClassesPrefixName]: true,
     [`${flagIconClassesPrefix}squared`]: squared,
@@ -31,13 +34,13 @@ export const makeClassesObject = (
       themeStyles[baseThemeStyleName],
   }
 
-  if (props.className && options.useCssModules) {
-    obj = { ...obj, [props.className]: true }
+  if (className && useCssModules) {
+    obj = { ...obj, [className]: true }
   }
   return obj
 }
 
-export default (
-  props: FlagIconPropsType,
-  options: FlagIconOptionsType,
+export default <T>(
+  props: FlagIconPropsType<*>,
+  options: FlagIconOptionsType<T>,
 ): string => classnames(makeClassesObject(props, options))

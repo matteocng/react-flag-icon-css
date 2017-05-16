@@ -1,9 +1,9 @@
 // @flow
 import type { FlagIconOptionsType, ObjStringKeyValuesType } from '../types/flow'
 
-export default (
+export default <T>(
   styles: ObjStringKeyValuesType,
-  options?: FlagIconOptionsType,
+  options?: FlagIconOptionsType<T>,
   // eslint-disable-next-line arrow-body-style
 ): ObjStringKeyValuesType => {
   return options && options.themeStyles

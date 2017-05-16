@@ -8,8 +8,8 @@ import type { ReactWrapper, ShallowWrapper } from 'enzyme' // eslint-disable-lin
 import type classes from 'classnames'
 import type {
   FlagIconPropsType,
-  FlagIconOptionsType,
   FlagIconCodeType,
+  FlagIconOptionsType,
 } from '../types/flow'
 
 import FlagIconFactory from '../'
@@ -32,9 +32,9 @@ const { flagIconClassesPrefixName } = constants
 
 // Helper functions
 
-const getExpectedClassName = (
-  props: FlagIconPropsType,
-  options: FlagIconOptionsType,
+const getExpectedClassName = <T>(
+  props: FlagIconPropsType<T>,
+  options: FlagIconOptionsType<T>,
 ): string => {
   const computedOptions = makeFlagIconOptions(options)
   let oParams = makeClassesObject(props, computedOptions)
@@ -75,9 +75,10 @@ const allProps = {
 
 // Tests
 
-test('countries.json is synchronized with flag-icon-css', (t: *) => {
-  const jsonCodes = getCountryCodes()
-  const moduleCodes: FlagIconCodeType[] = GetFlagIconModuleCountryCodes()
+test('countries.js is synchronized with flag-icon-css', (t: *) => {
+  // We cast FlagIconCodeType[] to string[] (Flow).
+  const jsonCodes = getCountryCodes().map((code): string => code)
+  const moduleCodes = GetFlagIconModuleCountryCodes()
   const diff = diffArrays(jsonCodes, moduleCodes)
   const testOk = diff.length === 0
   const message = testOk ? '' : `Diff: ${diff.join(', ')}`
@@ -141,7 +142,7 @@ test('FlagIcon props', (t: *) => {
   const countryCodes = getCountryCodes()
   let aComparisonResults = []
 
-  countryCodes.forEach((code: string) => {
+  countryCodes.forEach((code: FlagIconCodeType) => {
     currentProps = { ...currentProps, code }
 
     Object.keys(optionalProps).forEach((prop: string) => {

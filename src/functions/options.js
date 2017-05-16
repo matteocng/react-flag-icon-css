@@ -1,19 +1,19 @@
 // @flow
 import PropTypes from 'prop-types'
 import type { FlagIconOptionsType } from '../types/flow'
-import {
-  FlagIconOptionsType as FlagIconOptionsTypeReact,
-} from '../types/propTypes'
+import { MakeFlagIconOptionsPropType } from '../types/propTypes'
 
-const defaultOptions: FlagIconOptionsType = {
+const defaultOptions: FlagIconOptionsType<*> = {
   useCssModules: true,
 }
 
-export default (options?: FlagIconOptionsType): FlagIconOptionsType => {
+export default <T>(
+  options?: FlagIconOptionsType<T>,
+): FlagIconOptionsType<T> => {
   const computedOptions = { ...defaultOptions, ...options }
 
   PropTypes.checkPropTypes(
-    FlagIconOptionsTypeReact,
+    MakeFlagIconOptionsPropType(),
     computedOptions,
     'key',
     'FlagIconFactory options',
