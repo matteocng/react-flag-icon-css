@@ -44,12 +44,6 @@ export type FlagIconOptionsType<T> = Exact<{
   useCssModules?: boolean,
 }>
 
-export type FlagIconOptionsTypeStandard = Exact<{
-  customCodes?: ObjStringKeyValuesType,
-  themeStyles?: CssModuleType,
-  useCssModules?: boolean,
-}>
-
 export type KeyCallbackType = (key: string) => string
 
 export type FlagIconReturnType<T> = (
