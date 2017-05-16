@@ -27,6 +27,7 @@ test('prop-types > FlagIconPropsType', (t: *) => {
   element = <FlagIcon flip="horizontal" />
   t.truthy(consoleHook.flushLog().includes('Failed prop type'))
 
+  // $FlowExpectError
   element = <FlagIcon code="wrong" />
   t.truthy(consoleHook.flushLog().includes('Failed prop type'))
 
