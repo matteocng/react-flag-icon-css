@@ -84,7 +84,7 @@ A [Webpack 2 example project](//github.com/matteocng/react-flag-icon-css-example
 
 *Remember to always build `FlagIcon` with `FlagIconFactory`.*
 
-<sup>1</sup> *Upgrade to version 1.0.14 or later of this module.*
+<sup>1</sup> *Upgrade to version 1.0.15 or later of this module.*
 
 ## :factory: FlagIconFactory
 
@@ -103,7 +103,7 @@ A [Webpack 2 example project](//github.com/matteocng/react-flag-icon-css-example
 | customCodes <sup>2</sup> | <code>Object</code> | <code>Object</code> | An object literal whose keys are your custom codes.<br> [Example](#exampleCustomFlagsIndex). |  ||
 | themeStyles | <code>Object</code> | <code>CssModule</code> | Set this if <code>useCssModules</code> is <code>true</code> and a) you want to<br> apply styles to <code>FlagIcon</code> using <code>.theme-base</code> *and/or*<br> b) you are using [custom flags](#Custom flags).|  || |
 
-<sup>2</sup> *Upgrade to version 1.0.14 or later of this module.*
+<sup>2</sup> *Upgrade to version 1.0.15 or later of this module.*
 
 
 ## Custom flags
