@@ -1,7 +1,7 @@
 // @flow
 import type {
   FlagIconCodeType,
-  FlagIconSizesType,
+  FlagIconSizeType,
   FlagIconRotateType,
   FlagIconFlipType,
 } from './enums'
@@ -22,7 +22,7 @@ export type CssModuleType = ObjStringKeyValuesType
 
 export type {
   FlagIconCodeType,
-  FlagIconSizesType,
+  FlagIconSizeType,
   FlagIconRotateType,
   FlagIconFlipType,
 }
@@ -30,7 +30,7 @@ export type {
 export type FlagIconPropsType<T> = {
   code: FlagIconCodeType | $Keys<T & {}>,
   squared?: boolean,
-  size?: FlagIconSizesType,
+  size?: FlagIconSizeType,
   rotate?: FlagIconRotateType,
   flip?: FlagIconFlipType,
   Component?: string,

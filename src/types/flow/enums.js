@@ -8,7 +8,7 @@ export type FlagIconFlipType = 'horizontal' | 'vertical'
 
 export type FlagIconRotateType = 30 | 60 | 90 | 180 | 270
 
-export type FlagIconSizesType = 'lg' | '2x' | '3x' | '4x' | '5x'
+export type FlagIconSizeType = 'lg' | '2x' | '3x' | '4x' | '5x'
 
 export type FlagIconCodeType =
   | 'af'

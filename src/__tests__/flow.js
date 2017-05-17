@@ -16,7 +16,7 @@ import type {
   FlagIconPropsType,
   FlagIconRotateType,
   FlagIconFlipType,
-  FlagIconSizesType,
+  FlagIconSizeType,
   CountryType,
 } from '../types/flow'
 
@@ -122,7 +122,7 @@ sizes.push('wrong')
 // $FlowExpectError
 sizes.push(355)
 
-const sizesAnnotated: FlagIconSizesType[] = getSizes()
+const sizesAnnotated: FlagIconSizeType[] = getSizes()
 
 // $FlowExpectError
 sizesAnnotated.push(30)

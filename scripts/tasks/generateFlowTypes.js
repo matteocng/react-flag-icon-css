@@ -64,7 +64,7 @@ const rotates = castEnumToString(getRotates())
 const typesToGenerate: TypesTupleType<*>[] = [
   ['FlagIconFlipType', flips, {}],
   ['FlagIconRotateType', rotates, { quote: '' }],
-  ['FlagIconSizesType', sizes, {}],
+  ['FlagIconSizeType', sizes, {}],
   ['FlagIconCodeType', countryCodes, {}],
 ]
 

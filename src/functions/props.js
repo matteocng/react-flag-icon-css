@@ -3,7 +3,7 @@ import type {
   FlagIconCodeType,
   FlagIconRotateType,
   FlagIconFlipType,
-  FlagIconSizesType,
+  FlagIconSizeType,
   CountryType,
 } from '../types/flow'
 import { sizes, rotates, flips, countries } from '../../static/enums'
@@ -17,4 +17,4 @@ export const getFlips = (): FlagIconFlipType[] => flips
 
 export const getRotates = (): FlagIconRotateType[] => rotates
 
-export const getSizes = (): FlagIconSizesType[] => sizes
+export const getSizes = (): FlagIconSizeType[] => sizes
