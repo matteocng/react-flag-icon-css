@@ -20,7 +20,7 @@ We recommend installing and managing `npm` packages with [`yarn`](https://yarnpk
 $ yarn add react-flag-icon-css
 ```
 
-otherwise with `npm`:
+or with `npm`:
 
 ```bash
 $ npm install --save react-flag-icon-css
@@ -28,15 +28,15 @@ $ npm install --save react-flag-icon-css
 
 ## Prerequisites
 
-We recommend using the [`Webpack 2`](//github.com/webpack/webpack) module bundler and ecosystem to *assemble* your app.
+We recommend using the [`Webpack 2`](//github.com/webpack/webpack) module bundler and ecosystem to *assemble* your app, but this module should work with other bundlers.
 
-You will need to install and configure a few commonly used packages for `Webpack` (see the [Webpack 2 example project](//github.com/matteocng/react-flag-icon-css-example-multi)):
+If you are using `Webpack`, you will need to install and configure a few commmonly used modules (see the [Webpack 2 example project](//github.com/matteocng/react-flag-icon-css-example-multi)):
 
 ```bash
 $ yarn add -D babel-loader css-loader file-loader style-loader extract-text-webpack-plugin
 ```
 
-otherwise with `npm`:
+or with `npm`:
 
 ```bash
 $ npm install --save-dev ...
@@ -44,7 +44,7 @@ $ npm install --save-dev ...
 
 ## Basic usage
 
-Import the factory from `react-flag-icon-css`, it accepts the `React` module as the first argument and creates the `FlagIcon` component. This approach ensures that `FlagIcon` uses your app's `React` instance, avoiding issues such as two versions of `React` being loaded at the same time.
+Import `FlagIconFactory` from `react-flag-icon-css`, it accepts the `React` module as the first argument and creates the `FlagIcon` component. *This approach ensures that `FlagIcon` uses your app's `React` instance, avoiding issues such as two versions of `React` being loaded at the same time.*
 
 ```js
 import React from 'react'
@@ -74,15 +74,15 @@ A [Webpack 2 example project](//github.com/matteocng/react-flag-icon-css-example
 
 | Prop | Type | Flow Type | Default | Description | Supported values |
 | --- | --- | --- | --- | --- |  --- |
-| code * | <code>String</code> | <code>FlagIconCodeType</code> <sup>1</sup> | | [ISO 3166-1-alpha-2 code](https://www.iso.org/iso/country_names_and_code_elements) | The list is [here](static/enums.js#L24) |
+| code * | <code>String</code> | <code>FlagIconCodeType</code> <sup>1</sup> | | [ISO 3166-1-alpha-2](https://www.iso.org/iso/country_names_and_code_elements) code. | The list is [here](static/enums.js#L24). |
 | size | <code>String</code> | <code>FlagIconSizeType</code> | |  | lg, 2x, 3x, 4x, 5x |
 | flip | <code>String</code> | <code>FlagIconFlipType</code> | |  | horizontal, vertical |
 | rotate | <code>Number</code> | <code>FlagIconRotateType</code> | |  | 30, 60, 90, 180, 270 |
-| squared | <code>Boolean</code> | | <code>false</code> |  | |
-| Component | <code>String</code> | | <code>span</code> |  | e.g <code>span</code>, <code>div</code> |
-| Children | <code>String</code> | <code>React$Element<*></code> | | `React` element | e.g ```<Something />``` |
+| squared | <code>Boolean</code> | <code>boolean</code> | <code>false</code> | Uses the <code>1x1</code> image if <code>true</code>. | |
+| Component | <code>String</code> | <code>string</code> | <code>span</code> |  | e.g <code>span</code>, <code>div</code> |
+| Children | <code>String</code> | <code>React$Element<*></code> | | `React` element. | e.g ```<Something />``` |
 
-Remember to always build `FlagIcon` with `FlagIconFactory`.
+*Remember to always build `FlagIcon` with `FlagIconFactory`.*
 
 <sup>1</sup> *Upgrade to version 1.0.14 or later of this module.*
 
@@ -92,16 +92,19 @@ Remember to always build `FlagIcon` with `FlagIconFactory`.
 
 | Argument | Type | Flow Type | Description | Supported values |
 | --- | --- | --- | --- |  --- |
-| React * | <code>Module</code> | <code>ReactModule</code>  | Your app's React instance | Versions in `peerDependencies` |
+| React * | <code>Module</code> | <code>ReactModule</code>  | Your app's `React` instance. | Versions in [peerDependencies](./package.json). |
 | options | <code>Object</code> | <code>FlagIconOptionsType</code> |  |  ||
 
 ### :factory: FlagIconFactory options
 
 | Argument | Type | Flow Type | Description | Supported values | Default |
 | --- | --- | --- | --- |  --- | --- |
-| useCssModules | <code>Boolean</code> | <code>Boolean</code>  | Use <code>react-css-modules<code> | <code>true</code>, <code>false</code> | <code>true</code> |
-| customCodes | <code>Object</code> | <code>Object</code> | An object literal whose keys are your custom codes |  ||
-| themeStyles | <code>Object</code> | <code>CssModule</code> | The result of <code>import styles from './my-custom-flags.css'</code> |  || |
+| useCssModules | <code>Boolean</code> | <code>Boolean</code>  | Use <code>react-css-modules</code>. | <code>true</code>, <code>false</code> | <code>true</code> |
+| customCodes <sup>2</sup> | <code>Object</code> | <code>Object</code> | An object literal whose keys are your custom codes.<br> [Example](#exampleCustomFlagsIndex). |  ||
+| themeStyles | <code>Object</code> | <code>CssModule</code> | Set this if <code>useCssModules</code> is <code>true</code> and a) you want to<br> apply styles to <code>FlagIcon</code> using <code>.theme-base</code> *and/or*<br> b) you are using [custom flags](#Custom flags).|  || |
+
+<sup>2</sup> *Upgrade to version 1.0.14 or later of this module.*
+
 
 ## Custom flags
 
@@ -110,11 +113,11 @@ Remember to always build `FlagIcon` with `FlagIconFactory`.
 -   **Always** set <code>FlagIconFactory options.customCodes</code> to make this module aware of your codes. Otherwise: runtime warnings in development (and Flow errors, if you use it).
 -   **If** using *`React Css Modules`*, import your styles in <code>someVariable</code> and set <code>FlagIconFactory options.themeStyles</code> to <code>someVariable</code>. Otherwise: runtime `React Css Modules` errors.
 -   **Else if** using standard *Css*, make sure to import the styles. Otherwise: the custom images won't be loaded.
--   **If** using *<code>Flow</code>* use <code>CustomFlagIconFactory</code> and not <code>FlagIconFactory</code>. Otherwise: Flow errors.
+-   **If** using *<code>Flow</code>* use <code>CustomFlagIconFactory</code> and not <code>FlagIconFactory</code>. Otherwise: <code>Flow</code> errors.
 
 ### Quick example
 
-We recommend organizing your custom flags in a folder similar to the <code>example-custom-flags</code> folder [here](src/__tests__/example-custom-flags). You may copy-paste it in the root of your app and replace the codes and images.
+We recommend organizing your custom flags in a folder similar to [`example-custom-flags`](src/__tests__/example-custom-flags). You may copy-paste it in the root of your app and replace the codes and images.
 
 Example folder structure:
 
@@ -135,7 +138,7 @@ Example folder structure:
 ```
 
 Write the styles for each one of your codes, and load the appropriate images:
-
+<a name="exampleCustomFlagsStyles"></a>
 ```css
 /* example-custom-flags/styles.css */
 /**
@@ -155,7 +158,7 @@ Write the styles for each one of your codes, and load the appropriate images:
 ```
 
 Import the styles and export them and the object with your codes:
-
+<a name="exampleCustomFlagsIndex"></a>
 ```js
 /* example-custom-flags/index.js */
 import styles from './styles.css'
