@@ -105,6 +105,27 @@ A [Webpack 2 example project](//github.com/matteocng/react-flag-icon-css-example
 
 <sup>2</sup> *Upgrade to version 1.0.16 or later of this module.*
 
+## Configuration for Facebook's Flow
+
+*You can skip this section if you are not using <code>Flow</code> in your project.*
+
+The following are the rules that you need in your <code>.flowconfig</code>:
+
+```
+[options]
+...
+# Used in tests.
+suppress_comment=\\(.\\|\n\\)*\\$FlowExpectError
+suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe
+# SEE: https://github.com/facebook/flow/issues/1895
+suppress_type=$FlowIssue
+...
+[ignore]
+...
+# SEE: https://github.com/stylelint/stylelint/issues/2322
+.*/node_modules/stylelint/.*
+...
+```
 
 ## Custom flags
 
