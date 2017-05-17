@@ -1,3 +1,37 @@
+<a name="1.0.14"></a>
+## 1.0.14 (2017-05-17)
+
+* docs(README): add custom flags docs and example ([838010e](https://github.com/matteocng/react-flag-icon-css/commit/838010e))
+* docs(README): general improvements ([10f0527](https://github.com/matteocng/react-flag-icon-css/commit/10f0527))
+* docs(README): link to specific line ([4ce7e3b](https://github.com/matteocng/react-flag-icon-css/commit/4ce7e3b))
+* chore: add nsp (Node Security CLI) ([ab76d8d](https://github.com/matteocng/react-flag-icon-css/commit/ab76d8d))
+* chore: add prettier ([a9ea58b](https://github.com/matteocng/react-flag-icon-css/commit/a9ea58b))
+* chore: yarn lock ([07af05f](https://github.com/matteocng/react-flag-icon-css/commit/07af05f))
+* chore(flow): remove unused entries ([fea1a56](https://github.com/matteocng/react-flag-icon-css/commit/fea1a56))
+* chore(flow): rename FlagIconSizesType to FlagIconSizeType ([02aecdf](https://github.com/matteocng/react-flag-icon-css/commit/02aecdf))
+* chore(flow): run 'flow-typed install' ([a72e04e](https://github.com/matteocng/react-flag-icon-css/commit/a72e04e))
+* chore(package): update cross-env to version 5.0.0 ([4de2a6e](https://github.com/matteocng/react-flag-icon-css/commit/4de2a6e))
+* chore(package): update eslint-config-airbnb to version 15.0.0 ([d1d78d3](https://github.com/matteocng/react-flag-icon-css/commit/d1d78d3))
+* chore(package): update eslint-plugin-jsx-a11y to version 5.0.2 ([a130cef](https://github.com/matteocng/react-flag-icon-css/commit/a130cef))
+* chore(package): update flow-bin to version 0.45.0 ([0f4cd81](https://github.com/matteocng/react-flag-icon-css/commit/0f4cd81))
+* chore(package): update postcss-cli to version 4.0.0 (#37) ([71ae62c](https://github.com/matteocng/react-flag-icon-css/commit/71ae62c))
+* chore(package): update postcss-custom-properties to version 6.0.0 ([a1c064c](https://github.com/matteocng/react-flag-icon-css/commit/a1c064c))
+* chore(package): update prettier to version 1.2.2 ([8a80c09](https://github.com/matteocng/react-flag-icon-css/commit/8a80c09))
+* chore(package): upgrade eslint-plugin-react eslint-plugin-jsx-a11y ([849b1ff](https://github.com/matteocng/react-flag-icon-css/commit/849b1ff))
+* chore(package): upgrade flow-bin to version 0.46.0 ([c85646c](https://github.com/matteocng/react-flag-icon-css/commit/c85646c))
+* chore(package): upgrade prettier, eslint-plugin-react ([f8c3127](https://github.com/matteocng/react-flag-icon-css/commit/f8c3127))
+* fix: add test for invalid code prop ([29fe515](https://github.com/matteocng/react-flag-icon-css/commit/29fe515))
+* fix: make baseThemeStyleName not required ([baf74ea](https://github.com/matteocng/react-flag-icon-css/commit/baf74ea))
+* fix(flow): add  suppress_comment ([03e0457](https://github.com/matteocng/react-flag-icon-css/commit/03e0457))
+* fix(flow): remove unused type ([fab48b7](https://github.com/matteocng/react-flag-icon-css/commit/fab48b7))
+* fix(test): correct background-image path ([dc593c4](https://github.com/matteocng/react-flag-icon-css/commit/dc593c4))
+* test: add tests for custom flags and 'Flow' ([c0f53f7](https://github.com/matteocng/react-flag-icon-css/commit/c0f53f7))
+* feat: typechecked custom flags with 'customCodes', 'themeStyles' ([7e7301c](https://github.com/matteocng/react-flag-icon-css/commit/7e7301c))
+* feat(scripts): add optional third parameter to prettier task ([ff12459](https://github.com/matteocng/react-flag-icon-css/commit/ff12459))
+* refactor(flow): fix 'FlagIconCodeType', make it poly, generate types from enums ([2f55a5e](https://github.com/matteocng/react-flag-icon-css/commit/2f55a5e))
+
+
+
 <a name="1.0.13"></a>
 ## 1.0.13 (2017-04-26)
 
