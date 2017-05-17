@@ -1,3 +1,10 @@
+<a name="1.0.16"></a>
+## 1.0.16 (2017-05-17)
+
+* fix(npm): npmignore 'scripts' ([aeed5b0](https://github.com/matteocng/react-flag-icon-css/commit/aeed5b0))
+
+
+
 <a name="1.0.15"></a>
 ## 1.0.15 (2017-05-17)
 
