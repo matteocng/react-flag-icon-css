@@ -1,23 +1,23 @@
 .flag-icon-ex1 {
-  background-image: url(../images/4x3/ex1.svg);
+  background-image: url(./images/4x3/ex1.svg);
 }
 
 .flag-icon-ex2 {
-  background-image: url(../images/4x3/ex2.svg);
+  background-image: url(./images/4x3/ex2.svg);
 }
 
 .flag-icon-ex3 {
-  background-image: url(../images/4x3/ex3.svg);
+  background-image: url(./images/4x3/ex3.svg);
 }
 
 .flag-icon-ex1.flag-icon-squared {
-  background-image: url(../images/1x1/ex1.svg);
+  background-image: url(./images/1x1/ex1.svg);
 }
 
 .flag-icon-ex2.flag-icon-squared {
-  background-image: url(../images/1x1/ex2.svg);
+  background-image: url(./images/1x1/ex2.svg);
 }
 
 .flag-icon-ex3.flag-icon-squared {
-  background-image: url(../images/1x1/ex3.svg);
+  background-image: url(./images/1x1/ex3.svg);
 }
