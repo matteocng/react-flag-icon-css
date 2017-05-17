@@ -1,3 +1,11 @@
+<a name="1.0.15"></a>
+## 1.0.15 (2017-05-17)
+
+* docs(README): bump version ([d3811a0](https://github.com/matteocng/react-flag-icon-css/commit/d3811a0))
+* fix(package): fix ignore regex for __tests__ ([bce7561](https://github.com/matteocng/react-flag-icon-css/commit/bce7561))
+
+
+
 <a name="1.0.14"></a>
 ## 1.0.14 (2017-05-17)
 
