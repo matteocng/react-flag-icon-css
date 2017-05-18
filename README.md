@@ -26,7 +26,18 @@ or with `npm`:
 $ npm install --save react-flag-icon-css
 ```
 
-## Prerequisites
+## Using in a <code>create-react-app</code> app
+
+Apps bootstrapped with <code>create-react-app</code> support this module out of the box, remember to set <code>useCssModules</code> to <code>false</code> (unfortunately <code>create-react-app</code> does not currently support Css modules).
+
+```js
+import FlagIconFactory from 'react-flag-icon-css'
+
+const FlagIcon = FlagIconFactory(React, { useCssModules: false })
+// ...
+```
+
+## Prerequisites for *custom* apps
 
 We recommend using the [`Webpack 2`](//github.com/webpack/webpack) module bundler and ecosystem to *assemble* your app, but this module should work with other bundlers.
 
@@ -111,7 +122,7 @@ A [Webpack 2 example project](//github.com/matteocng/react-flag-icon-css-example
 
 The following are the rules that you need in your <code>.flowconfig</code>:
 
-```
+```ini
 [options]
 ...
 # Used in tests.
