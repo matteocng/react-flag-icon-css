@@ -28,7 +28,7 @@ $ npm install --save react-flag-icon-css
 
 ## Using in a <code>create-react-app</code> app
 
-Apps bootstrapped with <code>create-react-app</code> support this module out of the box, remember to set <code>useCssModules</code> to <code>false</code> (unfortunately <code>create-react-app</code> does not currently support Css modules).
+Apps bootstrapped with [<code>create-react-app</code>](https://github.com/facebookincubator/create-react-app) support this module out of the box, remember to set <code>useCssModules</code> to <code>false</code> (unfortunately <code>create-react-app</code> does not currently support Css modules).
 
 ```js
 import FlagIconFactory from 'react-flag-icon-css'
@@ -39,7 +39,7 @@ const FlagIcon = FlagIconFactory(React, { useCssModules: false })
 
 ## Prerequisites for *custom* apps
 
-We recommend using the [`Webpack 2`](//github.com/webpack/webpack) module bundler and ecosystem to *assemble* your app, but this module should work with other bundlers.
+We recommend using the [`Webpack 2`](//github.com/webpack/webpack) module bundler and ecosystem to *assemble* your app, but this module also works with `Webpack 1` and should work with other bundlers.
 
 If you are using `Webpack`, you will need to install and configure a few commmonly used modules (see the [Webpack 2 example project](//github.com/matteocng/react-flag-icon-css-example-multi)):
 
@@ -95,7 +95,7 @@ A [Webpack 2 example project](//github.com/matteocng/react-flag-icon-css-example
 
 *Remember to always build `FlagIcon` with `FlagIconFactory`.*
 
-<sup>1</sup> *Upgrade to version 1.0.16 or later of this module.*
+<sup>1</sup> *Upgrade to version 1.0.17 or later of this module.*
 
 ## :factory: FlagIconFactory
 
@@ -112,9 +112,9 @@ A [Webpack 2 example project](//github.com/matteocng/react-flag-icon-css-example
 | --- | --- | --- | --- |  --- | --- |
 | useCssModules | <code>Boolean</code> | <code>Boolean</code>  | Use <code>react-css-modules</code>. | <code>true</code>, <code>false</code> | <code>true</code> |
 | customCodes <sup>2</sup> | <code>Object</code> | <code>Object</code> | An object literal whose keys are your custom codes.<br> [Example](#exampleCustomFlagsIndex). |  ||
-| themeStyles | <code>Object</code> | <code>CssModule</code> | Set this if <code>useCssModules</code> is <code>true</code> and a) you want to<br> apply styles to <code>FlagIcon</code> using <code>.theme-base</code> *and/or*<br> b) you are using [custom flags](#Custom flags).|  || |
+| themeStyles | <code>Object</code> | <code>CssModule</code> | Set this if <code>useCssModules</code> is <code>true</code> and a) you want to apply styles to <code>FlagIcon</code><br> using <code>.theme-base</code> *and/or*<br> b) you are using [custom flags](#custom-flags). |  || |
 
-<sup>2</sup> *Upgrade to version 1.0.16 or later of this module.*
+<sup>2</sup> *Upgrade to version 1.0.17 or later of this module.*
 
 ## Configuration for Facebook's Flow
 
