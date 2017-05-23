@@ -2,7 +2,7 @@
   "name": "react-flag-icon-css",
   "description": "React SVG country flags component",
   "homepage": "https://github.com/matteocng/react-flag-icon-css#readme",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "main": "./lib",
   "author": {
     "email": "matteocng+npmjs@outlook.com",

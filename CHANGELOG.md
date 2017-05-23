@@ -1,3 +1,14 @@
+<a name="1.0.17"></a>
+## 1.0.17 (2017-05-23)
+
+* fix: move 'static' in 'src', so that it is handled by babel ([379fb18](https://github.com/matteocng/react-flag-icon-css/commit/379fb18))
+* chore(package): update postcss-each to version 0.10.0 ([0423e8a](https://github.com/matteocng/react-flag-icon-css/commit/0423e8a))
+* docs(README): add 'create-react-app' section ([637e2de](https://github.com/matteocng/react-flag-icon-css/commit/637e2de))
+* docs(README): add Flow configuration section ([cc8b076](https://github.com/matteocng/react-flag-icon-css/commit/cc8b076))
+* docs(README): fix version ([ae6e199](https://github.com/matteocng/react-flag-icon-css/commit/ae6e199))
+
+
+
 <a name="1.0.16"></a>
 ## 1.0.16 (2017-05-17)
 
