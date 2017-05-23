@@ -85,7 +85,7 @@ A [Webpack 2 example project](//github.com/matteocng/react-flag-icon-css-example
 
 | Prop | Type | Flow Type | Default | Description | Supported values |
 | --- | --- | --- | --- | --- |  --- |
-| code * | <code>String</code> | <code>FlagIconCodeType</code> <sup>1</sup> | | [ISO 3166-1-alpha-2](https://www.iso.org/iso/country_names_and_code_elements) code. | The list is [here](static/enums.js#L24). |
+| code * | <code>String</code> | <code>FlagIconCodeType</code> <sup>1</sup> | | [ISO 3166-1-alpha-2](https://www.iso.org/iso/country_names_and_code_elements) code. | The list is [here](src/static/enums.js#L24). |
 | size | <code>String</code> | <code>FlagIconSizeType</code> | |  | lg, 2x, 3x, 4x, 5x |
 | flip | <code>String</code> | <code>FlagIconFlipType</code> | |  | horizontal, vertical |
 | rotate | <code>Number</code> | <code>FlagIconRotateType</code> | |  | 30, 60, 90, 180, 270 |

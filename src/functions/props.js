@@ -6,7 +6,7 @@ import type {
   FlagIconSizeType,
   CountryType,
 } from '../types/flow'
-import { sizes, rotates, flips, countries } from '../../static/enums'
+import { sizes, rotates, flips, countries } from '../static/enums'
 
 export const getCountries = (): CountryType[] => countries
 
