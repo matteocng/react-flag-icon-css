@@ -2,8 +2,9 @@
   "name": "react-flag-icon-css",
   "description": "React SVG country flags component",
   "homepage": "https://github.com/matteocng/react-flag-icon-css#readme",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "main": "./lib",
+  "module": "./module",
   "author": {
     "email": "matteocng+npmjs@outlook.com",
     "name": "matteocng",
@@ -119,7 +120,6 @@
       "src/__tests__/types/propTypes.js"
     ]
   },
-  "module": "./module",
   "nyc": {
     "instrument": false,
     "require": [

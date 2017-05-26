@@ -1,3 +1,11 @@
+<a name="1.0.18"></a>
+## 1.0.18 (2017-05-26)
+
+* chore(package): upgrade flow-bin to version 0.47.0 ([7f1d0db](https://github.com/matteocng/react-flag-icon-css/commit/7f1d0db))
+* docs: small fixes ([94e8e0a](https://github.com/matteocng/react-flag-icon-css/commit/94e8e0a))
+
+
+
 <a name="1.0.17"></a>
 ## 1.0.17 (2017-05-23)
 
