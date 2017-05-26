@@ -1,5 +1,6 @@
 // @flow
-type RequestAnimationFrameCallbackType = () => void // eslint-disable-line flowtype/no-weak-types
+// eslint-disable-next-line flowtype/no-weak-types
+type RequestAnimationFrameCallbackType = number => void
 type PolyfillReturnType = (callback: RequestAnimationFrameCallbackType) => void
 
 // SEE(jlmakes): https://gist.github.com/paulirish/1579671
