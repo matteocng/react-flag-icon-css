@@ -29,9 +29,8 @@ export const makeClassesObject = <T>(
     [`${flagIconClassesPrefix}${code}`]: code,
     [`${flagIconClassesPrefix}flip-${flip}`]: flip,
     [`${flagIconClassesPrefix}rotate-${rotate || ''}`]: rotate,
-    [baseThemeStyleName]: useCssModules &&
-      themeStyles &&
-      themeStyles[baseThemeStyleName],
+    [baseThemeStyleName]:
+      useCssModules && themeStyles && themeStyles[baseThemeStyleName],
   }
 
   if (className && useCssModules) {

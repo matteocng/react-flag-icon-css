@@ -86,4 +86,6 @@ try {
 
 // eslint-disable-next-line no-console
 console.warn(`\`${fileName}\` generated, saved to disk and formatted with prettier.
-${chalk.dim(`Run \`yarn ${npmScriptName}\` or \`npm run ${npmScriptName}\` to generate again.`)}`)
+${chalk.dim(
+  `Run \`yarn ${npmScriptName}\` or \`npm run ${npmScriptName}\` to generate again.`,
+)}`)
