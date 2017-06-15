@@ -30,6 +30,8 @@ const makeFlagIconClassesObject = <T>(
     squared: PropTypes.bool,
     rotate: FlagIconRotateType,
     flip: FlagIconFlipType,
+    className: PropTypes.string,
+    styleName: PropTypes.string,
   }
 }
 
