@@ -6,7 +6,7 @@ import render from 'react-test-renderer' // eslint-disable-line import/no-extran
 import type classes from 'classnames'
 
 import FlagIconFactory from '../'
-import DummyComponentFactory from './DummyComponent'
+import DummyComponentFactory from './internals/DummyComponent'
 import {
   countries,
   makeClassesObject,
@@ -18,7 +18,7 @@ import {
   filterClassObjectKey,
   makeFlagIcons,
   restoreClassNamesInTree,
-} from './functions'
+} from './internals/functions'
 import testThemeStyles from './testThemeStyles.css'
 
 const { getCountryCodes } = countries

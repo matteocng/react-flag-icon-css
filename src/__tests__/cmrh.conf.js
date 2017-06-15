@@ -10,7 +10,7 @@ import atRulesVariables from 'postcss-at-rules-variables'
 import each from 'postcss-each'
 import customProperties from 'postcss-custom-properties'
 import discardComments from 'postcss-discard-comments'
-import { cssModulesScopedName as generateScopedName } from './constants'
+import { cssModulesScopedName as generateScopedName } from './internals/constants'
 
 module.exports = {
   generateScopedName,

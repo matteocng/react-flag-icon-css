@@ -3,19 +3,19 @@ import React from 'react'
 import fs from 'fs'
 import path from 'path'
 import type classes from 'classnames'
-import FlagIconFactory from '../'
+import FlagIconFactory from '../../'
 import type {
   FlagIconOptionsType,
   FlagIconPropsType,
   ReactTestRendererTreeType,
-} from '../types/flow'
+} from '../../types/flow'
 import {
   flagIconModulePath,
   flagIconClassesPrefix,
   flagIconClassesPrefixName,
-} from '../functions/constants'
+} from '../../functions/constants'
 import { cssModulePrefix } from './constants'
-import styles from '../styles'
+import styles from '../../styles'
 
 export const GetFlagIconModuleCountryCodes = (
   modulePath: string = flagIconModulePath,

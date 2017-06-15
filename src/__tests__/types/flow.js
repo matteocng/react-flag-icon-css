@@ -7,10 +7,10 @@ import {
   getRotates,
   getFlips,
   getSizes,
-} from '../functions/props'
-import FlagIconFactory from '../'
-import { CustomFlagIconFactory } from '../FlagIcon/FlagIconFactory'
-import { codes, styles } from './example-custom-flags'
+} from '../../functions/props'
+import FlagIconFactory from '../../'
+import { CustomFlagIconFactory } from '../../FlagIcon/FlagIconFactory'
+import { codes, styles } from '../example-custom-flags'
 import type {
   FlagIconCodeType,
   FlagIconPropsType,
@@ -18,7 +18,7 @@ import type {
   FlagIconFlipType,
   FlagIconSizeType,
   CountryType,
-} from '../types/flow'
+} from '../../types/flow'
 
 // 1. FlagIconCodeType
 // $FlowExpectError

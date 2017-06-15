@@ -3,8 +3,8 @@
 import React from 'react'
 import test from 'ava' // eslint-disable-line import/no-extraneous-dependencies
 import render from 'react-test-renderer' // eslint-disable-line import/no-extraneous-dependencies
-import { restoreClassNamesInTree, makeFlagIcons } from './functions'
-import { cssModulePrefix } from './constants'
+import { restoreClassNamesInTree, makeFlagIcons } from './internals/functions'
+import { cssModulePrefix } from './internals/constants'
 
 test('restoreClassNamesInTree', t => {
   // Sample 'react-test-renderer' render(<SomeComponent />) output.

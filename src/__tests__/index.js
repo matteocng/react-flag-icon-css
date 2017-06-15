@@ -11,4 +11,4 @@
 import 'css-modules-require-hook/preset' // eslint-disable-line import/no-extraneous-dependencies
 
 // This imports and initializes 'jsdom', a JavaScript implementation of the WHATWG DOM.
-import './create-document-register'
+import './internals/create-document-register'
