@@ -36,6 +36,7 @@ export type FlagIconPropsType<T> = {
   Component?: string,
   children?: React$Element<*>,
   className?: string,
+  styleName?: string,
 }
 
 export type FlagIconOptionsType<T> = Exact<{
@@ -44,7 +45,7 @@ export type FlagIconOptionsType<T> = Exact<{
   useCssModules?: boolean,
 }>
 
-export type KeyCallbackType = (key: string) => string
+export type KeyCallbackType = (key: string, i: number) => string
 
 export type FlagIconReturnType<T> = (
   props: FlagIconPropsType<T>,
@@ -58,4 +59,12 @@ export type StandardFlagIconFactoryReturnType = (
 export type CountryType = {
   name: string,
   code: FlagIconCodeType,
+}
+
+export type ReactTestRendererTreeType = {
+  type: string,
+  props: {
+    className?: string,
+  },
+  children?: ReactTestRendererTreeType,
 }

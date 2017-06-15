@@ -1,3 +1,11 @@
 .theme-base {
   opacity: .8;
 }
+
+.some-css-rule {
+  color: green;
+}
+
+.some-other-css-rule {
+  color: blue;
+}

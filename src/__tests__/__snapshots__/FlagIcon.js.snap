@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`optional props 1`] = `
+<span
+  className="flag-icon flag-icon-it"
+/>
+`;
+
+exports[`optional props 2`] = `
+<span
+  className="flag-icon flag-icon-3x flag-icon-it"
+/>
+`;
+
+exports[`optional props 3`] = `
+<span
+  className="flag-icon flag-icon-3x flag-icon-it"
+/>
+`;
+
+exports[`optional props 4`] = `
+<span
+  className="flag-icon flag-icon-3x flag-icon-it flag-icon-rotate-90"
+/>
+`;
+
+exports[`options:themeStyles 1`] = `
+<span
+  className="__MODULE__flag-icon __MODULE__flag-icon-it __MODULE__theme-base"
+/>
+`;
+
+exports[`props: className 1`] = `
+<span
+  className="flag-icon flag-icon-it some-css-rule"
+/>
+`;
+
+exports[`props: className, props: styleName 1`] = `
+<span
+  className="flag-icon flag-icon-it some-css-rule"
+/>
+`;
+
+exports[`props: className, props: styleName 2`] = `
+<span
+  className="__MODULE__flag-icon __MODULE__flag-icon-it __MODULE__theme-base __MODULE__some-other-css-rule __MODULE__some-css-rule"
+/>
+`;
+
+exports[`props: styleName 1`] = `
+<span
+  className="__MODULE__flag-icon __MODULE__flag-icon-it __MODULE__theme-base __MODULE__some-other-css-rule __MODULE__some-css-rule"
+/>
+`;
+
+exports[`props:Component 1`] = `
+<div
+  className="flag-icon flag-icon-it"
+/>
+`;
+
+exports[`props:Component 2`] = `
+<div
+  className="__MODULE__flag-icon __MODULE__flag-icon-it"
+/>
+`;
+
+exports[`props:children 1`] = `
+<span
+  className="flag-icon flag-icon-it"
+>
+  <div
+    className="test"
+  >
+    test
+  </div>
+</span>
+`;
+
+exports[`props:children 2`] = `
+<span
+  className="__MODULE__flag-icon __MODULE__flag-icon-it"
+>
+  <div
+    className="test"
+  >
+    test
+  </div>
+</span>
+`;

@@ -46,7 +46,6 @@
     "cpy-cli": "^1.0.1",
     "cross-env": "^5.0.0",
     "css-modules-require-hook": "^4.0.6",
-    "enzyme": "^2.8.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.0",
     "eslint-plugin-ava": "^4.2.0",
@@ -107,24 +106,27 @@
     "prettier": "cross-env BABEL_ENV=build babel-node ./scripts/tasks/prettier.js write",
     "prettier:check": "cross-env BABEL_ENV=build babel-node ./scripts/tasks/prettier.js",
     "styles": "postcss -o lib/styles/main.css src/styles/main.css && cpy lib/styles/main.css module/styles/",
-    "test": "cross-env BABEL_ENV=testing nyc ava"
+    "test": "cross-env BABEL_ENV=testing nyc ava",
+    "test:update:snapshots": "cross-env BABEL_ENV=testing ava --update-snapshots"
   },
   "license": "MIT",
   "ava": {
     "babel": "inherit",
     "files": [
+      "src/__tests__/internals.js",
+      "src/__tests__/FlagIconFactory.js",
       "src/__tests__/FlagIcon.js",
       "src/__tests__/customCodes.js",
       "src/__tests__/types/propTypes.js"
-    ]
-  },
-  "nyc": {
-    "instrument": false,
+    ],
     "require": [
       "babel-polyfill",
       "babel-register",
       "./src/__tests__/index.js"
-    ],
+    ]
+  },
+  "nyc": {
+    "instrument": false,
     "sourceMap": false
   },
   "peerDependencies": {

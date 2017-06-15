@@ -10,10 +10,9 @@ import atRulesVariables from 'postcss-at-rules-variables'
 import each from 'postcss-each'
 import customProperties from 'postcss-custom-properties'
 import discardComments from 'postcss-discard-comments'
-
-const cssModulesScopedName = '[path]___[name]__[local]___[hash:base64:5]'
+import { cssModulesScopedName as generateScopedName } from './constants'
 
 module.exports = {
-  generateScopedName: cssModulesScopedName,
+  generateScopedName,
   prepend: [atRulesVariables(), each(), customProperties(), discardComments()],
 }

@@ -1,9 +1,11 @@
 // @flow
 import React from 'react'
+import PropTypes from 'prop-types'
 import test from 'ava' // eslint-disable-line import/no-extraneous-dependencies
 
 import MakeConsoleHook, { ConsoleOutput } from '../ConsoleHook'
 import FlagIconFactory from '../../'
+import { AddExactValidator } from '../../functions/propTypes'
 
 /**
  * TODO: remove 'ConsoleHook' as soon as possible. SEE: "Add ability to throw
@@ -13,14 +15,17 @@ import FlagIconFactory from '../../'
  * prop i.e 'wrong', the error message is not printed again to the console.
  */
 
-test('prop-types > FlagIconPropsType', (t: *) => {
+test('FlagIconPropsType', (t: *) => {
   const consoleHook = MakeConsoleHook({ outputType: ConsoleOutput.error })
 
-  // We set 'useCssModules' to false because otherwise a 'react-css-modules' error
+  // We set 'useCssModules' to false because otherwise a 'css modules' error
   // would be thrown, and this test is not about that.
   const FlagIcon = FlagIconFactory(React, { useCssModules: false })
 
-  let element = <FlagIcon code="it" rotate={30} /> // eslint-disable-line no-unused-vars
+  let element = <FlagIcon code="it" /> // eslint-disable-line no-unused-vars
+  t.falsy(consoleHook.flushLog())
+
+  element = <FlagIcon code="it" rotate={30} />
   t.falsy(consoleHook.flushLog().includes('Failed prop type'))
 
   // $FlowExpectError
@@ -38,7 +43,7 @@ test('prop-types > FlagIconPropsType', (t: *) => {
   consoleHook.detach()
 })
 
-test('prop-types > FlagIconOptionsType', (t: *) => {
+test('FlagIconOptionsType', (t: *) => {
   const consoleHook = MakeConsoleHook({ outputType: ConsoleOutput.error })
 
   FlagIconFactory(React)
@@ -57,6 +62,23 @@ test('prop-types > FlagIconOptionsType', (t: *) => {
 
   // $FlowExpectError
   FlagIconFactory(React, { anotherWrong: 'wrong' })
+  t.truthy(consoleHook.flushLog())
+
+  consoleHook.detach()
+})
+
+test('exact validator', (t: *) => {
+  const consoleHook = MakeConsoleHook({ outputType: ConsoleOutput.error })
+  const propsTypes = AddExactValidator({
+    code: PropTypes.string.isRequired,
+  })
+
+  PropTypes.checkPropTypes(
+    propsTypes,
+    { code: 'it', additional: 'lorem' },
+    'key',
+    'Exact validator test',
+  )
   t.truthy(consoleHook.flushLog())
 
   consoleHook.detach()
