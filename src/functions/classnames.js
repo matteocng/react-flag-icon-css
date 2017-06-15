@@ -1,7 +1,12 @@
 // @flow
 import classnames from 'classnames'
 import type classes from 'classnames'
-import type { FlagIconPropsType, FlagIconOptionsType } from '../types/flow'
+import type {
+  FlagIconPropsType,
+  FlagIconOptionsType,
+  CssModuleType,
+} from '../types/flow'
+import classNameToStyleName from '../functions/classNameToStyleName'
 import {
   baseThemeStyleName,
   flagIconClassesPrefix,
@@ -19,10 +24,11 @@ export const makeClassesObject = <T>(
     squared = false,
     rotate,
     className,
+    styleName,
   } = props
   const { themeStyles, useCssModules } = options
 
-  let obj = {
+  return {
     [flagIconClassesPrefixName]: true,
     [`${flagIconClassesPrefix}squared`]: squared,
     [`${flagIconClassesPrefix}${size}`]: size,
@@ -31,15 +37,34 @@ export const makeClassesObject = <T>(
     [`${flagIconClassesPrefix}rotate-${rotate || ''}`]: rotate,
     [baseThemeStyleName]:
       useCssModules && themeStyles && themeStyles[baseThemeStyleName],
+    [styleName || '']: useCssModules && themeStyles && themeStyles[styleName],
+    [className || '']: className,
   }
-
-  if (className && useCssModules) {
-    obj = { ...obj, [className]: true }
-  }
-  return obj
 }
 
 export default <T>(
   props: FlagIconPropsType<*>,
   options: FlagIconOptionsType<T>,
-): string => classnames(makeClassesObject(props, options))
+  styles?: CssModuleType,
+): string => {
+  const { useCssModules } = options
+
+  const classesObject: classes = makeClassesObject(props, options)
+  let strClasses: string = classnames(classesObject)
+
+  if (useCssModules) {
+    // We split the ' ' separated class names that `classnames` has produced.
+    const aClasses = strClasses.split(' ')
+    const nClasses = strClasses.length
+
+    strClasses = aClasses
+      .map((c: string, i: number) => {
+        // We leave 'className' as it is because it must refer to global Css.
+        if (i === nClasses - 1) return c
+        // We replace each `className` with its corresponding 'Css module' name.
+        return classNameToStyleName(c, styles || {})
+      })
+      .join(' ')
+  }
+  return strClasses
+}

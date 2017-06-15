@@ -10,7 +10,10 @@ export * as constants from './constants'
 
 export const objectKeysApplyFn = (obj: classes, fn: KeyCallbackType): classes =>
   Object.keys(obj).reduce(
-    (rObj: classes, key: string): classes => ({ ...rObj, [fn(key)]: obj[key] }),
+    (rObj: classes, key: string, i: number): classes => ({
+      ...rObj,
+      [fn(key, i)]: obj[key],
+    }),
     {}, // reduce() second argument: initial value of rObj
   )
 
