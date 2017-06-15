@@ -3,43 +3,18 @@ import React from 'react'
 import test from 'ava' // eslint-disable-line import/no-extraneous-dependencies
 import render from 'react-test-renderer' // eslint-disable-line import/no-extraneous-dependencies
 
-import type classes from 'classnames'
-
 import FlagIconFactory from '../'
 import DummyComponentFactory from './internals/DummyComponent'
-import {
-  countries,
-  makeClassesObject,
-  makeFlagIconOptions,
-  diffArrays,
-} from '../functions'
+import { countries, diffArrays } from '../functions'
 import {
   GetFlagIconModuleCountryCodes,
-  filterClassObjectKey,
   makeFlagIcons,
   restoreClassNamesInTree,
 } from './internals/functions'
-import testThemeStyles from './testThemeStyles.css'
+import testThemeStyles from './static/testThemeStyles.css'
+import { requiredProps, optionalProps } from './static/flagIconProps'
 
 const { getCountryCodes } = countries
-
-// FlagIcon Props.
-
-const requiredProps = {
-  code: 'it',
-}
-
-const optionalProps = {
-  size: '3x',
-  squared: false,
-  rotate: 90,
-  flip: 'horizontal',
-}
-
-const allProps = {
-  ...requiredProps,
-  ...optionalProps,
-}
 
 // Utility functions.
 
@@ -67,24 +42,6 @@ test('countries.js is synchronized with flag-icon-css', (t: *) => {
   const message = testOk ? '' : `Diff: ${diff.join(', ')}`
 
   t.truthy(testOk, message)
-})
-
-test('functions > makeClassesObject', (t: *) => {
-  const computedOptions = makeFlagIconOptions()
-  const oParams: classes = makeClassesObject(allProps, computedOptions)
-
-  // First remove ${flagIconClassesPrefixName}, any key not starting with
-  // ${flagIconClassesPrefixName} (e.g theme key)
-  const oFilteredParams = Object.keys(oParams).filter(
-    filterClassObjectKey.bind(this, oParams),
-  )
-  const expectedLength = Object.keys(optionalProps).length
-  // We substract the length of the required properties and then expect a key in the
-  // object created by makeClassesObject for each of the optional properties
-  const computedLength =
-    oFilteredParams.length - Object.keys(requiredProps).length
-
-  t.is(expectedLength, computedLength)
 })
 
 test('props: className', (t: *) => {

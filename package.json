@@ -117,7 +117,8 @@
       "src/__tests__/FlagIconFactory.js",
       "src/__tests__/FlagIcon.js",
       "src/__tests__/customCodes.js",
-      "src/__tests__/types/propTypes.js"
+      "src/__tests__/types/propTypes.js",
+      "src/__tests__/makeClassesObject.js"
     ],
     "require": [
       "babel-polyfill",
