@@ -1,12 +1,13 @@
-A simple `React` SVG country flags component: it works with `React Css Modules` (default) or standard `Css`.
+A simple `React` SVG country flags component: it works with `Css Modules` (default) or standard `Css`.
 
 [![NPM version](http://img.shields.io/npm/v/react-flag-icon-css.svg?style=flat-square)](https://www.npmjs.org/package/react-flag-icon-css)
+[![NPM downloads](https://img.shields.io/npm/dm/react-flag-icon-css.svg)]()
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
 [![Build Status](https://travis-ci.org/matteocng/react-flag-icon-css.svg?branch=master)](https://travis-ci.org/matteocng/react-flag-icon-css)
 [![Greenkeeper badge](https://badges.greenkeeper.io/matteocng/react-flag-icon-css.svg)](https://greenkeeper.io/)
 [![dependencies Status](https://david-dm.org/matteocng/react-flag-icon-css/status.svg)](https://david-dm.org/matteocng/react-flag-icon-css)
 [![devDependencies Status](https://david-dm.org/matteocng/react-flag-icon-css/dev-status.svg)](https://david-dm.org/matteocng/react-flag-icon-css?type=dev)
 [![peerDependencies Status](https://david-dm.org/matteocng/react-flag-icon-css/peer-status.svg)](https://david-dm.org/matteocng/react-flag-icon-css?type=peer)
-
 [![codecov](https://codecov.io/gh/matteocng/react-flag-icon-css/branch/master/graph/badge.svg)](https://codecov.io/gh/matteocng/react-flag-icon-css)
 [![Coverage Status](https://coveralls.io/repos/github/matteocng/react-flag-icon-css/badge.svg?branch=master)](https://coveralls.io/github/matteocng/react-flag-icon-css?branch=master)
 
@@ -14,21 +15,23 @@ A simple `React` SVG country flags component: it works with `React Css Modules` 
 
 **React Flag Icon Css** is distributed as an [npm package](https://www.npmjs.org/package/react-flag-icon-css).
 
-We recommend installing and managing `npm` packages with [`yarn`](https://yarnpkg.com/):
+We recommend installing and managing `npm` packages with [`yarn`](https://yarnpkg.com/) or [`npm 5`](https://www.npmjs.com/package/npm5):
 
 ```bash
 $ yarn add react-flag-icon-css
 ```
 
-or with `npm`:
+or with `npm` <sup>1</sup>:
 
 ```bash
 $ npm install --save react-flag-icon-css
 ```
 
-## Using in a <code>create-react-app</code> app
+<sup>1</sup> *You can omit --save if using npm 5.*
 
-Apps bootstrapped with [<code>create-react-app</code>](https://github.com/facebookincubator/create-react-app) support this module out of the box, remember to set <code>useCssModules</code> to <code>false</code> (unfortunately <code>create-react-app</code> does not currently support Css modules).
+## Using in a `create-react-app` app
+
+Apps bootstrapped with [`create-react-app`](https://github.com/facebookincubator/create-react-app) support this module out of the box, remember to set `useCssModules` to `false` (unfortunately `create-react-app` does not currently support Css modules).
 
 ```js
 import FlagIconFactory from 'react-flag-icon-css'
@@ -39,9 +42,9 @@ const FlagIcon = FlagIconFactory(React, { useCssModules: false })
 
 ## Prerequisites for *custom* apps
 
-We recommend using the [`Webpack 2`](//github.com/webpack/webpack) module bundler and ecosystem to *assemble* your app, but this module also works with `Webpack 1` and should work with other bundlers.
+We recommend using the [`webpack 2`](//github.com/webpack/webpack) module bundler and ecosystem to *assemble* your app, but this module also works with `webpack 1` and should work with other bundlers.
 
-If you are using `Webpack`, you will need to install and configure a few commmonly used modules (see the [Webpack 2 example project](//github.com/matteocng/react-flag-icon-css-example-multi)):
+If you are using `webpack`, you will need to install and configure a few commmonly used modules (see the [webpack 2 example project](//github.com/matteocng/react-flag-icon-css-example-multi)):
 
 ```bash
 $ yarn add -D babel-loader css-loader file-loader style-loader extract-text-webpack-plugin
@@ -77,21 +80,21 @@ const appProps = { code: 'it', size: '3x' }
 ReactDOM.render(<App {...appProps} />, rootEL)
 ```
 
-A [Webpack 2 example project](//github.com/matteocng/react-flag-icon-css-example-multi) is available.
+A [`webpack 2` example project](//github.com/matteocng/react-flag-icon-css-example-multi) is available.
 
 ## :flags: FlagIcon props
 
-*The entries marked with <code>&ast;</code> are required.*
+*The entries marked with `&ast;` are required.*
 
 | Prop | Type | Flow Type | Default | Description | Supported values |
 | --- | --- | --- | --- | --- |  --- |
-| code * | <code>String</code> | <code>FlagIconCodeType</code> <sup>1</sup> | | [ISO 3166-1-alpha-2](https://www.iso.org/iso/country_names_and_code_elements) code. | The list is [here](src/static/enums.js#L24). |
-| size | <code>String</code> | <code>FlagIconSizeType</code> | |  | lg, 2x, 3x, 4x, 5x |
-| flip | <code>String</code> | <code>FlagIconFlipType</code> | |  | horizontal, vertical |
-| rotate | <code>Number</code> | <code>FlagIconRotateType</code> | |  | 30, 60, 90, 180, 270 |
-| squared | <code>Boolean</code> | <code>boolean</code> | <code>false</code> | Uses the <code>1x1</code> image if <code>true</code>. | |
-| Component | <code>String</code> | <code>string</code> | <code>span</code> |  | e.g <code>span</code>, <code>div</code> |
-| Children | <code>String</code> | <code>React$Element<*></code> | | `React` element. | e.g ```<Something />``` |
+| code * | `String` | `FlagIconCodeType` <sup>1</sup> | | [ISO 3166-1-alpha-2](https://www.iso.org/iso/country_names_and_code_elements) code. | The list is [here](src/static/enums.js#L24). |
+| size | `String` | `FlagIconSizeType` | |  | lg, 2x, 3x, 4x, 5x |
+| flip | `String` | `FlagIconFlipType` | |  | horizontal, vertical |
+| rotate | `Number` | `FlagIconRotateType` | |  | 30, 60, 90, 180, 270 |
+| squared | `Boolean` | `boolean` | `false` | Uses the `1x1` image if `true`. | |
+| Component | `String` | `string` | `span` |  | e.g `span`, `div` |
+| Children | `String` | `React$Element<*>` | | `React` element. | e.g ```<Something />``` |
 
 *Remember to always build `FlagIcon` with `FlagIconFactory`.*
 
@@ -99,28 +102,28 @@ A [Webpack 2 example project](//github.com/matteocng/react-flag-icon-css-example
 
 ## :factory: FlagIconFactory
 
-*The entries marked with <code>&ast;</code> are required.*
+*The entries marked with `&ast;` are required.*
 
 | Argument | Type | Flow Type | Description | Supported values |
 | --- | --- | --- | --- |  --- |
-| React * | <code>Module</code> | <code>ReactModule</code>  | Your app's `React` instance. | Versions in [peerDependencies](./package.json). |
-| options | <code>Object</code> | <code>FlagIconOptionsType</code> |  |  ||
+| React * | `Module` | `ReactModule`  | Your app's `React` instance. | Versions in [peerDependencies](./package.json). |
+| options | `Object` | `FlagIconOptionsType` |  |  ||
 
 ### :factory: FlagIconFactory options
 
 | Argument | Type | Flow Type | Description | Supported values | Default |
 | --- | --- | --- | --- |  --- | --- |
-| useCssModules | <code>Boolean</code> | <code>Boolean</code>  | Use <code>react-css-modules</code>. | <code>true</code>, <code>false</code> | <code>true</code> |
-| customCodes <sup>2</sup> | <code>Object</code> | <code>Object</code> | An object literal whose keys are your custom codes.<br> [Example](#exampleCustomFlagsIndex). |  ||
-| themeStyles | <code>Object</code> | <code>CssModule</code> | Set this if <code>useCssModules</code> is <code>true</code> and a) you want to apply styles to <code>FlagIcon</code><br> using <code>.theme-base</code> *and/or*<br> b) you are using [custom flags](#custom-flags). |  || |
+| useCssModules | `Boolean` | `Boolean`  | Use `CSS modules` styles (your module bundler must be correctly setup). | `true`, `false` | `true` |
+| customCodes <sup>2</sup> | `Object` | `Object` | An object literal whose keys are your custom codes.<br> [Example](#exampleCustomFlagsIndex). |  ||
+| themeStyles | `Object` | `CssModule` | Set this if `useCssModules` is `true` and a) you want to apply styles to `FlagIcon`<br> using `.theme-base` *and/or*<br> b) you are using [custom flags](#custom-flags). |  || |
 
 <sup>2</sup> *Upgrade to version 1.0.17 or later of this module.*
 
 ## Configuration for Facebook's Flow
 
-*You can skip this section if you are not using <code>Flow</code> in your project.*
+*You can skip this section if you are not using `Flow` in your project.*
 
-The following are the rules that you need in your <code>.flowconfig</code>:
+The following are the rules that you need in your `.flowconfig`:
 
 ```ini
 [options]
@@ -142,10 +145,10 @@ suppress_type=$FlowIssue
 
 ### Required parameters
 
--   **Always** set <code>FlagIconFactory options.customCodes</code> to make this module aware of your codes. Otherwise: runtime warnings in development (and Flow errors, if you use it).
--   **If** using *`React Css Modules`*, import your styles in <code>someVariable</code> and set <code>FlagIconFactory options.themeStyles</code> to <code>someVariable</code>. Otherwise: runtime `React Css Modules` errors.
+-   **Always** set `FlagIconFactory options.customCodes` to make this module aware of your codes. Otherwise: runtime warnings in development (and Flow errors, if you use it).
+-   **If** using *`Css Modules`*, import your styles in `someVariable` and set `FlagIconFactory options.themeStyles` to `someVariable`. Otherwise: runtime `Css Modules` errors.
 -   **Else if** using standard *Css*, make sure to import the styles. Otherwise: the custom images won't be loaded.
--   **If** using *<code>Flow</code>* use <code>CustomFlagIconFactory</code> and not <code>FlagIconFactory</code>. Otherwise: <code>Flow</code> errors.
+-   **If** using *`Flow`* use `CustomFlagIconFactory` and not `FlagIconFactory`. Otherwise: `Flow` errors.
 
 ### Quick example
 
@@ -207,7 +210,7 @@ export type CustomCodeType = $Keys<typeof codes>
 export { styles, codes }
 ```
 
-Import <code>CustomFlagIconFactory</code> in your app and build <code>FlagIcon</code> as shown:
+Import `CustomFlagIconFactory` in your app and build `FlagIcon` as shown:
 
 ```js
 /* app.js */
