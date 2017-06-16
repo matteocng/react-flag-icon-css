@@ -215,7 +215,7 @@ Import `CustomFlagIconFactory` in your app and build `FlagIcon` as shown:
 ```js
 /* app.js */
 import React from 'react'
-import CustomFlagIconFactory from 'react-flag-icon-css'
+import { CustomFlagIconFactory } from 'react-flag-icon-css'
 import { styles, codes } from './my-custom-flags'
 
 // Using 'react-css-modules'? Use this:
