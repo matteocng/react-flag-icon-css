@@ -9,6 +9,3 @@
   SEE: './src/__tests__/cmrh.conf.js'
 */
 import 'css-modules-require-hook/preset' // eslint-disable-line import/no-extraneous-dependencies
-
-// This imports and initializes 'jsdom', a JavaScript implementation of the WHATWG DOM.
-import './internals/create-document-register'
