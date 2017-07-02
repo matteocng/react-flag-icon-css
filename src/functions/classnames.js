@@ -42,6 +42,8 @@ export const makeClassesObject = <T>(
   }
 }
 
+// Generates a string with ' ' separated class names matching the current `props`
+// and `options`. It is called every time `FlagIcon` is rendered.
 export default <T>(
   props: FlagIconPropsType<*>,
   options: FlagIconOptionsType<T>,
@@ -55,12 +57,12 @@ export default <T>(
   if (useCssModules) {
     // We split the ' ' separated class names that `classnames` has produced.
     const aClasses = strClasses.split(' ')
-    const nClasses = strClasses.length
+    const nClasses = aClasses.length
 
     strClasses = aClasses
       .map((c: string, i: number) => {
         // We leave 'className' as it is because it must refer to global Css.
-        if (i === nClasses - 1) return c
+        if (props.className && i === nClasses - 1) return c
         // We replace each `className` with its corresponding 'Css module' name.
         return classNameToStyleName(c, styles || {})
       })
