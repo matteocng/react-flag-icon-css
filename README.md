@@ -94,6 +94,8 @@ A [`webpack 2` example project](//github.com/matteocng/react-flag-icon-css-examp
 | rotate | `Number` | `FlagIconRotateType` | |  | 30, 60, 90, 180, 270 |
 | squared | `Boolean` | `boolean` | `false` | Uses the `1x1` image if `true`. | |
 | Component | `String` | `string` | `span` |  | e.g `span`, `div` |
+| className | `String` | `string` | | This is always appended *as-is* to `class` in the HTML. | e.g `some-class` |
+| styleName | `String` | `string` | | This is mapped to a `CSS module` and appended to `class` in<br> the HTML. | e.g `some-class` |
 | Children | `String` | `React$Element<*>` | | `React` element. | e.g ```<Something />``` |
 
 *Remember to always build `FlagIcon` with `FlagIconFactory`.*
