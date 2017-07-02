@@ -1,3 +1,32 @@
+<a name="1.0.19"></a>
+## 1.0.19 (2017-07-02)
+
+* docs(github): add 'css-loader' request ([fdd3cbe](https://github.com/matteocng/react-flag-icon-css/commit/fdd3cbe))
+* docs(README): add 'className' and 'styleName' to props ([ae27154](https://github.com/matteocng/react-flag-icon-css/commit/ae27154))
+* docs(README): fix named import ([1d15ca4](https://github.com/matteocng/react-flag-icon-css/commit/1d15ca4))
+* docs(README): replace '<code>' with backtick, misc updates ([0540064](https://github.com/matteocng/react-flag-icon-css/commit/0540064))
+* test: add new tests, 'snapshot tests', 'react-test-renderer' ([945e7b7](https://github.com/matteocng/react-flag-icon-css/commit/945e7b7))
+* test: update ava snapshots .snap ([19fe4f1](https://github.com/matteocng/react-flag-icon-css/commit/19fe4f1))
+* test: upgrade ava to v.0.2.0, refactor and add new tests ([16390b2](https://github.com/matteocng/react-flag-icon-css/commit/16390b2))
+* chore: remove 'jsdom' as it is unused atm ([b32b7ba](https://github.com/matteocng/react-flag-icon-css/commit/b32b7ba))
+* chore(package): add 'package-lock.json' and regenerate lock files ([f854fb6](https://github.com/matteocng/react-flag-icon-css/commit/f854fb6))
+* chore(package): bump 'chalk', 'eslint-plugin-jsx-a11y', fix 'jsdom' version ([9b77371](https://github.com/matteocng/react-flag-icon-css/commit/9b77371))
+* chore(package): run finepack ([114dbc0](https://github.com/matteocng/react-flag-icon-css/commit/114dbc0))
+* chore(package): update nyc to version 11.0.1 ([2fbbee6](https://github.com/matteocng/react-flag-icon-css/commit/2fbbee6))
+* chore(package): upgrade cross-env to version 5.0.1 ([b210795](https://github.com/matteocng/react-flag-icon-css/commit/b210795))
+* chore(package): upgrade flow-bin to version 0.49.1 ([95104f3](https://github.com/matteocng/react-flag-icon-css/commit/95104f3))
+* chore(package): upgrade prettier to version 1.4.2 ([71822d0](https://github.com/matteocng/react-flag-icon-css/commit/71822d0))
+* chore(package): upgrade prettier to version 1.4.4 ([b618a19](https://github.com/matteocng/react-flag-icon-css/commit/b618a19))
+* chore(test): move functions used by tests to 'internals' ([52004bd](https://github.com/matteocng/react-flag-icon-css/commit/52004bd))
+* chore(travis): add Node.js 8 ([b71d5a6](https://github.com/matteocng/react-flag-icon-css/commit/b71d5a6))
+* refactor: remove dependency on 'react-css-modules' ([c51ecf6](https://github.com/matteocng/react-flag-icon-css/commit/c51ecf6))
+* refactor: remove unused 'objectKeysApplyFn' and move 'diffArrays' ([67910cc](https://github.com/matteocng/react-flag-icon-css/commit/67910cc))
+* refactor(test): move static data to 'static' folder ([b9037a7](https://github.com/matteocng/react-flag-icon-css/commit/b9037a7))
+* fix: add 'className' and 'styleName' to prop-types ([e3dac5a](https://github.com/matteocng/react-flag-icon-css/commit/e3dac5a))
+* fix: correct global 'className' handling ([3123449](https://github.com/matteocng/react-flag-icon-css/commit/3123449))
+
+
+
 <a name="1.0.18"></a>
 ## 1.0.18 (2017-05-26)
 
