@@ -113,15 +113,15 @@
   "ava": {
     "babel": "inherit",
     "files": [
-      "src/__tests__/internals.js",
-      "src/__tests__/FlagIconFactory.js",
       "src/__tests__/FlagIcon.js",
-      "src/__tests__/customCodes.js",
-      "src/__tests__/types/propTypes.js",
-      "src/__tests__/makeClassesObject.js",
+      "src/__tests__/FlagIconFactory.js",
       "src/__tests__/classNameToStyleName.js",
-      "src/__tests__/validateStyles.js",
-      "src/__tests__/makeStyles.js"
+      "src/__tests__/customCodes.js",
+      "src/__tests__/internals.js",
+      "src/__tests__/makeClassesObject.js",
+      "src/__tests__/makeStyles.js",
+      "src/__tests__/types/propTypes.js",
+      "src/__tests__/validateStyles.js"
     ],
     "require": [
       "babel-polyfill",
