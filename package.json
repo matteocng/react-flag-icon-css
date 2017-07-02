@@ -30,7 +30,7 @@
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "ava": "^0.19.0",
+    "ava": "^0.20.0",
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.1",
     "babel-plugin-istanbul": "^4.0.0",
@@ -118,7 +118,10 @@
       "src/__tests__/FlagIcon.js",
       "src/__tests__/customCodes.js",
       "src/__tests__/types/propTypes.js",
-      "src/__tests__/makeClassesObject.js"
+      "src/__tests__/makeClassesObject.js",
+      "src/__tests__/classNameToStyleName.js",
+      "src/__tests__/validateStyles.js",
+      "src/__tests__/makeStyles.js"
     ],
     "require": [
       "babel-polyfill",

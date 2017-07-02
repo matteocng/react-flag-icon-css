@@ -5,11 +5,12 @@ import render from 'react-test-renderer' // eslint-disable-line import/no-extran
 
 import FlagIconFactory from '../'
 import DummyComponentFactory from './internals/DummyComponent'
-import { countries, diffArrays } from '../functions'
+import { countries } from '../functions'
 import {
   GetFlagIconModuleCountryCodes,
   makeFlagIcons,
   restoreClassNamesInTree,
+  diffArrays,
 } from './internals/functions'
 import testThemeStyles from './static/testThemeStyles.css'
 import { requiredProps, optionalProps } from './static/flagIconProps'
@@ -28,7 +29,12 @@ const testFlagIcon = (t: *, flagIcon: React$Element<*>, options, props) => {
 
 const testFlagIcons = (t: *, flagIcons: React$Element<*>[], options, props) =>
   flagIcons.forEach((flagIcon, i) =>
-    testFlagIcon(t, flagIcon, options[i], props[i]),
+    testFlagIcon(
+      t,
+      flagIcon,
+      options[i],
+      Array.isArray(props) ? props[i] : props,
+    ),
   )
 
 // Tests.
@@ -93,9 +99,9 @@ test('optional props', (t: *) => {
     const modulesTree = render.create(flagIcons[1]).toJSON()
 
     const deModulifiedModulesTree = restoreClassNamesInTree(modulesTree)
-    t.deepEqual(
-      deModulifiedModulesTree,
-      tree,
+
+    t.true(
+      JSON.stringify(tree) === JSON.stringify(deModulifiedModulesTree),
       makeSnapshotMessage(currentProps, options[1]),
     )
 
