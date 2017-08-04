@@ -12,7 +12,10 @@ const DummyComponent = (
   React: ReactModule,
   props: DummyPropsType,
   // eslint-disable-next-line react/prop-types
-): React$Element<*> => <div className={props.className}>{props.text}</div>
+): React$Element<*> =>
+  <div className={props.className}>
+    {props.text}
+  </div>
 
 DummyComponent.defaultProps = {
   className: '',

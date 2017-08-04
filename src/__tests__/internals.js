@@ -36,8 +36,12 @@ test('makeFlagIcons', t => {
   t.throws(() => makeFlagIcons(options, [{ code: 'it' }]))
 
   const [FlagIcon, FlagIconModules] = makeFlagIcons(options, props)
-  const App = <div>{FlagIcon}{FlagIconModules}</div>
-
+  const App = (
+    <div>
+      {FlagIcon}
+      {FlagIconModules}
+    </div>
+  )
   const tree = render.create(App).toJSON()
   t.snapshot(tree)
 })
