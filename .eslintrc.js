@@ -23,6 +23,11 @@ module.exports = { // eslint-disable-line import/unambiguous
     // SEE: https://github.com/benmosher/eslint-plugin-import
     'plugin:import/errors', // https://git.io/vyRvM
     'plugin:import/warnings', // https://git.io/vyRv9
+
+    // SEE: https://github.com/prettier/eslint-config-prettier
+    "prettier",
+    "prettier/flowtype",
+    "prettier/react",
   ],
   rules:
   {
