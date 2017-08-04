@@ -1,4 +1,5 @@
 // @flow
+import PropTypes from 'prop-types'
 import typeof ReactModule from 'react'
 import type ReactType from 'react'
 
@@ -16,6 +17,11 @@ const DummyComponent = (
 DummyComponent.defaultProps = {
   className: '',
   text: '',
+}
+
+DummyComponent.propTypes = {
+  className: PropTypes.string,
+  text: PropTypes.string,
 }
 
 const DummyComponentFactory = (React: ReactModule): ReactType.createElement =>
