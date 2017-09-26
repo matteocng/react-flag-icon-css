@@ -67,7 +67,7 @@
     "postcss-discard-comments": "^4.0.0-rc.2",
     "postcss-each": "^0.10.0",
     "prettier": "^1.5.3",
-    "react": "^15.6.1",
+    "react": "^16.0.0",
     "react-addons-test-utils": "^15.6.0",
     "react-dom": "^15.6.1",
     "react-test-renderer": "^15.6.1",
