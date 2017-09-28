@@ -42,7 +42,7 @@
     "chalk": "^2.0.1",
     "classnames": "^2.2.5",
     "codecov": "^2.3.0",
-    "coveralls": "^2.13.1",
+    "coveralls": "^3.0.0",
     "cpy-cli": "^1.0.1",
     "cross-env": "^5.0.3",
     "css-modules-require-hook": "^4.0.6",
