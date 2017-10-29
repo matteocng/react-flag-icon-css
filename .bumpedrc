@@ -23,7 +23,7 @@ plugins:
 
     'Detecting problems before publish':
       plugin: 'bumped-terminal'
-      command: 'git-dirty && yarn prepublish'
+      command: 'git-dirty && yarn prepublishOnly'
 
     'Publishing at NPM':
       plugin: 'bumped-terminal'

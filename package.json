@@ -101,7 +101,7 @@
     "prebuild": "npm run clean",
     "prebuild:module": "npm run clean:module",
     "precoverage": "mkdirp .nyc_output",
-    "prepublish": "npm run test && npm run nsp && npm run build && npm run build:module",
+    "prepublishOnly": "npm run test && npm run nsp && npm run build && npm run build:module",
     "prettier": "cross-env BABEL_ENV=build babel-node ./scripts/tasks/prettier.js write",
     "prettier:check": "cross-env BABEL_ENV=build babel-node ./scripts/tasks/prettier.js",
     "styles": "postcss -o lib/styles/main.css src/styles/main.css && cpy lib/styles/main.css module/styles/",
