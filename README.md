@@ -131,27 +131,13 @@ A [`webpack 2` example project](//github.com/matteocng/react-flag-icon-css-examp
 
 <sup>2</sup> *Upgrade to version 1.0.17 or later of this module.*
 
-## Configuration for Facebook's Flow
+## Facebook's Flow support
 
-*You can skip this section if you are not using `Flow` in your project.*
+This module has **0** Flow errors on `flow-bin` version: **^0.57.3**.
 
-The following are the rules that you need in your `.flowconfig`:
+If in your app you are using a Flow version that is the same or newer than that, you should not need any specific configuration excluding the installation of the [flow-typed](https://github.com/flowtype/flow-typed) definition for `prop-types` (you may also take the opportunity to install definitions for all your app's modules using [flow-typed](https://github.com/flowtype/flow-typed)).
 
-```ini
-[options]
-...
-# Used in tests.
-suppress_comment=\\(.\\|\n\\)*\\$FlowExpectError
-suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe
-# SEE: https://github.com/facebook/flow/issues/1895
-suppress_type=$FlowIssue
-...
-[ignore]
-...
-# SEE: https://github.com/stylelint/stylelint/issues/2322
-.*/node_modules/stylelint/.*
-...
-```
+However, if in your app you are using a newer or particularly older version (not recommended) of Flow, it may throw warnings or errors. Please open an issue or submit a pull request if this module has not yet been made compatible with a newer Flow version.
 
 ## Custom flags
 
