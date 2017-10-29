@@ -1,5 +1,4 @@
 // @flow
-import typeof ReactModule from 'react'
 import FlagIcon from './FlagIcon'
 import styles from '../styles'
 import { makeStyles, makeFlagIconOptions } from '../functions'
@@ -11,10 +10,11 @@ import type {
   FlagIconFactoryReturnType,
   StandardFlagIconFactoryReturnType,
   CssModuleType,
+  ReactModuleType,
 } from '../types/flow'
 
 const FlagIconFactory = <T>(
-  React: ReactModule,
+  React: ReactModuleType,
   options?: FlagIconOptionsType<T>,
 ): StandardFlagIconFactoryReturnType => {
   // We 'makeFlagIconOptions' by merging the default options with the (optional)
@@ -55,7 +55,7 @@ const FlagIconFactory = <T>(
 export default FlagIconFactory
 
 const CustomFlagIconFactory = <T: { [string]: string }>(
-  React: ReactModule,
+  React: ReactModuleType,
   options?: FlagIconOptionsType<T>,
 ): FlagIconFactoryReturnType<T> => FlagIconFactory(React, options)
 export { CustomFlagIconFactory }

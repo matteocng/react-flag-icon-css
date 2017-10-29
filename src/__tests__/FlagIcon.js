@@ -17,7 +17,6 @@ import testThemeStyles from './static/testThemeStyles.css'
 import { requiredProps, optionalProps } from './static/flagIconProps'
 
 const { getCountryCodes } = countries
-const ReactDefault = React.default
 
 // Utility functions.
 
@@ -56,7 +55,7 @@ test('props: className', (t: *) => {
   const options = { useCssModules: false }
   const props = { ...requiredProps, className: 'some-css-rule' }
 
-  const FlagIcon = FlagIconFactory(ReactDefault, options)
+  const FlagIcon = FlagIconFactory(React, options)
   const ReactFlagIcon = FlagIcon(props)
   testFlagIcon(t, ReactFlagIcon, options, props)
 })
@@ -69,13 +68,13 @@ test('props: styleName', (t: *) => {
     className: 'some-css-rule',
   }
 
-  const FlagIconModules = FlagIconFactory(ReactDefault, options)(props)
+  const FlagIconModules = FlagIconFactory(React, options)(props)
   testFlagIcon(t, FlagIconModules, options, props)
 })
 
 test('options:themeStyles', (t: *) => {
   const options = { themeStyles: testThemeStyles }
-  const FlagIconCssModules = FlagIconFactory(ReactDefault, options)
+  const FlagIconCssModules = FlagIconFactory(React, options)
   const ReactFlagIcon = FlagIconCssModules({ ...requiredProps })
 
   const tree = render.create(ReactFlagIcon).toJSON()
@@ -124,7 +123,7 @@ test('props:children', (t: *) => {
 
   const childrenClassName = 'test'
   const childrenText = 'test'
-  const DummyComponent = DummyComponentFactory(ReactDefault)
+  const DummyComponent = DummyComponentFactory(React)
   const children = DummyComponent({
     code: 'it',
     text: childrenText,

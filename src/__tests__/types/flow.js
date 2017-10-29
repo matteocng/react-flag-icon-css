@@ -21,8 +21,6 @@ import type {
   FlagIconOptionsType,
 } from '../../types/flow'
 
-const ReactDefault = React.default
-
 const makeWrongCode = () => 'wrong'
 const makeCorrectCode = () => 'it'
 
@@ -50,7 +48,7 @@ const optionsCustomCodes = {
 }
 
 // 3. FlagIconFactory, FlagIcon
-const FlagIconCssModules = FlagIconFactory(ReactDefault)
+const FlagIconCssModules = FlagIconFactory(React)
 FlagIconCssModules({ code: validCode })
 
 // $FlowExpectError
@@ -75,7 +73,7 @@ const missingRequiredProps: FlagIconPropsType = {
 }
 
 // 5. CustomFlagIconFactory
-const CustomFlagIcon = CustomFlagIconFactory(ReactDefault, optionsCustomCodes)
+const CustomFlagIcon = CustomFlagIconFactory(React, optionsCustomCodes)
 
 let test = <CustomFlagIcon code={makeCorrectCode()} />
 
@@ -159,19 +157,19 @@ const correctOptions: FlagIconOptionsType<*> = { useCssModules: false }
 // $FlowExpectError
 const wrongOptions: FlagIconOptionsType<*> = { useCssModules: 'wrong' }
 
-FlagIconFactory(ReactDefault, correctOptions)
+FlagIconFactory(React, correctOptions)
 
 // $FlowExpectError
-FlagIconFactory(ReactDefault, { useCssModules: 'wrong' })
+FlagIconFactory(React, { useCssModules: 'wrong' })
 
 // 11. Dynamic loops (typical use case).
 const myAppCodes: FlagIconCodeType[] = ['it', 'eu', 'de', 'fr', 'es']
 
-const MyFlagIcon = FlagIconFactory(ReactDefault)
+const MyFlagIcon = FlagIconFactory(React)
 myAppCodes.map(code => MyFlagIcon({ code }))
 
 const myCustomCodes = { c1: 'Custom 1', c2: 'Custom 2' }
-const MyCustomFlagIcon = CustomFlagIconFactory(ReactDefault, {
+const MyCustomFlagIcon = CustomFlagIconFactory(React, {
   customCodes: myCustomCodes,
 })
 const myAppCodesWithCustom = [...myAppCodes, ...Object.keys(myCustomCodes)]

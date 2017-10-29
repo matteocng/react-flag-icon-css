@@ -6,10 +6,10 @@
 // and check that it all works in a single file (Flow types, React components,
 // Flow tests).
 import PropTypes from 'prop-types'
-import typeof ReactModule from 'react' // eslint-disable-line import/no-duplicates
 // We import `ReactLibrary` exclusively for the Flow tests below.
 import ReactLibrary from 'react' // eslint-disable-line import/no-duplicates
 import type { Node, StatelessFunctionalComponent } from 'react'
+import type { ReactModuleType } from '../../types/flow'
 
 // 1. Flow types.
 type DummyCodeType = 'it' | 'eu'
@@ -45,7 +45,7 @@ const makeCorrectCode = () => 'it'
 const makeWrongCode = () => 'wrong'
 
 const DummyComponent = <T>(
-  React: ReactModule,
+  React: ReactModuleType,
   // eslint-disable-next-line react/prop-types
 ): DummyReturnType<T> => (props: CustomDummyPropsType<T>): Node => (
   <div className={props.className}>
@@ -66,7 +66,7 @@ const makePropTypes = <T: {}>(options: DummyOptionsType<T> = {}) => ({
 })
 
 const DummyComponentFactory = <T: {}>(
-  React: ReactModule,
+  React: ReactModuleType,
   options?: DummyOptionsType<T>,
 ): StandardDummyFactoryReturnType => {
   const builtDummyComponent = DummyComponent(React)
@@ -80,7 +80,7 @@ const DummyComponentFactory = <T: {}>(
 }
 
 const CustomDummyFactory = <T: {}>(
-  React: ReactModule,
+  React: React,
   options?: DummyOptionsType<T>,
 ): DummyFactoryReturnType<T> => DummyComponentFactory(React, options)
 

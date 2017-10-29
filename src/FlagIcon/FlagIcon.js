@@ -1,16 +1,16 @@
 // @flow
-import typeof ReactModule from 'react'
 import type { Node } from 'react'
 import type {
   FlagIconPropsType,
   FlagIconOptionsType,
   FlagIconReturnType,
   CssModuleType,
+  ReactModuleType,
 } from '../types/flow'
 import { makeClassnames } from '../functions'
 
 const FlagIcon = <T>(
-  React: ReactModule,
+  React: ReactModuleType,
   options: FlagIconOptionsType<T>,
   styles?: CssModuleType,
 ): FlagIconReturnType<T> => (props: FlagIconPropsType): Node => {

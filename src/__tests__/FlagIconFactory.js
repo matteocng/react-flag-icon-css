@@ -5,8 +5,6 @@ import render from 'react-test-renderer'
 import test from 'ava' // eslint-disable-line import/no-extraneous-dependencies
 import FlagIconFactory from '../'
 
-const ReactDefault = React.default
-
 // SEE: https://github.com/facebook/flow/tree/master/packages/flow-upgrade
 test('Works when React is imported in the "old way"', t => {
   const FlagIcon = FlagIconFactory(OldWayReact)
@@ -20,7 +18,7 @@ test('does not set FlagIcon.propTypes in production', t => {
   const previousEnv = process.env.NODE_ENV
   process.env.NODE_ENV = 'production'
 
-  const FlagIcon = FlagIconFactory(ReactDefault)
+  const FlagIcon = FlagIconFactory(React)
 
   process.env.NODE_ENV = previousEnv
   t.falsy(FlagIcon.propTypes)
@@ -30,7 +28,7 @@ test('sets FlagIcon.propTypes in development', t => {
   const previousEnv = process.env.NODE_ENV
   process.env.NODE_ENV = 'development'
 
-  const FlagIcon = FlagIconFactory(ReactDefault)
+  const FlagIcon = FlagIconFactory(React)
 
   process.env.NODE_ENV = previousEnv
   t.truthy(FlagIcon.propTypes)

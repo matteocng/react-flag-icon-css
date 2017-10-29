@@ -53,7 +53,7 @@ export const makeFlagIcons = <T>(
 
   return aOptions.map((options: FlagIconOptionsType<T>, i: number) => {
     const props = aProps[i]
-    const FlagIcon = FlagIconFactory(React.default, options)
+    const FlagIcon = FlagIconFactory(React, options)
 
     return FlagIcon(props)
   })

@@ -75,3 +75,10 @@ export type ReactTestRendererTreeType = {
   },
   children?: ReactTestRendererTreeType,
 }
+
+// Just a placeholder. The '+' is required (see the React flow definition file).
+// If/when it's possible to type a module itself with maximum compatibility, research
+// and modify this. Test with an external app to be sure that there are no weird
+// Flow errors thrown; Flow thinking it's all ok when launching it from this
+// package's folder is not enough.
+export type ReactModuleType = { +[any]: any } // eslint-disable-line flowtype/no-weak-types
