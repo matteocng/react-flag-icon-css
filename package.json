@@ -88,7 +88,7 @@
     "coverage": "nyc ava report --reporter=text-lcov > .nyc_output/coverage.lcov",
     "coverage:codecov": "codecov",
     "coverage:coveralls": "coveralls < .nyc_output/coverage.lcov",
-    "flow": "flow; test $? -eq 0 -o $? -eq 2",
+    "flow": "flow --include-warnings; test $? -eq 0 -o $? -eq 2",
     "generate:types": "cross-env BABEL_ENV=build babel-node ./scripts/tasks/generateFlowTypes.js",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:css": "stylelint src/styles/main.css",
