@@ -133,7 +133,7 @@
     "sourceMap": false
   },
   "peerDependencies": {
-    "prop-types": "^15.5.10",
+    "prop-types": "^15.6.0",
     "react": "^0.14 || ^15.0 || ^16.0",
     "react-dom": "^0.14 || ^15.0 || ^16.0"
   },
