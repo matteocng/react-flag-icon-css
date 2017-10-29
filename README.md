@@ -88,7 +88,7 @@ const appProps = { code: 'it', size: '3x' }
 ReactDOM.render(<App {...appProps} />, rootEL)
 ```
 
-A [`webpack 2` example project](//github.com/matteocng/react-flag-icon-css-example-multi) is available.
+A [`webpack 3` example project](//github.com/matteocng/react-flag-icon-css-example-multi) is available ([webpack 2](https://github.com/matteocng/react-flag-icon-css-example-multi/tree/webpack-2) and [webpack 1](https://github.com/matteocng/react-flag-icon-css-example-multi/tree/webpack-1) versions).
 
 ## :flags: FlagIcon props
 
