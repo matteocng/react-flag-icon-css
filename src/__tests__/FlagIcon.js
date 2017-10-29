@@ -1,5 +1,6 @@
 // @flow
-import React from 'react'
+import * as React from 'react'
+import type { Node } from 'react'
 import test from 'ava' // eslint-disable-line import/no-extraneous-dependencies
 import render from 'react-test-renderer' // eslint-disable-line import/no-extraneous-dependencies
 
@@ -16,18 +17,19 @@ import testThemeStyles from './static/testThemeStyles.css'
 import { requiredProps, optionalProps } from './static/flagIconProps'
 
 const { getCountryCodes } = countries
+const ReactDefault = React.default
 
 // Utility functions.
 
 const makeSnapshotMessage = (props, options) =>
   `Props: ${JSON.stringify(props)}. Options: ${JSON.stringify(options)}`
 
-const testFlagIcon = (t: *, flagIcon: React$Element<*>, options, props) => {
+const testFlagIcon = (t: *, flagIcon: Node, options, props) => {
   const tree = render.create(flagIcon).toJSON()
   t.snapshot(tree, makeSnapshotMessage(props, options))
 }
 
-const testFlagIcons = (t: *, flagIcons: React$Element<*>[], options, props) =>
+const testFlagIcons = (t: *, flagIcons: Node[], options, props) =>
   flagIcons.forEach((flagIcon, i) =>
     testFlagIcon(
       t,
@@ -54,7 +56,7 @@ test('props: className', (t: *) => {
   const options = { useCssModules: false }
   const props = { ...requiredProps, className: 'some-css-rule' }
 
-  const FlagIcon = FlagIconFactory(React, options)
+  const FlagIcon = FlagIconFactory(ReactDefault, options)
   const ReactFlagIcon = FlagIcon(props)
   testFlagIcon(t, ReactFlagIcon, options, props)
 })
@@ -67,13 +69,13 @@ test('props: styleName', (t: *) => {
     className: 'some-css-rule',
   }
 
-  const FlagIconModules = FlagIconFactory(React, options)(props)
+  const FlagIconModules = FlagIconFactory(ReactDefault, options)(props)
   testFlagIcon(t, FlagIconModules, options, props)
 })
 
 test('options:themeStyles', (t: *) => {
   const options = { themeStyles: testThemeStyles }
-  const FlagIconCssModules = FlagIconFactory(React, options)
+  const FlagIconCssModules = FlagIconFactory(ReactDefault, options)
   const ReactFlagIcon = FlagIconCssModules({ ...requiredProps })
 
   const tree = render.create(ReactFlagIcon).toJSON()
@@ -122,7 +124,8 @@ test('props:children', (t: *) => {
 
   const childrenClassName = 'test'
   const childrenText = 'test'
-  const children = DummyComponentFactory(React)({
+  const DummyComponent = DummyComponentFactory(ReactDefault)
+  const children = DummyComponent({
     text: childrenText,
     className: childrenClassName,
   })

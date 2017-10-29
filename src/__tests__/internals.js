@@ -1,6 +1,6 @@
 // @flow
 // Test functions used in tests.
-import React from 'react'
+import * as React from 'react'
 import test from 'ava' // eslint-disable-line import/no-extraneous-dependencies
 import render from 'react-test-renderer' // eslint-disable-line import/no-extraneous-dependencies
 import { restoreClassNamesInTree, makeFlagIcons } from './internals/functions'

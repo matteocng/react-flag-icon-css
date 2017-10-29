@@ -1,4 +1,5 @@
 // @flow
+import type { Node } from 'react'
 import type {
   FlagIconCodeType,
   FlagIconSizeType,
@@ -34,7 +35,7 @@ export type FlagIconPropsType<T> = {
   rotate?: FlagIconRotateType,
   flip?: FlagIconFlipType,
   Component?: string,
-  children?: React$Element<*>,
+  children?: Node,
   className?: string,
   styleName?: string,
 }

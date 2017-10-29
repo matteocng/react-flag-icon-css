@@ -1,11 +1,13 @@
 // @flow
-import React from 'react'
+import * as React from 'react'
 import PropTypes from 'prop-types'
 import test from 'ava' // eslint-disable-line import/no-extraneous-dependencies
 
 import MakeConsoleHook, { ConsoleOutput } from '../internals/ConsoleHook'
 import FlagIconFactory from '../../'
 import { AddExactValidator } from '../../functions/propTypes'
+
+const ReactDefault = React.default
 
 /**
  * TODO: remove 'ConsoleHook' as soon as possible. SEE: "Add ability to throw
@@ -20,7 +22,7 @@ test('FlagIconPropsType', (t: *) => {
 
   // We set 'useCssModules' to false because otherwise a 'css modules' error
   // would be thrown, and this test is not about that.
-  const FlagIcon = FlagIconFactory(React, { useCssModules: false })
+  const FlagIcon = FlagIconFactory(ReactDefault, { useCssModules: false })
 
   let element = <FlagIcon code="it" /> // eslint-disable-line no-unused-vars
   t.falsy(consoleHook.flushLog())
@@ -46,22 +48,22 @@ test('FlagIconPropsType', (t: *) => {
 test('FlagIconOptionsType', (t: *) => {
   const consoleHook = MakeConsoleHook({ outputType: ConsoleOutput.error })
 
-  FlagIconFactory(React)
+  FlagIconFactory(ReactDefault)
   t.falsy(consoleHook.flushLog())
 
-  FlagIconFactory(React, { useCssModules: true })
+  FlagIconFactory(ReactDefault, { useCssModules: true })
   t.falsy(consoleHook.flushLog())
 
   // $FlowExpectError
-  FlagIconFactory(React, { useCssModules: false, wrong: 'lorem' })
+  FlagIconFactory(ReactDefault, { useCssModules: false, wrong: 'lorem' })
   t.truthy(consoleHook.flushLog())
 
   // $FlowExpectError
-  FlagIconFactory(React, { useCssModules: 'string', themeStyles: {} })
+  FlagIconFactory(ReactDefault, { useCssModules: 'string', themeStyles: {} })
   t.truthy(consoleHook.flushLog())
 
   // $FlowExpectError
-  FlagIconFactory(React, { anotherWrong: 'wrong' })
+  FlagIconFactory(ReactDefault, { anotherWrong: 'wrong' })
   t.truthy(consoleHook.flushLog())
 
   consoleHook.detach()

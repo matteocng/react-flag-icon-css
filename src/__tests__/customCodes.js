@@ -1,5 +1,5 @@
 // @flow
-import React from 'react'
+import * as React from 'react'
 import test from 'ava' // eslint-disable-line import/no-extraneous-dependencies
 import MakeConsoleHook, { ConsoleOutput } from './internals/ConsoleHook'
 import FlagIconFactory from '../'
@@ -7,6 +7,7 @@ import { CustomFlagIconFactory } from '../FlagIcon/FlagIconFactory'
 import type { FlagIconOptionsType } from '../types/flow'
 import { codes, styles } from './example-custom-flags'
 
+const ReactDefault = React.default
 const customCodes = codes
 const customCodesStyles = styles
 const themeStyles = {}
@@ -20,8 +21,8 @@ test('FlagIcon options > customCodes', (t: *) => {
       ...customCodesStyles,
     },
   }
-  const FlagIconCssModules = CustomFlagIconFactory(React, options)
-  const FlagIcon = CustomFlagIconFactory(React, {
+  const FlagIconCssModules = CustomFlagIconFactory(ReactDefault, options)
+  const FlagIcon = CustomFlagIconFactory(ReactDefault, {
     ...options,
     useCssModules: false,
   })
@@ -47,8 +48,11 @@ test('FlagIcon options > customCodes & !themeStyles', (t: *) => {
   const options: FlagIconOptionsType<*> = {
     customCodes,
   }
-  const FlagIconCssModules = FlagIconFactory(React, options)
-  const FlagIcon = FlagIconFactory(React, { ...options, useCssModules: false })
+  const FlagIconCssModules = FlagIconFactory(ReactDefault, options)
+  const FlagIcon = FlagIconFactory(ReactDefault, {
+    ...options,
+    useCssModules: false,
+  })
 
   // eslint-disable-next-line no-unused-vars
   let result = <FlagIconCssModules code="it" />
@@ -72,8 +76,11 @@ test('FlagIcon options > customCodes classes not in themeStyles', (t: *) => {
       'theme-base': 'lorem-ipsum',
     },
   }
-  const FlagIconCssModules = FlagIconFactory(React, options)
-  const FlagIcon = FlagIconFactory(React, { ...options, useCssModules: false })
+  const FlagIconCssModules = FlagIconFactory(ReactDefault, options)
+  const FlagIcon = FlagIconFactory(ReactDefault, {
+    ...options,
+    useCssModules: false,
+  })
 
   // eslint-disable-next-line no-unused-vars
   let result = <FlagIconCssModules code="it" />

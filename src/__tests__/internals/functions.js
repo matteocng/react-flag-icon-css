@@ -1,5 +1,5 @@
 // @flow
-import React from 'react'
+import * as React from 'react'
 import fs from 'fs'
 import path from 'path'
 import type classes from 'classnames'
@@ -53,7 +53,7 @@ export const makeFlagIcons = <T>(
 
   return aOptions.map((options: FlagIconOptionsType<T>, i: number) => {
     const props = aProps[i]
-    const FlagIcon = FlagIconFactory(React, options)
+    const FlagIcon = FlagIconFactory(React.default, options)
 
     return FlagIcon(props)
   })

@@ -1,5 +1,6 @@
 // @flow
 import typeof ReactModule from 'react'
+import type { Node } from 'react'
 import type {
   FlagIconPropsType,
   FlagIconOptionsType,
@@ -12,7 +13,7 @@ const FlagIcon = <T>(
   React: ReactModule,
   options: FlagIconOptionsType<T>,
   styles?: CssModuleType,
-): FlagIconReturnType<T> => (props: FlagIconPropsType<T>): React$Element<*> => {
+): FlagIconReturnType<T> => (props: FlagIconPropsType<T>): Node => {
   const { Component = 'span', children } = props
 
   /*

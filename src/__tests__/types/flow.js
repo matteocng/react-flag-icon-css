@@ -1,6 +1,6 @@
 // @flow
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import * as React from 'react'
 import {
   getCountries,
   getCountryCodes,
@@ -19,6 +19,8 @@ import type {
   FlagIconSizeType,
   CountryType,
 } from '../../types/flow'
+
+const ReactDefault = React.default
 
 // 1. FlagIconCodeType
 // $FlowExpectError
@@ -44,7 +46,7 @@ const optionsCustomCodes = {
 }
 
 // 3. FlagIconFactory, FlagIcon
-const FlagIconCssModules = FlagIconFactory(React)
+const FlagIconCssModules = FlagIconFactory(ReactDefault)
 FlagIconCssModules({ code: 'it' })
 
 // $FlowExpectError
@@ -69,7 +71,7 @@ const missingRequiredProps: FlagIconPropsType<void> = {
 }
 
 // 5. CustomFlagIconFactory
-const CustomFlagIcon = CustomFlagIconFactory(React, optionsCustomCodes)
+const CustomFlagIcon = CustomFlagIconFactory(ReactDefault, optionsCustomCodes)
 
 let test = <CustomFlagIcon code="it" />
 

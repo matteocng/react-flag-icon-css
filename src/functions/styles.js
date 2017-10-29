@@ -28,7 +28,8 @@ FlagIconFactory tried to build FlagIcon with the option 'useCssModules' set to t
         : 'default'}), but it seems that your environment \
 is not loading the stylesheets in the appropriate way. Two possibilities: \
 \n\n 1. Your project is not using CSS Modules / you don't want to use them. \
-Try building FlagIcon like this: \n\n\tFlagIconFactory(React, { useCssModules: false }) \
+Try building FlagIcon like this: \n\n\timport * as React from 'react' \
+\n\n\tconst FlagIcon = FlagIconFactory(React.default, { useCssModules: false }) \
 \n\n\tSee the README for more info: ${readme} \
 \n\n 2. You are using CSS Modules but your module bundler e.g Webpack \
 is not correctly set up for CSS modules. If you are using Webpack, the key \
