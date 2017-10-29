@@ -1,3 +1,23 @@
+<a name="1.0.23"></a>
+## 1.0.23 (2017-10-29)
+
+* docs(README): improve docs and remove duplication ([054c601](https://github.com/matteocng/react-flag-icon-css/commit/054c601))
+* fix(flow): use (placeholder) type for React module, fix/improve docs ([360ca47](https://github.com/matteocng/react-flag-icon-css/commit/360ca47))
+* chore(bumped): add lockfile generation and commit ([543be4c](https://github.com/matteocng/react-flag-icon-css/commit/543be4c))
+* chore(package): update lockfiles ([33f32d7](https://github.com/matteocng/react-flag-icon-css/commit/33f32d7))
+
+
+
+<a name="1.0.22"></a>
+## 1.0.22 (2017-10-29)
+
+* docs(README): improve docs and remove duplication ([054c601](https://github.com/matteocng/react-flag-icon-css/commit/054c601))
+* fix(flow): use (placeholder) type for React module, fix/improve docs ([360ca47](https://github.com/matteocng/react-flag-icon-css/commit/360ca47))
+* chore(bumped): add lockfile generation and commit ([543be4c](https://github.com/matteocng/react-flag-icon-css/commit/543be4c))
+* chore(package): update lockfiles ([33f32d7](https://github.com/matteocng/react-flag-icon-css/commit/33f32d7))
+
+
+
 <a name="1.0.21"></a>
 ## 1.0.21 (2017-10-29)
 
