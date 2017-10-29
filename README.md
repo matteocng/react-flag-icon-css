@@ -34,13 +34,14 @@ $ npm install --save react-flag-icon-css
 Apps bootstrapped with [`create-react-app`](https://github.com/facebookincubator/create-react-app) support this module out of the box, remember to set `useCssModules` to `false` (unfortunately `create-react-app` does not currently support Css modules).
 
 ```js
+import * as React from 'react';
 import FlagIconFactory from 'react-flag-icon-css'
 
 // Please only use `FlagIconFactory` one time in your application, there is no
 // need to use it multiple times (it would slow down your app). You may place the
 // line below in a `FlagIcon.js` file in your 'components' directory, then
 // write `export default FlagIcon` after it and import it everywhere in your app.
-const FlagIcon = FlagIconFactory(React, { useCssModules: false })
+const FlagIcon = FlagIconFactory(React.default, { useCssModules: false })
 // ...
 ```
 
@@ -66,7 +67,7 @@ Import `FlagIconFactory` from `react-flag-icon-css`, it accepts the `React` modu
 
 ```js
 // @flow
-import React from 'react'
+import * as React from 'react'
 import ReactDOM from 'react-dom'
 import FlagIconFactory from 'react-flag-icon-css'
 
@@ -74,7 +75,7 @@ import FlagIconFactory from 'react-flag-icon-css'
 // need to use it multiple times (it would slow down your app). You may place the
 // line below in a `FlagIcon.js` file in your 'components' directory, then
 // write `export default FlagIcon` after it and import it everywhere in your app.
-const FlagIcon = FlagIconFactory(React)
+const FlagIcon = FlagIconFactory(React.default)
 // If you are not using css modules, write the following:
 // const FlagIcon = FlagIconFactory(React, { useCssModules: false })
 
