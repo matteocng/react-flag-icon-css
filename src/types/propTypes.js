@@ -16,7 +16,7 @@ const FlagIconFlipType = PropTypes.oneOf(getFlips())
 const makeFlagIconCodeType = <T>(
   codes: MaybeFlagIconCodeType<T>[],
   // eslint-disable-next-line arrow-body-style
-): React$PropType$OneOf => {
+): $npm$propTypes$ReactPropsCheckType => {
   return PropTypes.oneOf(codes)
 }
 
