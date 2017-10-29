@@ -12,9 +12,9 @@ import type {
 type Exact<T> = T & $Shape<T>
 
 // Object whose values are 'ReactPropTypes'.
-// SEE: https://github.com/facebook/flow/blob/v0.44.1/lib/react.js#L138
+// SEE: https://git.io/vFIvf
 export type PropsTypeObjectType = $Subtype<{
-  [string]: $Keys<ReactPropTypes>,
+  [string]: $npm$propTypes$ReactPropsCheckType,
 }>
 
 export type ObjStringKeyValuesType = { [key: string]: string }
