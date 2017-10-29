@@ -35,9 +35,9 @@ Apps bootstrapped with [`create-react-app`](https://github.com/facebookincubator
 
 ## Prerequisites for *custom* apps
 
-We recommend using the [`webpack >= 2`](//github.com/webpack/webpack) module bundler and ecosystem to *assemble* your app, but this module also works with `webpack 1` and should work with other bundlers.
+We recommend using the [`webpack 3`](//github.com/webpack/webpack) module bundler and ecosystem to *assemble* your app, but this module also works with  `webpack 2` and `webpack 1` and should work with other bundlers.
 
-If you are using `webpack`, you will need to install and configure a few commmonly used modules (see the [webpack 2 example project](//github.com/matteocng/react-flag-icon-css-example-multi)):
+If you are using `webpack`, you will need to install and configure a few commmonly used modules (see the [webpack 3 example project](//github.com/matteocng/react-flag-icon-css-example-multi), or the [webpack 2](https://github.com/matteocng/react-flag-icon-css-example-multi/tree/webpack-2), [webpack 1](https://github.com/matteocng/react-flag-icon-css-example-multi/tree/webpack-1) versions of it):
 
 ```bash
 $ yarn add -D babel-loader css-loader file-loader style-loader extract-text-webpack-plugin
@@ -117,7 +117,7 @@ A [`webpack 2` example project](//github.com/matteocng/react-flag-icon-css-examp
 | Argument | Type | Flow Type | Description | Supported values |
 | --- | --- | --- | --- |  --- |
 | React * | `Module` | `ReactModule`  | Your app's `React` instance. | Versions in [peerDependencies](./package.json). |
-| options | `Object` | `FlagIconOptionsType` |  |  ||
+| options | `Object` | `FlagIconOptionsType` |  | See *FlagIconFactory options* below.  ||
 
 ### :factory: FlagIconFactory options
 
