@@ -37,7 +37,8 @@ export const makeClassesObject = <T>(
     [`${flagIconClassesPrefix}rotate-${rotate || ''}`]: rotate,
     [baseThemeStyleName]:
       useCssModules && themeStyles && themeStyles[baseThemeStyleName],
-    [styleName || '']: useCssModules && themeStyles && themeStyles[styleName],
+    [styleName || '']:
+      useCssModules && themeStyles && styleName && themeStyles[styleName],
     [className || '']: className,
   }
 }
