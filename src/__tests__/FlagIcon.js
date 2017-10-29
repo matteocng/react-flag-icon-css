@@ -126,6 +126,7 @@ test('props:children', (t: *) => {
   const childrenText = 'test'
   const DummyComponent = DummyComponentFactory(ReactDefault)
   const children = DummyComponent({
+    code: 'it',
     text: childrenText,
     className: childrenClassName,
   })
