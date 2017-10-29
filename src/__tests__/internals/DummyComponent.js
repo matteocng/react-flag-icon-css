@@ -47,13 +47,12 @@ const makeWrongCode = () => 'wrong'
 const DummyComponent = <T>(
   React: ReactModuleType,
   // eslint-disable-next-line react/prop-types
-): DummyReturnType<T> => (props: CustomDummyPropsType<T>): Node => (
+): DummyReturnType<T> => (props: CustomDummyPropsType<T>): Node =>
   <div className={props.className}>
     <span>
       {props.text} - {props.code}
     </span>
   </div>
-)
 
 const defaultProps = {
   text: 'Some Text',
