@@ -36,6 +36,10 @@ Apps bootstrapped with [`create-react-app`](https://github.com/facebookincubator
 ```js
 import FlagIconFactory from 'react-flag-icon-css'
 
+// Please only use `FlagIconFactory` one time in your application, there is no
+// need to use it multiple times (it would slow down your app). You may place the
+// line below in a `FlagIcon.js` file in your 'components' directory, then
+// write `export default FlagIcon` after it and import it everywhere in your app.
 const FlagIcon = FlagIconFactory(React, { useCssModules: false })
 // ...
 ```
@@ -61,10 +65,15 @@ $ npm install --save-dev ...
 Import `FlagIconFactory` from `react-flag-icon-css`, it accepts the `React` module as the first argument and creates the `FlagIcon` component. *This approach ensures that `FlagIcon` uses your app's `React` instance, avoiding issues such as two versions of `React` being loaded at the same time.*
 
 ```js
+// @flow
 import React from 'react'
 import ReactDOM from 'react-dom'
 import FlagIconFactory from 'react-flag-icon-css'
 
+// Please only use `FlagIconFactory` one time in your application, there is no
+// need to use it multiple times (it would slow down your app). You may place the
+// line below in a `FlagIcon.js` file in your 'components' directory, then
+// write `export default FlagIcon` after it and import it everywhere in your app.
 const FlagIcon = FlagIconFactory(React)
 // If you are not using css modules, write the following:
 // const FlagIcon = FlagIconFactory(React, { useCssModules: false })
@@ -216,6 +225,7 @@ Import `CustomFlagIconFactory` in your app and build `FlagIcon` as shown:
 
 ```js
 /* app.js */
+// @flow
 import React from 'react'
 import { CustomFlagIconFactory } from 'react-flag-icon-css'
 import { styles, codes } from './my-custom-flags'
