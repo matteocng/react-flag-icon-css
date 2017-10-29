@@ -1,6 +1,6 @@
 **/node_modules/
 **/build/
-lib
+**/lib/
 !.eslintrc.js
 # We prevent eslint from crashing. TODO: remove this as soon as the following
 # bug is solved, SEE: https://github.com/yannickcr/eslint-plugin-react/issues/1499
