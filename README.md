@@ -47,7 +47,7 @@ const FlagIcon = FlagIconFactory(React.default, { useCssModules: false })
 
 ## Prerequisites for *custom* apps
 
-We recommend using the [`webpack 2`](//github.com/webpack/webpack) module bundler and ecosystem to *assemble* your app, but this module also works with `webpack 1` and should work with other bundlers.
+We recommend using the [`webpack >= 2`](//github.com/webpack/webpack) module bundler and ecosystem to *assemble* your app, but this module also works with `webpack 1` and should work with other bundlers.
 
 If you are using `webpack`, you will need to install and configure a few commmonly used modules (see the [webpack 2 example project](//github.com/matteocng/react-flag-icon-css-example-multi)):
 
