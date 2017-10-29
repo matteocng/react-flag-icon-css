@@ -41,7 +41,7 @@ export const filterClassObjectKey = (obj: classes, objKey: string): boolean =>
 // Makes N `FlagIcon` with N `options` and `props`.
 export const makeFlagIcons = <T>(
   aOptions: FlagIconOptionsType<T>[],
-  aProps: FlagIconPropsType<T>[],
+  aProps: FlagIconPropsType[],
 ) => {
   if (!aOptions || !aProps) {
     throw Error('`props` and `options` must not be empty.')

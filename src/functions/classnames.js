@@ -14,7 +14,7 @@ import {
 } from './constants'
 
 export const makeClassesObject = <T>(
-  props: FlagIconPropsType<T>,
+  props: FlagIconPropsType,
   options: FlagIconOptionsType<T>,
 ): classes => {
   const {
@@ -45,7 +45,7 @@ export const makeClassesObject = <T>(
 // Generates a string with ' ' separated class names matching the current `props`
 // and `options`. It is called every time `FlagIcon` is rendered.
 export default <T>(
-  props: FlagIconPropsType<*>,
+  props: FlagIconPropsType,
   options: FlagIconOptionsType<T>,
   styles?: CssModuleType,
 ): string => {

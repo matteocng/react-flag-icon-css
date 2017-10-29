@@ -13,7 +13,7 @@ const FlagIcon = <T>(
   React: ReactModule,
   options: FlagIconOptionsType<T>,
   styles?: CssModuleType,
-): FlagIconReturnType<T> => (props: FlagIconPropsType<T>): Node => {
+): FlagIconReturnType<T> => (props: FlagIconPropsType): Node => {
   const { Component = 'span', children } = props
 
   /*

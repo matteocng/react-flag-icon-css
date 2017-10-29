@@ -1,5 +1,5 @@
 // @flow
-import type { Node } from 'react'
+import type { Node, StatelessFunctionalComponent } from 'react'
 import type {
   FlagIconCodeType,
   FlagIconSizeType,
@@ -28,8 +28,7 @@ export type {
   FlagIconFlipType,
 }
 
-export type FlagIconPropsType<T> = {
-  code: FlagIconCodeType | $Keys<T & {}>,
+type FlagIconPropsTypeBase = {
   squared?: boolean,
   size?: FlagIconSizeType,
   rotate?: FlagIconRotateType,
@@ -40,6 +39,14 @@ export type FlagIconPropsType<T> = {
   styleName?: string,
 }
 
+export type FlagIconPropsType = FlagIconPropsTypeBase & {
+  code: FlagIconCodeType,
+}
+
+export type CustomFlagIconPropsType<T> = FlagIconPropsTypeBase & {
+  code: FlagIconCodeType | $Keys<T & {}>,
+}
+
 export type FlagIconOptionsType<T> = Exact<{
   customCodes?: T,
   themeStyles?: CssModuleType,
@@ -48,14 +55,13 @@ export type FlagIconOptionsType<T> = Exact<{
 
 export type KeyCallbackType = (key: string, i: number) => string
 
-export type FlagIconReturnType<T> = (
-  props: FlagIconPropsType<T>,
-) => React$Element<*>
-
+export type FlagIconReturnType<T> = StatelessFunctionalComponent<
+  CustomFlagIconPropsType<T>,
+>
 export type FlagIconFactoryReturnType<T> = FlagIconReturnType<T>
-export type StandardFlagIconFactoryReturnType = (
-  props: FlagIconPropsType<void>,
-) => React$Element<*>
+export type StandardFlagIconFactoryReturnType = StatelessFunctionalComponent<
+  FlagIconPropsType,
+>
 
 export type CountryType = {
   name: string,
