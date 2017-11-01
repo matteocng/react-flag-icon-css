@@ -5,7 +5,10 @@ import test from 'ava' // eslint-disable-line import/no-extraneous-dependencies
 
 import MakeConsoleHook, { ConsoleOutput } from '../internals/ConsoleHook'
 import FlagIconFactory from '../../'
-import { AddNoExtraPropsValidator } from '../../functions/propTypes'
+import {
+  AddNoExtraPropsValidator,
+  AddThemeStylesValidator,
+} from '../../functions/propTypes'
 
 /**
  * TODO: remove 'ConsoleHook' as soon as possible. SEE: "Add ability to throw
@@ -99,4 +102,26 @@ test('No extra props validator', (t: *) => {
 
   // No errors because there are no `extra` props.
   t.falsy(consoleHook.flushLog())
+
+  // If it's applied two times it returns the same object.
+  const propTypesBis = {
+    lorem: PropTypes.string,
+    ipsum: PropTypes.bool,
+  }
+  const resultPropTypes = AddNoExtraPropsValidator(propTypesBis)
+  const secondTimePropTypes = AddNoExtraPropsValidator(resultPropTypes)
+
+  t.deepEqual(resultPropTypes, secondTimePropTypes)
+})
+
+test('AddThemeStylesValidator', (t: *) => {
+  // If it's applied two times it returns the same object.
+  const propTypesBis = {
+    lorem: PropTypes.string,
+    ipsum: PropTypes.bool,
+  }
+  const resultPropTypes = AddThemeStylesValidator(propTypesBis)
+  const secondTimePropTypes = AddThemeStylesValidator(resultPropTypes)
+
+  t.deepEqual(resultPropTypes, secondTimePropTypes)
 })
