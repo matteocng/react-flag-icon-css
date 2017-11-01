@@ -5,7 +5,7 @@ import test from 'ava' // eslint-disable-line import/no-extraneous-dependencies
 
 import MakeConsoleHook, { ConsoleOutput } from '../internals/ConsoleHook'
 import FlagIconFactory from '../../'
-import { AddExactValidator } from '../../functions/propTypes'
+import { AddNoExtraPropsValidator } from '../../functions/propTypes'
 
 /**
  * TODO: remove 'ConsoleHook' as soon as possible. SEE: "Add ability to throw
@@ -67,9 +67,9 @@ test('FlagIconOptionsType', (t: *) => {
   consoleHook.detach()
 })
 
-test('exact validator', (t: *) => {
+test('No extra props validator', (t: *) => {
   const consoleHook = MakeConsoleHook({ outputType: ConsoleOutput.error })
-  const propsTypes = AddExactValidator({
+  const propsTypes = AddNoExtraPropsValidator({
     code: PropTypes.string.isRequired,
   })
 
@@ -77,9 +77,26 @@ test('exact validator', (t: *) => {
     propsTypes,
     { code: 'it', additional: 'lorem' },
     'key',
-    'Exact validator test',
+    'No extra props validator test',
   )
+
   t.truthy(consoleHook.flushLog())
 
-  consoleHook.detach()
+  // `AddNoExtraPropsValidator` is not an `exact` validator and doesn't check if
+  // a prop was not passed. It triggers an error if it finds undeclared, extra props.
+  // This means the user has to set`.isRequired` to check that a prop is required.
+  const propsTypesTwo = AddNoExtraPropsValidator({
+    lorem: PropTypes.string,
+    ipsum: PropTypes.bool,
+  })
+
+  PropTypes.checkPropTypes(
+    propsTypesTwo,
+    {},
+    'key',
+    'No extra props validator test',
+  )
+
+  // No errors because there are no `extra` props.
+  t.falsy(consoleHook.flushLog())
 })

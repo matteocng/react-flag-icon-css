@@ -66,7 +66,7 @@ export const AddThemeStylesValidator = (
  *
  * SEE: https://github.com/reactjs/prop-types
  */
-const fnExactValidator = (
+const fnNoExtraPropsValidator = (
   // prop-types Object supplied by the user. i.e {lorem: PropTypes.string}
   propsObject: PropsTypeObjectType,
   // prop-values Object supplied by the user. i.e {lorem: 'ipsum'}
@@ -90,29 +90,34 @@ const fnExactValidator = (
 
 /**
  * Adds a 'custom validator' function to `obj`; this function makes sure that any
- * 'prop' passed by the user at runtime exists in `obj`, otherwise it throws an Error.
- * `obj` is a 'props' object, the one you would assign to `SomeComponent.propTypes`
+ * 'prop' passed by the user at runtime exists as a key in `obj`, otherwise it throws
+ * an Error. `obj` is a 'props' object, the one you would assign to `SomeComponent.propTypes`
  * or pass to `PropTypes.checkPropTypes()`. i.e {lorem: PropTypes.string}
  *
- * We use bind() to make a new `fnExactValidator` function with the first argument
+ * We use bind() to make a new `fnNoExtraPropsValidator` function with the first argument
  * set as: `obj`. We need to do this because `prop-types` doesn't pass this object
- * to 'custom validator' functions such as `fnExactValidator`.
+ * to 'custom validator' functions such as `fnNoExtraPropsValidator`.
  *
- * This type of validation is the runtime equivalent to Flow's 'exact object types'.
+ * This type of validation is NOT the runtime equivalent to Flow's 'exact object
+ * types', since we don't check if any required `prop-types` props have been supplied
+ * or not, relying on the user to have specified an appropriate `isRequired` prop-type
+ * for those.
+ *
  * SEE: https://flow.org/en/docs/types/objects/#toc-exact-object-types
  */
 // eslint-disable-next-line import/prefer-default-export, max-len
-export const AddExactValidator = (
+export const AddNoExtraPropsValidator = (
   obj: PropsTypeObjectType,
 ): PropsTypeObjectType => {
-  const validatorKeyName = '__exact__'
+  const validatorKeyName = '__no__extra__props__validator___'
   if (Object.prototype.hasOwnProperty.call(obj, validatorKeyName)) {
-    // TODO: print a message or throw when not in production?
-    return obj // The custom validator is already 'installed'.
+    // The custom validator is already 'installed', or the user has managed to
+    // somehow use `validatorKeyName`.
+    return obj
   }
 
   return {
     ...obj,
-    [validatorKeyName]: fnExactValidator.bind(this, obj),
+    [validatorKeyName]: fnNoExtraPropsValidator.bind(this, obj),
   }
 }

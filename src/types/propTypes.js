@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types'
 import { getRotates, getFlips, getSizes } from '../functions/props'
 import {
-  AddExactValidator,
+  AddNoExtraPropsValidator,
   AddThemeStylesValidator,
 } from '../functions/propTypes'
 import type { FlagIconCodeType, PropsTypeObjectType } from '../types/flow'
@@ -49,7 +49,8 @@ const makeFlagIconPropsTypeObject = <T>(
 export const MakeFlagIconPropsType = <T>(
   codes: MaybeFlagIconCodeType<T>[],
   // eslint-disable-next-line arrow-body-style
-): PropsTypeObjectType => AddExactValidator(makeFlagIconPropsTypeObject(codes))
+): PropsTypeObjectType =>
+  AddNoExtraPropsValidator(makeFlagIconPropsTypeObject(codes))
 
 const flagIconOptionsType = {
   customCodes: PropTypes.object,
@@ -58,4 +59,4 @@ const flagIconOptionsType = {
 }
 
 export const MakeFlagIconOptionsPropType = (): PropsTypeObjectType =>
-  AddExactValidator(AddThemeStylesValidator(flagIconOptionsType))
+  AddNoExtraPropsValidator(AddThemeStylesValidator(flagIconOptionsType))
