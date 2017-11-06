@@ -59,7 +59,7 @@
     "flow-bin": "^0.57.3",
     "flow-copy-source": "^1.2.0",
     "mkdirp": "^0.5.1",
-    "nsp": "^2.7.0",
+    "nsp": "^3.0.0",
     "nyc": "^11.3.0",
     "postcss-at-rules-variables": "^0.1.1",
     "postcss-cli": "^4.1.0",
