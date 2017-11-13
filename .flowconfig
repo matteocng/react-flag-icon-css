@@ -5,4 +5,4 @@ esproposal.export_star_as=enable
 <PROJECT_ROOT>/lib/.*
 <PROJECT_ROOT>/module/.*
 [version]
-^0.57.3
+^0.59.0
