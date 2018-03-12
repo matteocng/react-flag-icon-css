@@ -5,3 +5,6 @@ examples
 src
 yarn.lock
 scripts
+storybook-static
+.storybook
+stories
