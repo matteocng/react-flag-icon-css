@@ -60,7 +60,7 @@
     "flow-copy-source": "^1.2.0",
     "mkdirp": "^0.5.1",
     "nsp": "^3.0.0",
-    "nyc": "^11.3.0",
+    "nyc": "^12.0.1",
     "postcss-at-rules-variables": "^0.1.1",
     "postcss-cli": "^5.0.0",
     "postcss-custom-properties": "^7.0.0",
