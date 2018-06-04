@@ -57,7 +57,7 @@
     "eslint-plugin-react": "^7.4.0",
     "flag-icon-css": "^2.8.0",
     "flow-bin": "^0.59.0",
-    "flow-copy-source": "^1.2.0",
+    "flow-copy-source": "^2.0.0",
     "mkdirp": "^0.5.1",
     "nsp": "^3.0.0",
     "nyc": "^11.3.0",
