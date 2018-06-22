@@ -47,7 +47,7 @@
     "cross-env": "^5.0.3",
     "css-modules-require-hook": "^4.2.2",
     "eslint": "^4.10.0",
-    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb": "^17.0.0",
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-ava": "^4.2.1",
     "eslint-plugin-babel": "^4.1.2",
