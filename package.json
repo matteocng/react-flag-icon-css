@@ -77,6 +77,14 @@
   "engines": {
     "node": ">=6"
   },
+  "prettier": {
+    "bracketSpacing": true,
+    "singleQuote": true,
+    "jsxBracketSameLine": true,
+    "trailingComma": "all",
+    "printWidth": 80,
+    "semi": false
+  },
   "scripts": {
     "build": "cross-env BABEL_ENV=build babel src --out-dir ./lib",
     "build:module": "cross-env BABEL_ENV=module babel src --out-dir ./module ",

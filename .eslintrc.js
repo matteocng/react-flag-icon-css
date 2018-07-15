@@ -1,4 +1,5 @@
-module.exports = { // eslint-disable-line import/unambiguous
+// eslint-disable-next-line import/unambiguous
+module.exports = {
   parser: 'babel-eslint',
   plugins: [
     'ava', // SEE: https://github.com/avajs/eslint-plugin-ava
@@ -25,12 +26,11 @@ module.exports = { // eslint-disable-line import/unambiguous
     'plugin:import/warnings', // https://git.io/vyRv9
 
     // SEE: https://github.com/prettier/eslint-config-prettier
-    "prettier",
-    "prettier/flowtype",
-    "prettier/react",
+    'prettier',
+    'prettier/flowtype',
+    'prettier/react',
   ],
-  rules:
-  {
+  rules: {
     // Disable this for now, it doesn't seem to work correctly with polymorphic
     // Flow types (e.g <T>(...)).
     'arrow-parens': 0,
@@ -51,5 +51,16 @@ module.exports = { // eslint-disable-line import/unambiguous
 
     // No semicolons. Overrides the recommended 'airbnb' setting.
     semi: 0,
+
+    'comma-dangle': [
+      'error',
+      {
+        arrays: 'always-multiline',
+        objects: 'always-multiline',
+        imports: 'always-multiline',
+        exports: 'always-multiline',
+        functions: 'always-multiline',
+      },
+    ],
   },
 }

@@ -16,29 +16,16 @@ const prettierCmd = path.resolve(
   __dirname,
   `../../node_modules/.bin/${prettier}`,
 )
-const defaultOptions = {
-  'bracket-spacing': 'true',
-  'single-quote': 'true',
-  'jsx-bracket-same-line': 'true',
-  'trailing-comma': 'all',
-  'print-width': 80,
-  semi: 'false',
-  parser: 'flow',
-}
 
 // We assign the 'Object' type to specify that 'config' is not sealed.
 // eslint-disable-next-line flowtype/no-weak-types
 let config: Object = {
   default: {
-    patterns: ['src/**/*.js'],
+    patterns: ['src/**/*.js', '.eslintrc.js'],
     ignore: ['**/node_modules/**'],
   },
   scripts: {
     patterns: ['scripts/**/*.js'],
-    ignore: [],
-  },
-  static: {
-    patterns: ['static/**/*.js'],
     ignore: [],
   },
 }
@@ -67,9 +54,7 @@ Object.keys(config).forEach(key => {
     patterns.length > 1 ? `{${patterns.join(',')}}` : `${patterns.join(',')}`
   const files = glob.sync(globPattern, { ignore })
 
-  const args = Object.keys(defaultOptions).map(
-    k => `--${k}=${(options && options[k]) || defaultOptions[k]}`,
-  )
+  const args = []
   args.push(`--${shouldWrite ? 'write' : 'l'}`)
 
   try {
