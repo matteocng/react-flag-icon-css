@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import test from 'ava' // eslint-disable-line import/no-extraneous-dependencies
 
 import MakeConsoleHook, { ConsoleOutput } from '../internals/ConsoleHook'
-import FlagIconFactory from '../../'
+import FlagIconFactory from '../..'
 import {
   AddNoExtraPropsValidator,
   AddThemeStylesValidator,

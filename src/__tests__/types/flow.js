@@ -8,7 +8,7 @@ import {
   getFlips,
   getSizes,
 } from '../../functions/props'
-import FlagIconFactory from '../../'
+import FlagIconFactory from '../..'
 import { CustomFlagIconFactory } from '../../FlagIcon/FlagIconFactory'
 import { codes, styles } from '../example-custom-flags'
 import type {

@@ -3,7 +3,8 @@ import * as React from 'react'
 import fs from 'fs'
 import path from 'path'
 import type classes from 'classnames'
-import FlagIconFactory from '../../'
+import type { Node } from 'react'
+import FlagIconFactory from '../..'
 import type {
   FlagIconOptionsType,
   FlagIconPropsType,
@@ -20,18 +21,16 @@ import styles from '../../styles'
 export const GetFlagIconModuleCountryCodes = (
   modulePath: string = flagIconModulePath,
 ): string[] =>
-  fs
-    .readdirSync(path.resolve(`${modulePath}/flags/4x3`))
-    .reduce(
-      (retAr: string[], fileName: string): string[] => {
-        // reduce() first argument: function.
-        const code = path.basename(fileName, path.extname(fileName))
-        return styles[`${flagIconClassesPrefix}${code}`]
-          ? [...retAr, code]
-          : retAr
-      },
-      ([]: string[]), // reduce() second argument: initial value of 'retAr'.
-    )
+  fs.readdirSync(path.resolve(`${modulePath}/flags/4x3`)).reduce(
+    (retAr: string[], fileName: string): string[] => {
+      // reduce() first argument: function.
+      const code = path.basename(fileName, path.extname(fileName))
+      return styles[`${flagIconClassesPrefix}${code}`]
+        ? [...retAr, code]
+        : retAr
+    },
+    ([]: string[]), // reduce() second argument: initial value of 'retAr'.
+  )
 
 // Removes from `obj` all keys whose name is `flagIconClassesPrefixName` or starts with it.
 export const filterClassObjectKey = (obj: classes, objKey: string): boolean =>
@@ -42,7 +41,7 @@ export const filterClassObjectKey = (obj: classes, objKey: string): boolean =>
 export const makeFlagIcons = <T>(
   aOptions: FlagIconOptionsType<T>[],
   aProps: FlagIconPropsType[],
-) => {
+): Node[] => {
   if (!aOptions || !aProps) {
     throw Error('`props` and `options` must not be empty.')
   }

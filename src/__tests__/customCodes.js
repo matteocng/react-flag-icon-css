@@ -2,7 +2,7 @@
 import * as React from 'react'
 import test from 'ava' // eslint-disable-line import/no-extraneous-dependencies
 import MakeConsoleHook, { ConsoleOutput } from './internals/ConsoleHook'
-import FlagIconFactory from '../'
+import FlagIconFactory from '..'
 import { CustomFlagIconFactory } from '../FlagIcon/FlagIconFactory'
 import type { FlagIconOptionsType } from '../types/flow'
 import { codes, styles } from './example-custom-flags'

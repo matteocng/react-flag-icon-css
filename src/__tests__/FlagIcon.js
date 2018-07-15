@@ -4,7 +4,7 @@ import type { Node } from 'react'
 import test from 'ava' // eslint-disable-line import/no-extraneous-dependencies
 import render from 'react-test-renderer' // eslint-disable-line import/no-extraneous-dependencies
 
-import FlagIconFactory from '../'
+import FlagIconFactory from '..'
 import DummyComponentFactory from './internals/DummyComponent'
 import { countries } from '../functions'
 import {
@@ -28,15 +28,18 @@ const testFlagIcon = (t: *, flagIcon: Node, options, props) => {
   t.snapshot(tree, makeSnapshotMessage(props, options))
 }
 
-const testFlagIcons = (t: *, flagIcons: Node[], options, props) =>
+const testFlagIcons = (t: *, flagIcons: Node[], options, flagIconsProps) => {
+  const isFlagIconsPropsArray = Array.isArray(flagIconsProps)
+
   flagIcons.forEach((flagIcon, i) =>
     testFlagIcon(
       t,
       flagIcon,
       options[i],
-      Array.isArray(props) ? props[i] : props,
+      isFlagIconsPropsArray ? flagIconsProps[i] : flagIconsProps,
     ),
   )
+}
 
 // Tests.
 

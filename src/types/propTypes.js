@@ -5,7 +5,7 @@ import {
   AddNoExtraPropsValidator,
   AddThemeStylesValidator,
 } from '../functions/propTypes'
-import type { FlagIconCodeType, PropsTypeObjectType } from '../types/flow'
+import type { FlagIconCodeType, PropsTypeObjectType } from './flow'
 
 type MaybeFlagIconCodeType<T> = FlagIconCodeType | T
 

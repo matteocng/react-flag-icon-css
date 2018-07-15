@@ -5,12 +5,12 @@
  * After editing this file, run: `yarn generate:types` or `npm run generate:types`
  * to re-generate the Flow types. Then add new tests or modify existing tests in
  * `./src/__tests__/` if necessary.
-*/
+ */
 
 /**
  * These props are currently 'react-flag-icon-css' specific and not supported in
  * 'flag-icon-css' stylesheets.
-*/
+ */
 export const sizes = ['lg', '2x', '3x', '4x', '5x']
 
 export const rotates = [30, 60, 90, 180, 270]
@@ -20,7 +20,7 @@ export const flips = ['horizontal', 'vertical']
 /**
  * Manually edit this array when new 'flag-icon-css' versions come out, usually
  * adding or modyfing existing flags ('react-flag-icon-css' doesn't add custom flags).
-*/
+ */
 export const countries = [
   {
     name: 'Afghanistan',
@@ -185,6 +185,10 @@ export const countries = [
   {
     name: 'Cape Verde',
     code: 'cv',
+  },
+  {
+    name: 'Catalonia',
+    code: 'es-ct',
   },
   {
     name: 'Cayman Islands',

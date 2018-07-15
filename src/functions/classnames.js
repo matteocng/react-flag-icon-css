@@ -6,7 +6,7 @@ import type {
   FlagIconOptionsType,
   CssModuleType,
 } from '../types/flow'
-import classNameToStyleName from '../functions/classNameToStyleName'
+import classNameToStyleName from './classNameToStyleName'
 import {
   baseThemeStyleName,
   flagIconClassesPrefix,
@@ -56,6 +56,7 @@ export default <T>(
   let strClasses: string = classnames(classesObject)
 
   if (useCssModules) {
+    const { className } = props
     // We split the ' ' separated class names that `classnames` has produced.
     const aClasses = strClasses.split(' ')
     const nClasses = aClasses.length
@@ -63,7 +64,7 @@ export default <T>(
     strClasses = aClasses
       .map((c: string, i: number) => {
         // We leave 'className' as it is because it must refer to global Css.
-        if (props.className && i === nClasses - 1) return c
+        if (className && i === nClasses - 1) return c
         // We replace each `className` with its corresponding 'Css module' name.
         return classNameToStyleName(c, styles || {})
       })

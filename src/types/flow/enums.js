@@ -3,7 +3,7 @@
  * This file must be generated with `yarn generate:types` or `npm run generate:types`,
  * do not modify manually.
  * SEE: package.json.
-*/
+ */
 export type FlagIconFlipType = 'horizontal' | 'vertical'
 
 export type FlagIconRotateType = 30 | 60 | 90 | 180 | 270
@@ -52,6 +52,7 @@ export type FlagIconCodeType =
   | 'cm'
   | 'ca'
   | 'cv'
+  | 'es-ct'
   | 'ky'
   | 'cf'
   | 'td'

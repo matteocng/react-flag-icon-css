@@ -23,9 +23,9 @@ export const validateStyles = <T>(
       // eslint-disable-next-line no-console
       console.error(`Warning: Detected configuration mismatch/error: [react-flag-icon-css] \
 FlagIconFactory tried to build FlagIcon with the option 'useCssModules' set to true \
-(${userSetUseCssModules
-        ? 'by you'
-        : 'default'}), but it seems that your environment \
+(${
+        userSetUseCssModules ? 'by you' : 'default'
+      }), but it seems that your environment \
 is not loading the stylesheets in the appropriate way. Two possibilities: \
 \n\n 1. Your project is not using CSS Modules / you don't want to use them. \
 Try building FlagIcon like this: \n\n\timport * as React from 'react' \
