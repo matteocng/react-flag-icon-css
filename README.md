@@ -15,7 +15,7 @@ A simple `React` SVG country flags component: it works with `Css Modules` (defau
 
 **React Flag Icon Css** is distributed as an [npm package](https://www.npmjs.org/package/react-flag-icon-css).
 
-We recommend installing and managing `npm` packages with [`yarn`](https://yarnpkg.com/) or [`npm 5`](https://www.npmjs.com/package/npm5):
+We recommend installing and managing `npm` packages with [`yarn`](https://yarnpkg.com/) or [`npm 6`](https://www.npmjs.com/package/npm5):
 
 ```bash
 $ yarn add react-flag-icon-css
@@ -27,15 +27,15 @@ or with `npm` <sup>1</sup>:
 $ npm install --save react-flag-icon-css
 ```
 
-<sup>1</sup> *You can omit --save if using npm 5.*
+<sup>1</sup> *You can omit --save if using npm >= 5.*
 
 ## Using in a `create-react-app` app
 
-Apps bootstrapped with [`create-react-app`](https://github.com/facebookincubator/create-react-app) support this module out of the box, just follow the [Basic Usage](#basic-usage) example and remember to set `useCssModules` to `false` (unfortunately `create-react-app` [does not currently](https://github.com/facebookincubator/create-react-app/pull/2285) support Css modules).
+Apps bootstrapped with [`create-react-app`](https://github.com/facebookincubator/create-react-app) support this module out of the box, just follow the [Basic Usage](#basic-usage) example and remember to set `useCssModules` to `false` (`create-react-app` [does not currently](https://github.com/facebookincubator/create-react-app/pull/2285) support Css modules in its stable version, you can try [the alpha](https://github.com/facebook/create-react-app/issues/3815) but it will still not work with this module).
 
 ## Prerequisites for *custom* apps
 
-We recommend using the [`webpack 3`](//github.com/webpack/webpack) module bundler and ecosystem to *assemble* your app, but this module also works with  `webpack 2` and `webpack 1` and should work with other bundlers.
+We recommend using the [`webpack 4`](//github.com/webpack/webpack) module bundler and ecosystem to *assemble* your app, but this module also works with `webpack 3`, `webpack 2` and `webpack 1` and should work with other bundlers.
 
 If you are using `webpack`, you will need to install and configure a few commmonly used modules (see the [webpack 3 example project](//github.com/matteocng/react-flag-icon-css-example-multi), or the [webpack 2](https://github.com/matteocng/react-flag-icon-css-example-multi/tree/webpack-2), [webpack 1](https://github.com/matteocng/react-flag-icon-css-example-multi/tree/webpack-1) versions of it):
 
@@ -131,7 +131,7 @@ A [`webpack 3` example project](//github.com/matteocng/react-flag-icon-css-examp
 
 ## Facebook's Flow support
 
-This module has **0** Flow errors on `flow-bin` version: **^0.57.3**.
+This module has **0** Flow errors on `flow-bin` version: **^0.76.0**.
 
 If in your app you are using a Flow version that is the same or newer than that, you should not need any specific configuration excluding the installation of the [flow-typed](https://github.com/flowtype/flow-typed) definition for `prop-types` (you may also take the opportunity to install definitions for all your app's modules using [flow-typed](https://github.com/flowtype/flow-typed)).
 
