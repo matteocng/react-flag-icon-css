@@ -1,7 +1,16 @@
 .babelrc
+.bumpedrc
 .eslintignore
+.eslintrc.js
+.flowconfig
 .github
+.nyc_output
+.travis.yml
 examples
-src
+flow
+flow-typed
 yarn.lock
+yarn-error.log
+yarn-debug.log
 scripts
+src

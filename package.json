@@ -76,6 +76,10 @@
   "engines": {
     "node": ">=6"
   },
+  "files": [
+    "lib",
+    "module"
+  ],
   "prettier": {
     "bracketSpacing": true,
     "singleQuote": true,
