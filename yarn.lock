@@ -794,7 +794,7 @@ babel-plugin-espower@^2.3.2:
     espurify "^1.6.0"
     estraverse "^4.1.1"
 
-babel-plugin-istanbul@^4.1.5:
+babel-plugin-istanbul@^4.1.6:
   version "4.1.6"
   resolved "https://registry.yarnpkg.com/babel-plugin-istanbul/-/babel-plugin-istanbul-4.1.6.tgz#36c59b2192efce81c5b378321b74175add1c9a45"
   dependencies:
@@ -1496,7 +1496,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.5:
+classnames@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
 
@@ -1739,7 +1739,7 @@ cosmiconfig@^5.0.0:
     js-yaml "^3.9.0"
     parse-json "^4.0.0"
 
-coveralls@^3.0.0:
+coveralls@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/coveralls/-/coveralls-3.0.2.tgz#f5a0bcd90ca4e64e088b710fa8dda640aea4884f"
   dependencies:
@@ -1782,7 +1782,7 @@ create-error-class@^3.0.0:
   dependencies:
     capture-stack-trace "^1.0.0"
 
-cross-env@^5.0.3:
+cross-env@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-5.2.0.tgz#6ecd4c015d5773e614039ee529076669b9d126f2"
   dependencies:
@@ -2163,7 +2163,7 @@ eslint-config-airbnb@17.0.0:
     object.assign "^4.1.0"
     object.entries "^1.0.4"
 
-eslint-config-prettier@^2.3.0:
+eslint-config-prettier@^2.9.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-2.9.0.tgz#5ecd65174d486c22dff389fe036febf502d468a3"
   dependencies:
@@ -2204,7 +2204,7 @@ eslint-plugin-babel@^5.1.0:
   dependencies:
     eslint-rule-composer "^0.3.0"
 
-eslint-plugin-flowtype@^2.35.0:
+eslint-plugin-flowtype@^2.50.0:
   version "2.50.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.50.0.tgz#953e262fa9b5d0fa76e178604892cf60dfb916da"
   dependencies:
@@ -4613,7 +4613,7 @@ posix-character-classes@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/posix-character-classes/-/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"
 
-postcss-at-rules-variables@^0.1.1:
+postcss-at-rules-variables@^0.1.5:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/postcss-at-rules-variables/-/postcss-at-rules-variables-0.1.5.tgz#15dd488aa71525ffa91136249994c359f88066aa"
   dependencies:
@@ -4643,7 +4643,7 @@ postcss-custom-properties@^7.0.0:
     balanced-match "^1.0.0"
     postcss "^6.0.18"
 
-postcss-discard-comments@^4.0.0-rc.2:
+postcss-discard-comments@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/postcss-discard-comments/-/postcss-discard-comments-4.0.0.tgz#9684a299e76b3e93263ef8fd2adbf1a1c08fd88d"
   dependencies:
@@ -4828,7 +4828,7 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
-prettier@^1.7.4:
+prettier@^1.13.7:
   version "1.13.7"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.13.7.tgz#850f3b8af784a49a6ea2d2eaa7ed1428a34b7281"
 
