@@ -62,5 +62,9 @@ module.exports = {
         functions: 'always-multiline',
       },
     ],
+
+    // Override `eslint-config-prettier`.
+    // SEE: https://github.com/prettier/eslint-config-prettier/blob/master/README.md#no-unexpected-multiline
+    'no-unexpected-multiline': 'error',
   },
 }
