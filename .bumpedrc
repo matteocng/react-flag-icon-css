@@ -12,6 +12,10 @@ plugins:
         ignoreObjectAtKeys: ['rules']
         ignoreArrayAtKeys: ['require']
 
+     'Exit if not logged in to NPM':
+      plugin: 'bumped-terminal'
+      command: 'npm whoami'
+
   postrelease:
 
     'Generating and committing lock files':
