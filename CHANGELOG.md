@@ -1,3 +1,40 @@
+<a name="1.0.24"></a>
+## <small>1.0.24 (2018-07-17)</small>
+
+* chore: add 'exit if not logged in to NPM' step to bumped ([a299393](https://github.com/matteocng/react-flag-icon-css/commit/a299393))
+* chore: add Node.JS 10 to travis ([e2589d8](https://github.com/matteocng/react-flag-icon-css/commit/e2589d8))
+* chore: bring package.json up to date and fix Flow and Eslint errors ([0944102](https://github.com/matteocng/react-flag-icon-css/commit/0944102))
+* chore: finish upgrading packages and run 'npm audit fix' to fix security issues ([d364496](https://github.com/matteocng/react-flag-icon-css/commit/d364496))
+* chore: move 'prettier' settings to 'package.json' for format-on-save compatibility ([a361673](https://github.com/matteocng/react-flag-icon-css/commit/a361673)), closes [#83](https://github.com/matteocng/react-flag-icon-css/issues/83)
+* chore: remove deprecated 'nsp' and use 'npm audit' ([8f08c7f](https://github.com/matteocng/react-flag-icon-css/commit/8f08c7f))
+* chore(BREAKING): drop Node.js 4 ([67f8471](https://github.com/matteocng/react-flag-icon-css/commit/67f8471))
+* chore(breaking): remove Node.js 6 and 7 from travis ([af1d07a](https://github.com/matteocng/react-flag-icon-css/commit/af1d07a))
+* chore(CI): add Node.js 9 to travis ([29e6707](https://github.com/matteocng/react-flag-icon-css/commit/29e6707))
+* chore(eslint): restore 'no-unexpected-multiline' error rule ([bc8298d](https://github.com/matteocng/react-flag-icon-css/commit/bc8298d))
+* chore(package): correct prop-types semver in peerDependencies ([5d66ca2](https://github.com/matteocng/react-flag-icon-css/commit/5d66ca2))
+* chore(package): update ava to version 0.24.0 ([6220a07](https://github.com/matteocng/react-flag-icon-css/commit/6220a07))
+* chore(package): update ava to version 0.25.0 ([634d896](https://github.com/matteocng/react-flag-icon-css/commit/634d896))
+* chore(package): update eslint-plugin-babel to version 5.0.0 ([6e683a5](https://github.com/matteocng/react-flag-icon-css/commit/6e683a5))
+* chore(package): update flow-bin to version 0.59.0 ([b8547ef](https://github.com/matteocng/react-flag-icon-css/commit/b8547ef))
+* chore(package): update lockfiles ([839f2b5](https://github.com/matteocng/react-flag-icon-css/commit/839f2b5))
+* chore(package): update nsp to version 3.0.0 ([e0502dd](https://github.com/matteocng/react-flag-icon-css/commit/e0502dd))
+* chore(package): update postcss-cli to version 5.0.0 ([a76f711](https://github.com/matteocng/react-flag-icon-css/commit/a76f711))
+* chore(package): update postcss-custom-properties to version 7.0.0 ([4573352](https://github.com/matteocng/react-flag-icon-css/commit/4573352))
+* chore(package): update stylelint to version 9.0.0 ([10a18d1](https://github.com/matteocng/react-flag-icon-css/commit/10a18d1))
+* chore(package): upgrade prettier to version 1.7.4 ([04605b8](https://github.com/matteocng/react-flag-icon-css/commit/04605b8))
+* chore(prettier): run 'yarn prettier' ([bda79e4](https://github.com/matteocng/react-flag-icon-css/commit/bda79e4))
+* fix: remove flow folders and hidden files from release bundle shipped to npm ([d74f679](https://github.com/matteocng/react-flag-icon-css/commit/d74f679))
+* fix: use 'npx' to run 'git-dirty' ([625d24c](https://github.com/matteocng/react-flag-icon-css/commit/625d24c))
+* docs: update software versions in docs ([1d14898](https://github.com/matteocng/react-flag-icon-css/commit/1d14898))
+* docs(README): bump webpack versions ([5c2a758](https://github.com/matteocng/react-flag-icon-css/commit/5c2a758))
+* docs(README): specify webpack version better ([17f7137](https://github.com/matteocng/react-flag-icon-css/commit/17f7137))
+* chore(bumped) switch changelog generation and lock files ([7c2946c](https://github.com/matteocng/react-flag-icon-css/commit/7c2946c))
+* wip ([921a31f](https://github.com/matteocng/react-flag-icon-css/commit/921a31f))
+* test: improve prop-types tests ([89a404b](https://github.com/matteocng/react-flag-icon-css/commit/89a404b))
+* refactor: rename 'ExactValidator' validator to 'NoExtraPropsValidator' ([1ee4fbc](https://github.com/matteocng/react-flag-icon-css/commit/1ee4fbc)), closes [#49](https://github.com/matteocng/react-flag-icon-css/issues/49)
+
+
+
 <a name="1.0.23"></a>
 ## 1.0.23 (2017-10-29)
 
