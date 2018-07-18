@@ -61,7 +61,7 @@
     "mkdirp": "^0.5.1",
     "nyc": "^12.0.2",
     "postcss-at-rules-variables": "^0.1.5",
-    "postcss-cli": "^5.0.0",
+    "postcss-cli": "^6.0.0",
     "postcss-custom-properties": "^7.0.0",
     "postcss-discard-comments": "^4.0.0",
     "postcss-each": "^0.10.0",
