@@ -1,3 +1,5 @@
+[libs]
+./flow/decls
 [options]
 suppress_comment=\\(.\\|\n\\)*\\$FlowExpectError
 esproposal.export_star_as=enable
@@ -5,4 +7,4 @@ esproposal.export_star_as=enable
 <PROJECT_ROOT>/lib/.*
 <PROJECT_ROOT>/module/.*
 [version]
-^0.76.0
+^0.77.0
