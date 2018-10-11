@@ -56,7 +56,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.9.1",
     "flag-icon-css": "^3.0.0",
-    "flow-bin": "^0.77.0",
+    "flow-bin": "^0.83.0",
     "flow-copy-source": "^2.0.1",
     "mkdirp": "^0.5.1",
     "nyc": "^12.0.2",
