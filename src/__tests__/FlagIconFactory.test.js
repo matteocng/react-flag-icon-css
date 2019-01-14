@@ -21,6 +21,8 @@ test('does not set FlagIcon.propTypes in production', t => {
   const FlagIcon = FlagIconFactory(React)
 
   process.env.NODE_ENV = previousEnv
+
+  // eslint-disable-next-line react/forbid-foreign-prop-types
   t.falsy(FlagIcon.propTypes)
 })
 
@@ -31,5 +33,7 @@ test('sets FlagIcon.propTypes in development', t => {
   const FlagIcon = FlagIconFactory(React)
 
   process.env.NODE_ENV = previousEnv
+
+  // eslint-disable-next-line react/forbid-foreign-prop-types
   t.truthy(FlagIcon.propTypes)
 })

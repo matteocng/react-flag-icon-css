@@ -42,15 +42,20 @@ const makeEnumType = <T: string | number>(
 
 const makeHeading = (npmScriptName: string): string => `// @flow
 /**
- * This file must be generated with \`yarn ${npmScriptName}\` or \`npm run ${npmScriptName}\`,
- * do not modify manually.
+ * This file must be generated with \`yarn ${npmScriptName}\` or \`npm ${npmScriptName}\`,
+ * do not modify manually. Remember that the version of this file shipped to the
+ * \`npm\` registry should be in sync with the \`TypeScript\` type definition;
+ * it can be found [here](https://www.npmjs.com/package/@types/react-flag-icon-css).
  * SEE: package.json.
 */
 `
 
 // Execute task.
 const npmConfigArgv = JSON.parse(process.env.npm_config_argv || '')
-const npmScriptName = npmConfigArgv ? npmConfigArgv.original : ''
+let npmScriptName = npmConfigArgv ? npmConfigArgv.original : ''
+npmScriptName = Array.isArray(npmScriptName)
+  ? npmScriptName.join(' ')
+  : npmScriptName
 const fileName = 'enums.js'
 
 const castEnumToString = <T: string | number>(values: T[]): string[] =>

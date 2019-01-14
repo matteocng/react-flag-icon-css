@@ -59,9 +59,7 @@ export type FlagIconReturnType<T> = StatelessFunctionalComponent<
   CustomFlagIconPropsType<T>,
 >
 export type FlagIconFactoryReturnType<T> = FlagIconReturnType<T>
-export type StandardFlagIconFactoryReturnType = StatelessFunctionalComponent<
-  FlagIconPropsType,
->
+export type StandardFlagIconFactoryReturnType = StatelessFunctionalComponent<FlagIconPropsType>
 
 export type CountryType = {
   name: string,

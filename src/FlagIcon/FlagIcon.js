@@ -59,7 +59,7 @@ const FlagIcon = <T>(
    *
    *  TODO: add this text with a few examples to the docs.
    *
-  */
+   */
   return (
     <Component className={makeClassnames(props, options, styles)}>
       {children}

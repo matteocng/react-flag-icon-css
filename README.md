@@ -231,7 +231,11 @@ const FlagIcon = CustomFlagIconFactory(React, options)
 
 **Runtime type checking**: in development mode (`process.env.NODE_ENV !== 'production'`), when using unsupported props or prop values, you are warned at runtime by *Failed prop type* errors in the browser console. Feature powered by [`prop-types`](https://github.com/reactjs/prop-types).
 
-**Static type checking**: if you use Facebook's [`flow`](https://github.com/facebook/flow) in your app (otherwise you can skip this section, unless you want to submit a pull request), it should automatically pick up this package's definitions from the `.js.flow` files that are distributed with it, checking your code accordingly when you run `yarn flow`. Using the latest `Flow` version or the version in `./package.json` is recommended. We also recommend using a `Flow`-aware editor such as [`Nuclide`](https://nuclide.io/) for [`Atom`](https://atom.io/).
+**Static type checking**:
+
+If you use Facebook's [`flow`](https://github.com/facebook/flow) in your app (otherwise you can skip this section, unless you want to submit a pull request), it should automatically pick up this package's definitions from the `.js.flow` files that are distributed with it, checking your code accordingly when you run `yarn flow`. Using the latest `Flow` version or the version in `./package.json` is recommended. We also recommend using a `Flow`-aware editor such as [`Nuclide`](https://nuclide.io/) for [`Atom`](https://atom.io/).
+
+If you use Microsoft's [`TypeScript`](https://www.typescriptlang.org/) in your app (otherwise you can skip this section, unless you want to submit a pull request), the package that contains the type definitions for this module is: [@types/react-flag-icon-css](https://www.npmjs.com/package/@types/react-flag-icon-css).
 
 ## Contributing
 

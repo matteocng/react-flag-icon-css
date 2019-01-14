@@ -1,7 +1,9 @@
 // @flow
 /**
- * This file must be generated with `yarn generate:types` or `npm run generate:types`,
- * do not modify manually.
+ * This file must be generated with `yarn run generate:types` or `npm run generate:types`,
+ * do not modify manually. Remember that the version of this file shipped to the
+ * `npm` registry should be in sync with the `TypeScript` type definition;
+ * it can be found [here](https://www.npmjs.com/package/@types/react-flag-icon-css).
  * SEE: package.json.
  */
 export type FlagIconFlipType = 'horizontal' | 'vertical'

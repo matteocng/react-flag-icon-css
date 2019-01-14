@@ -5,7 +5,7 @@
  * would be discrepancies between the testing and other environments.
  *
  * SEE: https://github.com/css-modules/css-modules-require-hook#using-with-babel-node--es6-imports
-*/
+ */
 import atRulesVariables from 'postcss-at-rules-variables'
 import each from 'postcss-each'
 import customProperties from 'postcss-custom-properties'
@@ -14,5 +14,8 @@ import { cssModulesScopedName as generateScopedName } from './internals/constant
 
 module.exports = {
   generateScopedName,
+  // "Since the require function is synchronous, you should provide synchronous
+  // plugins only."
+  // SEE: https://github.com/css-modules/css-modules-require-hook#prepend-array
   prepend: [atRulesVariables(), each(), customProperties(), discardComments()],
 }

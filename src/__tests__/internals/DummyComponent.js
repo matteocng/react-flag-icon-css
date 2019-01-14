@@ -29,9 +29,7 @@ type CustomDummyPropsType<T> = BaseDummyPropsType & {
 
 type DummyReturnType<T> = StatelessFunctionalComponent<CustomDummyPropsType<T>>
 type DummyFactoryReturnType<T> = DummyReturnType<T>
-type StandardDummyFactoryReturnType = StatelessFunctionalComponent<
-  DummyPropsType,
->
+type StandardDummyFactoryReturnType = StatelessFunctionalComponent<DummyPropsType>
 
 type DummyOptionsType<T: {}> = {
   customCodes?: T,

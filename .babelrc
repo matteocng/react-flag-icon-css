@@ -1,28 +1,40 @@
 {
 	"presets": [
-		"react"
+		"@babel/preset-react",
+		"@babel/preset-flow"
 	],
 	"plugins": [
-		"transform-object-rest-spread",
-		"transform-export-extensions"
+		"@babel/plugin-proposal-object-rest-spread",
+		"@babel/plugin-proposal-export-default-from",
+		"@babel/plugin-proposal-export-namespace-from"
 	],
 	"comments": false,
 	"env": {
 		"build": {
-			"presets": ["es2015"],
-			"ignore": ["**/__tests__/"]
+			"presets": [
+				"@babel/preset-env"
+			],
+			"ignore": [
+				"**/__tests__/"
+			]
 		},
 		"module": {
 			"presets": [
-				["es2015", {
-					"modules": false
-				}]
+				[
+					"@babel/preset-env",
+					{
+						"modules": false
+					}
+				]
 			],
-			"ignore": ["**/__tests__/"]
+			"ignore": [
+				"**/__tests__/"
+			]
 		},
 		"testing": {
-			"presets": ["es2015"],
-			"plugins": ["babel-plugin-istanbul"]
+			"plugins": [
+				"babel-plugin-istanbul"
+			]
 		}
 	}
 }
