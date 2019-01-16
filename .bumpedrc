@@ -20,7 +20,7 @@ plugins:
 
     'Generating and committing lock files':
       plugin: 'bumped-terminal'
-      command: 'yarn && npm i && git add yarn.lock package-lock.json && git commit -m "chore(package): update lockfiles"'
+      command: 'npm i && yarn && git add yarn.lock package-lock.json && git commit -m "chore(package): update lockfiles"'
 
     'Generating CHANGELOG file':
       plugin: 'bumped-changelog'
