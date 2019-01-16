@@ -2,7 +2,7 @@
   "name": "react-flag-icon-css",
   "description": "React SVG country flags component",
   "homepage": "https://github.com/matteocng/react-flag-icon-css#readme",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "main": "./lib",
   "module": "./module",
   "author": {
@@ -107,26 +107,21 @@
     "postbuild:module": "npm run styles && flow-copy-source --ignore *__tests__/**/* -v src module",
     "postcoverage": "npm run coverage:codecov && npm run coverage:coveralls",
     "posttest:ci": "npm run lint && npm run flow && npm run prettier:check",
-    "prebuild:common": "npm run generate:types && npm run flow",
     "prebuild": "npm run clean && npm run prebuild:common",
+    "prebuild:common": "npm run generate:types && npm run flow",
     "prebuild:module": "npm run clean:module && npm run prebuild:common",
     "precoverage": "mkdirp .nyc_output",
     "prepublishOnly": "npm run test:ci && npm run audit && npm run build && npm run build:module",
     "prettier": "cross-env BABEL_ENV=build babel-node ./scripts/tasks/prettier.js write",
     "prettier:check": "cross-env BABEL_ENV=build babel-node ./scripts/tasks/prettier.js",
     "styles": "postcss -o lib/styles/main.css src/styles/main.css && cpy lib/styles/main.css module/styles/",
-    "test:ci": "cross-env BABEL_ENV=testing nyc ava",
     "test": "cross-env BABEL_ENV=testing ava",
-    "watch:test": "npm run test -- --watch",
-    "test:update:snapshots": "npm run test -- --update-snapshots"
+    "test:ci": "cross-env BABEL_ENV=testing nyc ava",
+    "test:update:snapshots": "npm run test -- --update-snapshots",
+    "watch:test": "npm run test -- --watch"
   },
   "license": "MIT",
   "ava": {
-    "require": [
-      "@babel/register",
-      "esm",
-      "./src/__tests__/index.js"
-    ],
     "babel": {
       "testOptions": {
         "presets": [
@@ -141,6 +136,11 @@
     },
     "files": [
       "**/*.test.js"
+    ],
+    "require": [
+      "@babel/register",
+      "esm",
+      "./src/__tests__/index.js"
     ]
   },
   "nyc": {

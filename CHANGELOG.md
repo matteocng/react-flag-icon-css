@@ -1,3 +1,21 @@
+<a name="1.0.25"></a>
+## 1.0.25 (2019-01-16)
+
+* chore: invert order of 'yarn' and 'npm' install ([2f8f94a](https://github.com/matteocng/react-flag-icon-css/commit/2f8f94a))
+* chore: remove node 9 and add node 11 to 'travis' (ava does not support node 9) ([8c51a9e](https://github.com/matteocng/react-flag-icon-css/commit/8c51a9e))
+* chore: upgrade 'babel' to version 7, 'ava' to version 1, 'react' and other modules ([7d705b3](https://github.com/matteocng/react-flag-icon-css/commit/7d705b3)), closes [#110](https://github.com/matteocng/react-flag-icon-css/issues/110)
+* chore(package): update 'flow-bin' to version 0.77.0 ([b3a96d8](https://github.com/matteocng/react-flag-icon-css/commit/b3a96d8))
+* chore(package): update babel-eslint to version 9.0.0 ([8cfce57](https://github.com/matteocng/react-flag-icon-css/commit/8cfce57))
+* chore(package): update eslint-config-prettier to version 3.0.0 ([b21bb53](https://github.com/matteocng/react-flag-icon-css/commit/b21bb53))
+* chore(package): update eslint-plugin-flowtype to version 3.0.0 ([ebd484e](https://github.com/matteocng/react-flag-icon-css/commit/ebd484e))
+* chore(package): update lockfile package-lock.json ([f578807](https://github.com/matteocng/react-flag-icon-css/commit/f578807))
+* chore(package): update lockfiles ([f2daf1c](https://github.com/matteocng/react-flag-icon-css/commit/f2daf1c))
+* chore(package): update lockfiles ([59d9ddf](https://github.com/matteocng/react-flag-icon-css/commit/59d9ddf))
+* chore(package): update postcss-cli to version 6.0.0 ([890c05f](https://github.com/matteocng/react-flag-icon-css/commit/890c05f))
+* docs: add links to the 'webpack 4' example ([eb7390b](https://github.com/matteocng/react-flag-icon-css/commit/eb7390b))
+
+
+
 <a name="1.0.24"></a>
 ## <small>1.0.24 (2018-07-17)</small>
 
