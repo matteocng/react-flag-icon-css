@@ -71,7 +71,7 @@
     "postcss-discard-comments": "^4.0.1",
     "postcss-each": "^0.10.0",
     "prettier": "^1.16.1",
-    "react": "^16.7.0",
+    "react": "^16.8.4",
     "react-dom": "^16.7.0",
     "react-test-renderer": "^16.7.0",
     "rimraf": "^2.6.3",
