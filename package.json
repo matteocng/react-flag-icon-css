@@ -67,7 +67,7 @@
     "nyc": "^13.1.0",
     "postcss-at-rules-variables": "^0.1.6",
     "postcss-cli": "^6.1.1",
-    "postcss-custom-properties": "7.0.0",
+    "postcss-custom-properties": "8.0.10",
     "postcss-discard-comments": "^4.0.1",
     "postcss-each": "^0.10.0",
     "prettier": "^1.16.1",
