@@ -266,6 +266,7 @@ export type FlagIconCodeType =
   | 'vi'
   | 'wf'
   | 'eh'
+  | 'xk'
   | 'ye'
   | 'zm'
   | 'zw'
