@@ -26,7 +26,7 @@
   ],
   "dependencies": {
     "classnames": "^2.2.6",
-    "flag-icon-css": "^3.2.1",
+    "flag-icon-css": "^3.3.0",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
@@ -60,7 +60,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.12.3",
     "esm": "^3.0.84",
-    "flag-icon-css": "^3.2.1",
+    "flag-icon-css": "^3.3.0",
     "flow-bin": "^0.77.0",
     "flow-copy-source": "^2.0.2",
     "mkdirp": "^0.5.1",

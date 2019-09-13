@@ -1035,6 +1035,10 @@ export const countries = [
     code: 'eh',
   },
   {
+    name: 'Kosovo',
+    code: 'xk',
+  },
+  {
     name: 'Yemen',
     code: 'ye',
   },
