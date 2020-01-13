@@ -39,7 +39,7 @@
     "@babel/polyfill": "^7.8.0",
     "@babel/preset-env": "^7.8.2",
     "@babel/preset-flow": "^7.8.0",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-react": "^7.8.0",
     "ava": "^1.1.0",
     "babel-eslint": "^10.0.1",
     "babel-plugin-istanbul": "^5.1.0",
