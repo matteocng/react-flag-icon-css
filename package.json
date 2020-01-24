@@ -63,7 +63,7 @@
     "flag-icon-css": "^3.2.1",
     "flow-bin": "^0.77.0",
     "flow-copy-source": "^2.0.2",
-    "mkdirp": "^0.5.1",
+    "mkdirp": "^1.0.1",
     "nyc": "^13.1.0",
     "postcss-at-rules-variables": "^0.1.6",
     "postcss-cli": "^6.1.1",
