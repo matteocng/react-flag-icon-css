@@ -75,7 +75,7 @@
     "react-dom": "^16.7.0",
     "react-test-renderer": "^16.7.0",
     "rimraf": "^2.6.3",
-    "stylelint": "^9.9.0",
+    "stylelint": "^13.3.2",
     "stylelint-config-standard": "^18.2.0"
   },
   "engines": {
