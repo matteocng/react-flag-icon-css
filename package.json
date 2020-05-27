@@ -34,7 +34,7 @@
     "@babel/core": "^7.10.1",
     "@babel/node": "^7.10.1",
     "@babel/plugin-proposal-export-default-from": "^7.10.1",
-    "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.10.1",
     "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
     "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.2.3",
